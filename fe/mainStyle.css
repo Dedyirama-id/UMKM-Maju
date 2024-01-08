@@ -1,0 +1,49 @@
+body{
+    margin: 0px;
+}
+
+body{
+    background-color: #7FC7D9;
+}
+main{
+    margin: 10px;
+}
+
+.navbar{
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #365486;
+}
+
+.navbar #home{
+    cursor: pointer;
+    margin: 5px
+}
+
+.navbar a{
+    display: block;
+    text-align: center;
+    padding: 20px;
+    text-decoration: none;
+    color: #14199c;
+}
+
+.navbar li{
+    float: left;
+}
+
+.navbar ul li{
+    padding: 0px;
+    margin: 0px;
+    list-style-type:none ;
+    display: block;
+    margin: 0px;
+}
+
+.navbar ul li:hover{
+    background-color: #0F1035;
+}
