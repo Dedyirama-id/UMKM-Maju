@@ -1,9 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const ESLintPlugin = require('eslint-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
-const TerserPlugin = require('terser-webpack-plugin');
 
 module.exports = {
   entry: {
@@ -32,16 +30,12 @@ module.exports = {
       template: './src/html/index.html',
       filename: 'index.html',
     }),
-    new ESLintPlugin({
-      extensions: ['js', 'jsx'],
-    }),
     new MiniCssExtractPlugin({
       filename: 'style-[contenthash].css',
     }),
   ],
   optimization: {
     minimizer: [
-      new TerserPlugin(),
       new CssMinimizerPlugin(),
     ],
   },

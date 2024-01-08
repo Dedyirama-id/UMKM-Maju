@@ -25,7 +25,10 @@ module.exports = {
     'import/no-extraneous-dependencies': [
       'error',
       {
-        projectDependencies: false,
+        devDependencies: [
+          '**/*.js',
+          '**/*.js',
+        ],
       },
     ],
   },

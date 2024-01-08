@@ -1,11 +1,11 @@
 const { merge } = require('webpack-merge');
-const common = require('./webpack.common.js');
+const common = require('./webpack.common');
 
 module.exports = merge(common, {
   mode: 'development',
   devServer: {
     static: {
-      directory: './src/index.html',
+      directory: './src/html/index.html',
       watch: true,
     },
     client: {
@@ -13,9 +13,9 @@ module.exports = merge(common, {
         errors: true,
         warnings: false,
       },
-      optimization: {
-        minimizer: true,
-      },
     },
+  },
+  optimization: {
+    minimize: true,
   },
 });
