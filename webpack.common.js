@@ -30,6 +30,10 @@ module.exports = {
       template: './src/html/index.html',
       filename: 'index.html',
     }),
+    new HtmlWebpackPlugin({
+      template: './src/html/404.html',
+      filename: '404.html',
+    }),
     new MiniCssExtractPlugin({
       filename: 'style-[contenthash].css',
     }),

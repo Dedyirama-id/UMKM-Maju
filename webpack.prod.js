@@ -1,4 +1,3 @@
-const ESLintPlugin = require('eslint-webpack-plugin');
 const { merge } = require('webpack-merge');
 const common = require('./webpack.common');
 
@@ -20,11 +19,6 @@ module.exports = merge(common, {
       },
     ],
   },
-  plugins: [
-    new ESLintPlugin({
-      extensions: ['js', 'jsx'],
-    }),
-  ],
   optimization: {
     minimize: true,
   },
