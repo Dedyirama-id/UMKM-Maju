@@ -13,6 +13,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name]-[contenthash].js',
+    chunkFilename: '[name]-[contenthash].js',
     assetModuleFilename: 'img/[name]-[hash]',
     clean: true,
   },
@@ -36,21 +37,21 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       template: './src/html/404.html',
-      filename: '404-[contenthash].html',
+      filename: '404.html',
     }),
     new HtmlWebpackPlugin({
       template: './src/html/admin-dashboard.html',
-      filename: 'admin-dashboard-[contenthash].html',
+      filename: 'admin-dashboard.html',
       chunks: ['adminDashboard'],
     }),
     new HtmlWebpackPlugin({
       template: './src/html/signup.html',
-      filename: 'signup-[contenthash].html',
+      filename: 'signup.html',
       chunks: ['signup'],
     }),
     new HtmlWebpackPlugin({
       template: './src/html/user-dashboard.html',
-      filename: 'user-dashboard-[contenthash].html',
+      filename: 'user-dashboard.html',
       chunks: ['userDashboard'],
     }),
     new MiniCssExtractPlugin({
