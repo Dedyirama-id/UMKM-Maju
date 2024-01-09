@@ -36889,16 +36889,20 @@ onSnapshot(colRef, function (snapshot) {
 //   timestamp: serverTimestamp(),
 // });
 
+// Function to redirect to the dashboard
+function redirectToDashboard() {
+  window.location.href = 'dashboard.html';
+  console.log('to dashboard');
+}
+
 // Sign-up
 var signupForm = document.querySelector('#signup-form');
 signupForm.addEventListener('submit', function (e) {
   e.preventDefault();
   var email = signupForm['signup-email'].value;
   var password = signupForm['signup-password'].value;
-  createUserWithEmailAndPassword(auth, email, password).then(function (userCredential) {
-    // Signed in
-    var user = _objectSpread({}, userCredential.user);
-    console.log(user);
+  createUserWithEmailAndPassword(auth, email, password).then(function () {
+    redirectToDashboard();
   })["catch"](function (error) {
     var errorCode = error.code;
     var errorMessage = error.message;
@@ -36908,8 +36912,9 @@ signupForm.addEventListener('submit', function (e) {
 onAuthStateChanged(auth, function (user) {
   if (user) {
     console.log('Logged in: ', user);
-    // open dashboard
-    window.location.href = 'dashboard-[contenthash].html';
+
+    // Redirect to the dashboard if the user is already logged in
+    redirectToDashboard();
   } else {
     console.log('Logged Out!');
   }

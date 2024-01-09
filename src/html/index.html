@@ -5,25 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UMKM Maju: Platform Digital Pengembangan UMKM</title>
 </head>
+
+
 <body>
-    <h1>UMKM Maju: Platform Digital Pengembangan UMKM</h1>
-    <hr>
-    <h2>Sign Up</h2>
-    <form id="signup-form">
-        <label for="signup-email">Email: </label>
-        <input type="email" id="signup-email" required>
-        <label for="signup-password">Password: </label>
-        <input type="password" id="signup-password" required>
-        <button type="submit">Submit</button>
-    </form>
-    <hr>
-    <h2>Login</h2>
-    <form id="login-form">
-        <label for="login-email">Title</label>
-        <input type="email" id="login-email">
-        <label for="login-password">Title</label>
-        <input type="password" id="login-password">
-        <button type="submit">Submit</button>
-    </form>
+    <div class="main">
+        <form action="" method="post">
+            <h1>Login</h1>
+            <div class="inputTxt">
+                <input type="text" id="username" placeholder="Username" required> 
+            </div>
+        
+            <div class="inputTxt">
+                <input type="password" id="password" placeholder="Password" minlength="8" required>
+            </div>
+
+
+            <a href=""  id="forgotPassword">Forgot Password?</a>
+
+            <input type="submit" value="Login" id="toSubmit">
+            
+            <div id="toRegist">
+                No account?
+                <a href="regist.html">Create new account</a>
+            </div>
+
+        </form>
+    </div>
 </body>
+
+
 </html>
