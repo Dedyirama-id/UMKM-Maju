@@ -32,7 +32,11 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       template: './src/html/404.html',
-      filename: '404.html',
+      filename: '404-[contenthash].html',
+    }),
+    new HtmlWebpackPlugin({
+      template: './src/html/dashboard.html',
+      filename: 'dashboard.html',
     }),
     new MiniCssExtractPlugin({
       filename: 'style-[contenthash].css',
