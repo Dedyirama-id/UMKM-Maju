@@ -12,9 +12,13 @@ loginForm.addEventListener('submit', (e) => {
 
   signInWithEmailAndPassword(auth, email, password)
     .catch((error) => {
-      const errorCode = error.code;
-      const errorMessage = error.message;
-      console.log(errorCode, errorMessage);
+      const parts = error.code.split('/');
+      const filteredText = parts[parts.length - 1].replace(/-/g, ' ');
+      const errMessage = filteredText.replace(/\b\w/g, (char) => char.toUpperCase());
+
+      const errText = document.getElementById('error-message');
+      errText.textContent = errMessage;
+      errText.style.display = 'block';
     });
 });
 

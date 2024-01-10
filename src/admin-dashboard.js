@@ -1,3 +1,2 @@
 import './script/view/admin';
-import './styles/table.css';
-// import './styles/main.css';
+import './styles/admin-dashboard.css';

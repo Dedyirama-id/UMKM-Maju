@@ -5,13 +5,13 @@ import {
 import { auth, db } from './init';
 import { dbCollection } from '../data/firebase-config';
 
-// signup
-const signup = document.querySelector('#signup-form');
-signup.addEventListener('submit', (e) => {
+// signupForm
+const signupForm = document.querySelector('#signup-form');
+signupForm.addEventListener('submit', (e) => {
   e.preventDefault();
-  const email = signup.email.value;
-  const username = signup.username.value;
-  const password = signup.password.value;
+  const email = signupForm.email.value;
+  const username = signupForm.username.value;
+  const password = signupForm.password.value;
 
   createUserWithEmailAndPassword(auth, email, password)
     .then((cred) => {
@@ -21,9 +21,13 @@ signup.addEventListener('submit', (e) => {
       });
     })
     .catch((error) => {
-      const errorCode = error.code;
-      const errorMessage = error.message;
-      console.log(errorCode, errorMessage);
+      const parts = error.code.split('/');
+      const filteredText = parts[parts.length - 1].replace(/-/g, ' ');
+      const errMessage = filteredText.replace(/\b\w/g, (char) => char.toUpperCase());
+
+      const errText = document.getElementById('error-message');
+      errText.textContent = errMessage;
+      errText.style.display = 'block';
     });
 });
 
