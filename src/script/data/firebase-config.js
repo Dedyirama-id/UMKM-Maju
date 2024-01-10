@@ -8,4 +8,9 @@ const firebaseConfig = {
   measurementId: 'G-GNVRPSSBN8',
 };
 
-export default firebaseConfig;
+const dbCollection = {
+  libraries: 'libraries',
+  users: 'users',
+};
+
+export { firebaseConfig, dbCollection };

@@ -3996,32 +3996,6 @@ registerCoreComponents('');
 
 //# sourceMappingURL=index.esm2017.js.map
 
-;// CONCATENATED MODULE: ./node_modules/firebase/app/dist/esm/index.esm.js
-
-
-
-var index_esm_name = "firebase";
-var index_esm_version = "10.7.1";
-
-/**
- * @license
- * Copyright 2020 Google LLC
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *   http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-registerVersion(index_esm_name, index_esm_version, 'app');
-//# sourceMappingURL=index.esm.js.map
-
 ;// CONCATENATED MODULE: ./node_modules/@firebase/webchannel-wrapper/dist/esm/index.esm2017.js
 var commonjsGlobal = typeof globalThis !== 'undefined' ? globalThis : typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : typeof self !== 'undefined' ? self : {};
 
@@ -4131,7 +4105,7 @@ function Yd(a,b){if(Y(b))throw Error("division by zero");if(Y(a))return new ae(V
 b.ea()));d=Math.ceil(Math.log(c)/Math.LN2);d=48>=d?1:Math.pow(2,d-48);f=U(c);for(h=f.R(b);X(h)||0<h.X(a);)c-=d,f=U(c),h=f.R(b);Y(f)&&(f=Wd);e=e.add(f);a=Zd(a,h);}return new ae(e,a)}k.gb=function(a){return Yd(this,a).h};k.and=function(a){for(var b=Math.max(this.g.length,a.g.length),c=[],d=0;d<b;d++)c[d]=this.D(d)&a.D(d);return new T(c,this.h&a.h)};k.or=function(a){for(var b=Math.max(this.g.length,a.g.length),c=[],d=0;d<b;d++)c[d]=this.D(d)|a.D(d);return new T(c,this.h|a.h)};
 k.xor=function(a){for(var b=Math.max(this.g.length,a.g.length),c=[],d=0;d<b;d++)c[d]=this.D(d)^a.D(d);return new T(c,this.h^a.h)};function be(a){for(var b=a.g.length+1,c=[],d=0;d<b;d++)c[d]=a.D(d)<<1|a.D(d-1)>>>31;return new T(c,a.h)}function Z(a,b){var c=b>>5;b%=32;for(var d=a.g.length-c,e=[],f=0;f<d;f++)e[f]=0<b?a.D(f+c)>>>b|a.D(f+c+1)<<32-b:a.D(f+c);return new T(e,a.h)}Od.prototype.createWebChannel=Od.prototype.g;Q.prototype.send=Q.prototype.u;Q.prototype.open=Q.prototype.m;Q.prototype.close=Q.prototype.close;Sb.NO_ERROR=0;Sb.TIMEOUT=8;Sb.HTTP_ERROR=6;Tb.COMPLETE="complete";Wb.EventType=Xb;Xb.OPEN="a";Xb.CLOSE="b";Xb.ERROR="c";Xb.MESSAGE="d";B.prototype.listen=B.prototype.O;P.prototype.listenOnce=P.prototype.P;P.prototype.getLastError=P.prototype.Sa;P.prototype.getLastErrorCode=P.prototype.Ia;P.prototype.getStatus=P.prototype.da;P.prototype.getResponseJson=P.prototype.Wa;
 P.prototype.getResponseText=P.prototype.ja;P.prototype.send=P.prototype.ha;P.prototype.setWithCredentials=P.prototype.Oa;S.prototype.digest=S.prototype.l;S.prototype.reset=S.prototype.reset;S.prototype.update=S.prototype.j;T.prototype.add=T.prototype.add;T.prototype.multiply=T.prototype.R;T.prototype.modulo=T.prototype.gb;T.prototype.compare=T.prototype.X;T.prototype.toNumber=T.prototype.ea;T.prototype.toString=T.prototype.toString;T.prototype.getBits=T.prototype.D;T.fromNumber=U;T.fromString=Vd;
-var index_esm2017_createWebChannelTransport = esm.createWebChannelTransport=function(){return new Od};var index_esm2017_getStatEventTarget = esm.getStatEventTarget=function(){return Mb()};var index_esm2017_ErrorCode = esm.ErrorCode=Sb;var index_esm2017_EventType = esm.EventType=Tb;var index_esm2017_Event = esm.Event=E;var index_esm2017_Stat = esm.Stat={xb:0,Ab:1,Bb:2,Ub:3,Zb:4,Wb:5,Xb:6,Vb:7,Tb:8,Yb:9,PROXY:10,NOPROXY:11,Rb:12,Nb:13,Ob:14,Mb:15,Pb:16,Qb:17,tb:18,sb:19,ub:20};var FetchXmlHttpFactory = esm.FetchXmlHttpFactory=ld;var index_esm2017_WebChannel = esm.WebChannel=Wb;var index_esm2017_XhrIo = esm.XhrIo=P;var index_esm2017_Md5 = esm.Md5=S;var index_esm2017_Integer = esm.Integer=T;
+var createWebChannelTransport = esm.createWebChannelTransport=function(){return new Od};var getStatEventTarget = esm.getStatEventTarget=function(){return Mb()};var ErrorCode = esm.ErrorCode=Sb;var EventType = esm.EventType=Tb;var Event = esm.Event=E;var Stat = esm.Stat={xb:0,Ab:1,Bb:2,Ub:3,Zb:4,Wb:5,Xb:6,Vb:7,Tb:8,Yb:9,PROXY:10,NOPROXY:11,Rb:12,Nb:13,Ob:14,Mb:15,Pb:16,Qb:17,tb:18,sb:19,ub:20};var FetchXmlHttpFactory = esm.FetchXmlHttpFactory=ld;var WebChannel = esm.WebChannel=Wb;var XhrIo = esm.XhrIo=P;var Md5 = esm.Md5=S;var Integer = esm.Integer=T;
 
 
 //# sourceMappingURL=index.esm2017.js.map
@@ -5192,7 +5166,7 @@ const index_esm2017_C = /^[_a-zA-Z][_a-zA-Z0-9]*$/;
 /**
  * A dot-separated path for navigating sub-objects within a document.
  * @internal
- */ class FieldPath$1 extends (/* unused pure expression or super */ null && (BasePath)) {
+ */ class FieldPath$1 extends BasePath {
     construct(e, t, n) {
         return new FieldPath$1(e, t, n);
     }
@@ -7190,7 +7164,7 @@ function __PRIVATE_isBase64Available() {
 
 ByteString.EMPTY_BYTE_STRING = new ByteString("");
 
-const ee = (/* unused pure expression or super */ null && (new RegExp(/^\d{4}-\d\d-\d\dT\d\d:\d\d:\d\d(?:\.(\d+))?Z$/)));
+const ee = new RegExp(/^\d{4}-\d\d-\d\dT\d\d:\d\d:\d\d(?:\.(\d+))?Z$/);
 
 /**
  * Converts the possible Proto values for a timestamp value into a "seconds and
@@ -8136,7 +8110,7 @@ function __PRIVATE_orderByEquals(e, t) {
  * limitations under the License.
  */ class Filter {}
 
-class FieldFilter extends (/* unused pure expression or super */ null && (Filter)) {
+class FieldFilter extends Filter {
     constructor(e, t, n) {
         super(), this.field = e, this.op = t, this.value = n;
     }
@@ -8189,7 +8163,7 @@ class FieldFilter extends (/* unused pure expression or super */ null && (Filter
     }
 }
 
-class CompositeFilter extends (/* unused pure expression or super */ null && (Filter)) {
+class CompositeFilter extends Filter {
     constructor(e, t) {
         super(), this.filters = e, this.op = t, this.ue = null;
     }
@@ -8282,7 +8256,7 @@ function __PRIVATE_compositeFilterWithAddedFilters(e, t) {
     }(e) : "Filter";
 }
 
-class __PRIVATE_KeyFieldFilter extends (/* unused pure expression or super */ null && (FieldFilter)) {
+class __PRIVATE_KeyFieldFilter extends FieldFilter {
     constructor(e, t, n) {
         super(e, t, n), this.key = DocumentKey.fromName(n.referenceValue);
     }
@@ -8292,7 +8266,7 @@ class __PRIVATE_KeyFieldFilter extends (/* unused pure expression or super */ nu
     }
 }
 
-/** Filter that matches on key fields within an array. */ class __PRIVATE_KeyFieldInFilter extends (/* unused pure expression or super */ null && (FieldFilter)) {
+/** Filter that matches on key fields within an array. */ class __PRIVATE_KeyFieldInFilter extends FieldFilter {
     constructor(e, t) {
         super(e, "in" /* Operator.IN */ , t), this.keys = __PRIVATE_extractDocumentKeysFromArrayValue("in" /* Operator.IN */ , t);
     }
@@ -8301,7 +8275,7 @@ class __PRIVATE_KeyFieldFilter extends (/* unused pure expression or super */ nu
     }
 }
 
-/** Filter that matches on key fields not present within an array. */ class __PRIVATE_KeyFieldNotInFilter extends (/* unused pure expression or super */ null && (FieldFilter)) {
+/** Filter that matches on key fields not present within an array. */ class __PRIVATE_KeyFieldNotInFilter extends FieldFilter {
     constructor(e, t) {
         super(e, "not-in" /* Operator.NOT_IN */ , t), this.keys = __PRIVATE_extractDocumentKeysFromArrayValue("not-in" /* Operator.NOT_IN */ , t);
     }
@@ -8315,7 +8289,7 @@ function __PRIVATE_extractDocumentKeysFromArrayValue(e, t) {
     return ((null === (n = t.arrayValue) || void 0 === n ? void 0 : n.values) || []).map((e => DocumentKey.fromName(e.referenceValue)));
 }
 
-/** A Filter that implements the array-contains operator. */ class __PRIVATE_ArrayContainsFilter extends (/* unused pure expression or super */ null && (FieldFilter)) {
+/** A Filter that implements the array-contains operator. */ class __PRIVATE_ArrayContainsFilter extends FieldFilter {
     constructor(e, t) {
         super(e, "array-contains" /* Operator.ARRAY_CONTAINS */ , t);
     }
@@ -8325,7 +8299,7 @@ function __PRIVATE_extractDocumentKeysFromArrayValue(e, t) {
     }
 }
 
-/** A Filter that implements the IN operator. */ class __PRIVATE_InFilter extends (/* unused pure expression or super */ null && (FieldFilter)) {
+/** A Filter that implements the IN operator. */ class __PRIVATE_InFilter extends FieldFilter {
     constructor(e, t) {
         super(e, "in" /* Operator.IN */ , t);
     }
@@ -8335,7 +8309,7 @@ function __PRIVATE_extractDocumentKeysFromArrayValue(e, t) {
     }
 }
 
-/** A Filter that implements the not-in operator. */ class __PRIVATE_NotInFilter extends (/* unused pure expression or super */ null && (FieldFilter)) {
+/** A Filter that implements the not-in operator. */ class __PRIVATE_NotInFilter extends FieldFilter {
     constructor(e, t) {
         super(e, "not-in" /* Operator.NOT_IN */ , t);
     }
@@ -8348,7 +8322,7 @@ function __PRIVATE_extractDocumentKeysFromArrayValue(e, t) {
     }
 }
 
-/** A Filter that implements the array-contains-any operator. */ class __PRIVATE_ArrayContainsAnyFilter extends (/* unused pure expression or super */ null && (FieldFilter)) {
+/** A Filter that implements the array-contains-any operator. */ class __PRIVATE_ArrayContainsAnyFilter extends FieldFilter {
     constructor(e, t) {
         super(e, "array-contains-any" /* Operator.ARRAY_CONTAINS_ANY */ , t);
     }
@@ -9091,9 +9065,9 @@ function __PRIVATE_targetIdSet() {
 }
 
 /** Transforms a value into a server-generated timestamp. */
-class __PRIVATE_ServerTimestampTransform extends (/* unused pure expression or super */ null && (TransformOperation)) {}
+class __PRIVATE_ServerTimestampTransform extends TransformOperation {}
 
-/** Transforms an array value via a union operation. */ class __PRIVATE_ArrayUnionTransformOperation extends (/* unused pure expression or super */ null && (TransformOperation)) {
+/** Transforms an array value via a union operation. */ class __PRIVATE_ArrayUnionTransformOperation extends TransformOperation {
     constructor(e) {
         super(), this.elements = e;
     }
@@ -9109,7 +9083,7 @@ function __PRIVATE_applyArrayUnionTransformOperation(e, t) {
     };
 }
 
-/** Transforms an array value via a remove operation. */ class __PRIVATE_ArrayRemoveTransformOperation extends (/* unused pure expression or super */ null && (TransformOperation)) {
+/** Transforms an array value via a remove operation. */ class __PRIVATE_ArrayRemoveTransformOperation extends TransformOperation {
     constructor(e) {
         super(), this.elements = e;
     }
@@ -9130,7 +9104,7 @@ function __PRIVATE_applyArrayRemoveTransformOperation(e, t) {
  * transforms. Converts all field values to integers or doubles, but unlike the
  * backend does not cap integer values at 2^63. Instead, JavaScript number
  * arithmetic is used and precision loss can occur for values greater than 2^53.
- */ class __PRIVATE_NumericIncrementTransformOperation extends (/* unused pure expression or super */ null && (TransformOperation)) {
+ */ class __PRIVATE_NumericIncrementTransformOperation extends TransformOperation {
     constructor(e, t) {
         super(), this.serializer = e, this.Ie = t;
     }
@@ -9428,7 +9402,7 @@ function __PRIVATE_mutationEquals(e, t) {
 /**
  * A mutation that creates or replaces the document at the given key with the
  * object value contents.
- */ class __PRIVATE_SetMutation extends (/* unused pure expression or super */ null && (Mutation)) {
+ */ class __PRIVATE_SetMutation extends Mutation {
     constructor(e, t, n, r = []) {
         super(), this.key = e, this.value = t, this.precondition = n, this.fieldTransforms = r, 
         this.type = 0 /* MutationType.Set */;
@@ -9438,7 +9412,7 @@ function __PRIVATE_mutationEquals(e, t) {
     }
 }
 
-class __PRIVATE_PatchMutation extends (/* unused pure expression or super */ null && (Mutation)) {
+class __PRIVATE_PatchMutation extends Mutation {
     constructor(e, t, n, r, i = []) {
         super(), this.key = e, this.data = t, this.fieldMask = n, this.precondition = r, 
         this.fieldTransforms = i, this.type = 1 /* MutationType.Patch */;
@@ -9497,7 +9471,7 @@ function __PRIVATE_getPatch(e) {
     return r;
 }
 
-/** A mutation that deletes the document at the given key. */ class __PRIVATE_DeleteMutation extends (/* unused pure expression or super */ null && (Mutation)) {
+/** A mutation that deletes the document at the given key. */ class __PRIVATE_DeleteMutation extends Mutation {
     constructor(e, t) {
         super(), this.key = e, this.precondition = t, this.type = 2 /* MutationType.Delete */ , 
         this.fieldTransforms = [];
@@ -9949,7 +9923,7 @@ function __PRIVATE_newTextEncoder() {
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-const le = new index_esm2017_Integer([ 4294967295, 4294967295 ], 0);
+const le = new Integer([ 4294967295, 4294967295 ], 0);
 
 // Hash a string using md5 hashing algorithm.
 function __PRIVATE_getMd5HashValue(e) {
@@ -10019,7 +9993,7 @@ class BloomFilter {
     }
 }
 
-class __PRIVATE_BloomFilterError extends (/* unused pure expression or super */ null && (Error)) {
+class __PRIVATE_BloomFilterError extends Error {
     constructor() {
         super(...arguments), this.name = "BloomFilterError";
     }
@@ -15156,7 +15130,7 @@ class __PRIVATE_MemoryRemoteDocumentCacheImpl {
 /**
  * Handles the details of adding and updating documents in the MemoryRemoteDocumentCache.
  */
-class __PRIVATE_MemoryRemoteDocumentChangeBuffer extends (/* unused pure expression or super */ null && (RemoteDocumentChangeBuffer)) {
+class __PRIVATE_MemoryRemoteDocumentChangeBuffer extends RemoteDocumentChangeBuffer {
     constructor(e) {
         super(), this._r = e;
     }
@@ -15366,7 +15340,7 @@ class __PRIVATE_MemoryPersistence {
 /**
  * Memory persistence is not actually transactional, but future implementations
  * may have transaction-scoped state.
- */ class __PRIVATE_MemoryTransaction extends (/* unused pure expression or super */ null && (PersistenceTransaction)) {
+ */ class __PRIVATE_MemoryTransaction extends PersistenceTransaction {
     constructor(e) {
         super(), this.currentSequenceNumber = e;
     }
@@ -16413,9 +16387,9 @@ class __PRIVATE_QueryEngine {
         })).next((() => i.result));
     }
     Ji(e, t, n, r) {
-        return n.documentReadCount < this.Ui ? (__PRIVATE_getLogLevel() <= LogLevel.DEBUG && __PRIVATE_logDebug("QueryEngine", "SDK will not create cache indexes for query:", __PRIVATE_stringifyQuery(t), "since it only creates cache indexes for collection contains", "more than or equal to", this.Ui, "documents"), 
-        PersistencePromise.resolve()) : (__PRIVATE_getLogLevel() <= LogLevel.DEBUG && __PRIVATE_logDebug("QueryEngine", "Query:", __PRIVATE_stringifyQuery(t), "scans", n.documentReadCount, "local documents and returns", r, "documents as results."), 
-        n.documentReadCount > this.Wi * r ? (__PRIVATE_getLogLevel() <= LogLevel.DEBUG && __PRIVATE_logDebug("QueryEngine", "The SDK decides to create cache indexes for query:", __PRIVATE_stringifyQuery(t), "as using cache indexes may help improve performance."), 
+        return n.documentReadCount < this.Ui ? (__PRIVATE_getLogLevel() <= index_esm2017_LogLevel.DEBUG && __PRIVATE_logDebug("QueryEngine", "SDK will not create cache indexes for query:", __PRIVATE_stringifyQuery(t), "since it only creates cache indexes for collection contains", "more than or equal to", this.Ui, "documents"), 
+        PersistencePromise.resolve()) : (__PRIVATE_getLogLevel() <= index_esm2017_LogLevel.DEBUG && __PRIVATE_logDebug("QueryEngine", "Query:", __PRIVATE_stringifyQuery(t), "scans", n.documentReadCount, "local documents and returns", r, "documents as results."), 
+        n.documentReadCount > this.Wi * r ? (__PRIVATE_getLogLevel() <= index_esm2017_LogLevel.DEBUG && __PRIVATE_logDebug("QueryEngine", "The SDK decides to create cache indexes for query:", __PRIVATE_stringifyQuery(t), "as using cache indexes may help improve performance."), 
         this.indexManager.createTargetIndexes(e, __PRIVATE_queryToTarget(t))) : PersistencePromise.resolve());
     }
     /**
@@ -16451,7 +16425,7 @@ class __PRIVATE_QueryEngine {
      */    ji(e, t, n, r) {
         return __PRIVATE_queryMatchesAllDocuments(t) || r.isEqual(SnapshotVersion.min()) ? PersistencePromise.resolve(null) : this.Gi.getDocuments(e, n).next((i => {
             const s = this.Yi(t, i);
-            return this.Zi(t, s, n, r) ? PersistencePromise.resolve(null) : (__PRIVATE_getLogLevel() <= LogLevel.DEBUG && __PRIVATE_logDebug("QueryEngine", "Re-using previous result from %s to execute query: %s", r.toString(), __PRIVATE_stringifyQuery(t)), 
+            return this.Zi(t, s, n, r) ? PersistencePromise.resolve(null) : (__PRIVATE_getLogLevel() <= index_esm2017_LogLevel.DEBUG && __PRIVATE_logDebug("QueryEngine", "Re-using previous result from %s to execute query: %s", r.toString(), __PRIVATE_stringifyQuery(t)), 
             this.Xi(e, s, t, __PRIVATE_newIndexOffsetSuccessorFromReadTime(r, -1)).next((e => e)));
         }));
         // Queries that have never seen a snapshot without limbo free documents
@@ -16496,7 +16470,7 @@ class __PRIVATE_QueryEngine {
         return !!i && (i.hasPendingWrites || i.version.compareTo(r) > 0);
     }
     Hi(e, t, n) {
-        return __PRIVATE_getLogLevel() <= LogLevel.DEBUG && __PRIVATE_logDebug("QueryEngine", "Using full collection scan to execute query:", __PRIVATE_stringifyQuery(t)), 
+        return __PRIVATE_getLogLevel() <= index_esm2017_LogLevel.DEBUG && __PRIVATE_logDebug("QueryEngine", "Using full collection scan to execute query:", __PRIVATE_stringifyQuery(t)), 
         this.Gi.getDocumentsMatchingQuery(e, t, IndexOffset.min(), n);
     }
     /**
@@ -17738,7 +17712,7 @@ class __PRIVATE_WebChannelConnection extends
  * Base class for all Rest-based connections to the backend (WebChannel and
  * HTTP).
  */
-(/* unused pure expression or super */ null && (class __PRIVATE_RestConnection {
+class __PRIVATE_RestConnection {
     constructor(e) {
         this.databaseInfo = e, this.databaseId = e.databaseId;
         const t = e.ssl ? "https" : "http", n = encodeURIComponent(this.databaseId.projectId), r = encodeURIComponent(this.databaseId.database);
@@ -17788,7 +17762,7 @@ class __PRIVATE_WebChannelConnection extends
         const n = Re[e];
         return `${this.mo}/v1/${t}:${n}`;
     }
-})) {
+} {
     constructor(e) {
         super(e), this.forceLongPolling = e.forceLongPolling, this.autoDetectLongPolling = e.autoDetectLongPolling, 
         this.useFetchStreams = e.useFetchStreams, this.longPollingOptions = e.longPollingOptions;
@@ -18368,7 +18342,7 @@ class __PRIVATE_PersistentStream {
  * Once the Listen stream has called the onOpen() listener, any number of
  * listen() and unlisten() calls can be made to control what changes will be
  * sent from the server for ListenResponses.
- */ class __PRIVATE_PersistentListenStream extends (/* unused pure expression or super */ null && (__PRIVATE_PersistentStream)) {
+ */ class __PRIVATE_PersistentListenStream extends __PRIVATE_PersistentStream {
     constructor(e, t, n, r, i, s) {
         super(e, "listen_stream_connection_backoff" /* TimerId.ListenStreamConnectionBackoff */ , "listen_stream_idle" /* TimerId.ListenStreamIdle */ , "health_check_timeout" /* TimerId.HealthCheckTimeout */ , t, n, r, s), 
         this.serializer = i;
@@ -18526,7 +18500,7 @@ class __PRIVATE_PersistentStream {
  * An implementation of Datastore that exposes additional state for internal
  * consumption.
  */
-class __PRIVATE_DatastoreImpl extends (/* unused pure expression or super */ null && (class Datastore {})) {
+class __PRIVATE_DatastoreImpl extends class Datastore {} {
     constructor(e, t, n, r) {
         super(), this.authCredentials = e, this.appCheckCredentials = t, this.connection = n, 
         this.serializer = r, this.d_ = !1;
@@ -22346,7 +22320,7 @@ function collection(e, t, ...n) {
 }
 
 function doc(e, t, ...n) {
-    if (e = getModularInstance(e), 
+    if (e = index_esm2017_getModularInstance(e), 
     // We allow omission of 'pathString' but explicitly prohibit passing in both
     // 'undefined' and 'null'.
     1 === arguments.length && (t = __PRIVATE_AutoId.newId()), __PRIVATE_validateNonEmptyArgument("doc", "path", t), 
@@ -23808,7 +23782,7 @@ function __PRIVATE_validatePlainObject(e, t, n) {
 
 /**
  * Matches any characters in a field path string that are reserved.
- */ const pe = (/* unused pure expression or super */ null && (new RegExp("[~\\*/\\[\\]]")));
+ */ const pe = new RegExp("[~\\*/\\[\\]]");
 
 /**
  * Wraps fromDotSeparatedString with an error message about the method that
@@ -23940,7 +23914,7 @@ function __PRIVATE_createError(e, t, n, r, i) {
  * `DocumentSnapshot`. Since query results contain only existing documents, the
  * `exists` property will always be true and `data()` will never return
  * 'undefined'.
- */ class QueryDocumentSnapshot$1 extends (/* unused pure expression or super */ null && (DocumentSnapshot$1)) {
+ */ class QueryDocumentSnapshot$1 extends DocumentSnapshot$1 {
     /**
      * Retrieves all fields in the document as an `Object`.
      *
@@ -24682,7 +24656,7 @@ class __PRIVATE_LiteUserDataWriter extends (/* unused pure expression or super *
  * For a `DocumentSnapshot` that points to a non-existing document, any data
  * access will return 'undefined'. You can use the `exists()` method to
  * explicitly verify a document's existence.
- */ class DocumentSnapshot extends (/* unused pure expression or super */ null && (DocumentSnapshot$1)) {
+ */ class DocumentSnapshot extends DocumentSnapshot$1 {
     /** @hideconstructor protected */
     constructor(e, t, n, r, i, s) {
         super(e, t, n, r, s), this._firestore = e, this._firestoreImpl = e, this.metadata = i;
@@ -24753,7 +24727,7 @@ class __PRIVATE_LiteUserDataWriter extends (/* unused pure expression or super *
  * `DocumentSnapshot`. Since query results contain only existing documents, the
  * `exists` property will always be true and `data()` will never return
  * 'undefined'.
- */ class QueryDocumentSnapshot extends (/* unused pure expression or super */ null && (DocumentSnapshot)) {
+ */ class QueryDocumentSnapshot extends DocumentSnapshot {
     /**
      * Retrieves all fields in the document as an `Object`.
      *
@@ -24914,7 +24888,7 @@ function __PRIVATE_resultChangeType(e) {
     return __PRIVATE_firestoreClientGetDocumentViaSnapshotListener(ensureFirestoreConfigured(t), e._key).then((n => __PRIVATE_convertToDocSnapshot(t, e, n)));
 }
 
-class __PRIVATE_ExpUserDataWriter extends (/* unused pure expression or super */ null && (AbstractUserDataWriter)) {
+class __PRIVATE_ExpUserDataWriter extends AbstractUserDataWriter {
     constructor(e) {
         super(), this.firestore = e;
     }
@@ -25943,31 +25917,6 @@ let Se = null;
 
 //# sourceMappingURL=index.esm.js.map
 
-;// CONCATENATED MODULE: ./src/script/data/firebase-config.js
-var firebaseConfig = {
-  apiKey: 'AIzaSyDWNyKQpMAzdxYrx-6ZMIWLQlOCDYVsRXc',
-  authDomain: 'umkm-maju.firebaseapp.com',
-  projectId: 'umkm-maju',
-  storageBucket: 'umkm-maju.appspot.com',
-  messagingSenderId: '476036969425',
-  appId: '1:476036969425:web:ef970566295ef8a170a6f0',
-  measurementId: 'G-GNVRPSSBN8'
-};
-/* harmony default export */ const firebase_config = (firebaseConfig);
-;// CONCATENATED MODULE: ./src/script/view/main.js
-
-
-
-
-// Initialize Firebase
-initializeApp(firebase_config);
-
-// init services
-var main_db = getFirestore();
-
-// collection ref
-var colRef = collection(main_db, 'libraries');
-/* harmony default export */ const main = ((/* unused pure expression or super */ null && (colRef)));
 ;// CONCATENATED MODULE: ./node_modules/tslib/tslib.es6.mjs
 /******************************************************************************
 Copyright (c) Microsoft Corporation.
@@ -32894,7 +32843,7 @@ function updateCurrentUser(auth, user) {
  * @public
  */
 function signOut(auth) {
-    return getModularInstance(auth).signOut();
+    return index_esm2017_getModularInstance(auth).signOut();
 }
 /**
  * Revokes the given access token. Currently only supports Apple OAuth access tokens.
@@ -36861,9 +36810,63 @@ registerAuth("Browser" /* ClientPlatform.BROWSER */);
 
 //# sourceMappingURL=index.esm.js.map
 
+;// CONCATENATED MODULE: ./src/script/data/firebase-config.js
+var firebaseConfig = {
+  apiKey: 'AIzaSyDWNyKQpMAzdxYrx-6ZMIWLQlOCDYVsRXc',
+  authDomain: 'umkm-maju.firebaseapp.com',
+  projectId: 'umkm-maju',
+  storageBucket: 'umkm-maju.appspot.com',
+  messagingSenderId: '476036969425',
+  appId: '1:476036969425:web:ef970566295ef8a170a6f0',
+  measurementId: 'G-GNVRPSSBN8'
+};
+var dbCollection = {
+  libraries: 'libraries',
+  users: 'users'
+};
+
+;// CONCATENATED MODULE: ./node_modules/firebase/app/dist/esm/index.esm.js
+
+
+
+var index_esm_name = "firebase";
+var index_esm_version = "10.7.1";
+
+/**
+ * @license
+ * Copyright 2020 Google LLC
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+registerVersion(index_esm_name, index_esm_version, 'app');
+//# sourceMappingURL=index.esm.js.map
+
+;// CONCATENATED MODULE: ./src/script/view/init.js
+
+
+
+
+var initApp = initializeApp(firebaseConfig);
+var init_db = getFirestore();
+var libRef = collection(init_db, dbCollection.libraries);
+var userRef = collection(init_db, dbCollection.users);
+var auth = getAuth();
+
 ;// CONCATENATED MODULE: ./src/script/view/login.js
 
-var auth = getAuth();
+
+
+
 
 // Login
 var loginForm = document.querySelector('#login-form');
@@ -36871,9 +36874,7 @@ loginForm.addEventListener('submit', function (e) {
   e.preventDefault();
   var email = loginForm.email.value;
   var password = loginForm.password.value;
-  signInWithEmailAndPassword(auth, email, password).then(function () {
-    window.location.href = 'admin-dashboard.html';
-  })["catch"](function (error) {
+  signInWithEmailAndPassword(auth, email, password)["catch"](function (error) {
     var errorCode = error.code;
     var errorMessage = error.message;
     console.log(errorCode, errorMessage);
@@ -36881,14 +36882,25 @@ loginForm.addEventListener('submit', function (e) {
 });
 onAuthStateChanged(auth, function (user) {
   if (user) {
-    console.log('Logged in: ', user);
-    window.location.href = 'admin-dashboard.html';
-  } else {
-    console.log('Logged Out!');
+    getDoc(doc(init_db, dbCollection.users, user.uid)).then(function (docSnapshot) {
+      var _docSnapshot$data = docSnapshot.data(),
+        role = _docSnapshot$data.role;
+      if (role === 'admin') {
+        window.location.href = 'admin-dashboard.html';
+      } else if (role === 'user') {
+        window.location.href = 'user-dashboard.html';
+      } else {
+        alert('Invalid account type!');
+        signOut(auth).then(function () {
+          window.location.href = window.location.origin;
+        })["catch"](function (error) {
+          return console.log(error);
+        });
+      }
+    });
   }
 });
 ;// CONCATENATED MODULE: ./src/index.js
-
 
 
 /******/ })()

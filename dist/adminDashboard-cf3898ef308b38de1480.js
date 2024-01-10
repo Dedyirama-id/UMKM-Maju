@@ -10881,7 +10881,7 @@ function beforeAuthStateChanged(auth, callback, onAbort) {
  * @public
  */
 function onAuthStateChanged(auth, nextOrObserver, error, completed) {
-    return getModularInstance(auth).onAuthStateChanged(nextOrObserver, error, completed);
+    return index_esm2017_getModularInstance(auth).onAuthStateChanged(nextOrObserver, error, completed);
 }
 /**
  * Sets the current language to the default device/browser preference.
@@ -10922,7 +10922,7 @@ function updateCurrentUser(auth, user) {
  * @public
  */
 function signOut(auth) {
-    return getModularInstance(auth).signOut();
+    return index_esm2017_getModularInstance(auth).signOut();
 }
 /**
  * Revokes the given access token. Currently only supports Apple OAuth access tokens.
@@ -14998,7 +14998,7 @@ function Yd(a,b){if(Y(b))throw Error("division by zero");if(Y(a))return new ae(V
 b.ea()));d=Math.ceil(Math.log(c)/Math.LN2);d=48>=d?1:Math.pow(2,d-48);f=U(c);for(h=f.R(b);X(h)||0<h.X(a);)c-=d,f=U(c),h=f.R(b);Y(f)&&(f=Wd);e=e.add(f);a=Zd(a,h);}return new ae(e,a)}k.gb=function(a){return Yd(this,a).h};k.and=function(a){for(var b=Math.max(this.g.length,a.g.length),c=[],d=0;d<b;d++)c[d]=this.D(d)&a.D(d);return new T(c,this.h&a.h)};k.or=function(a){for(var b=Math.max(this.g.length,a.g.length),c=[],d=0;d<b;d++)c[d]=this.D(d)|a.D(d);return new T(c,this.h|a.h)};
 k.xor=function(a){for(var b=Math.max(this.g.length,a.g.length),c=[],d=0;d<b;d++)c[d]=this.D(d)^a.D(d);return new T(c,this.h^a.h)};function be(a){for(var b=a.g.length+1,c=[],d=0;d<b;d++)c[d]=a.D(d)<<1|a.D(d-1)>>>31;return new T(c,a.h)}function Z(a,b){var c=b>>5;b%=32;for(var d=a.g.length-c,e=[],f=0;f<d;f++)e[f]=0<b?a.D(f+c)>>>b|a.D(f+c+1)<<32-b:a.D(f+c);return new T(e,a.h)}Od.prototype.createWebChannel=Od.prototype.g;Q.prototype.send=Q.prototype.u;Q.prototype.open=Q.prototype.m;Q.prototype.close=Q.prototype.close;Sb.NO_ERROR=0;Sb.TIMEOUT=8;Sb.HTTP_ERROR=6;Tb.COMPLETE="complete";Wb.EventType=Xb;Xb.OPEN="a";Xb.CLOSE="b";Xb.ERROR="c";Xb.MESSAGE="d";B.prototype.listen=B.prototype.O;P.prototype.listenOnce=P.prototype.P;P.prototype.getLastError=P.prototype.Sa;P.prototype.getLastErrorCode=P.prototype.Ia;P.prototype.getStatus=P.prototype.da;P.prototype.getResponseJson=P.prototype.Wa;
 P.prototype.getResponseText=P.prototype.ja;P.prototype.send=P.prototype.ha;P.prototype.setWithCredentials=P.prototype.Oa;S.prototype.digest=S.prototype.l;S.prototype.reset=S.prototype.reset;S.prototype.update=S.prototype.j;T.prototype.add=T.prototype.add;T.prototype.multiply=T.prototype.R;T.prototype.modulo=T.prototype.gb;T.prototype.compare=T.prototype.X;T.prototype.toNumber=T.prototype.ea;T.prototype.toString=T.prototype.toString;T.prototype.getBits=T.prototype.D;T.fromNumber=U;T.fromString=Vd;
-var createWebChannelTransport = esm.createWebChannelTransport=function(){return new Od};var getStatEventTarget = esm.getStatEventTarget=function(){return Mb()};var ErrorCode = esm.ErrorCode=Sb;var EventType = esm.EventType=Tb;var Event = esm.Event=E;var Stat = esm.Stat={xb:0,Ab:1,Bb:2,Ub:3,Zb:4,Wb:5,Xb:6,Vb:7,Tb:8,Yb:9,PROXY:10,NOPROXY:11,Rb:12,Nb:13,Ob:14,Mb:15,Pb:16,Qb:17,tb:18,sb:19,ub:20};var FetchXmlHttpFactory = esm.FetchXmlHttpFactory=ld;var WebChannel = esm.WebChannel=Wb;var XhrIo = esm.XhrIo=P;var index_esm2017_Md5 = esm.Md5=S;var index_esm2017_Integer = esm.Integer=T;
+var createWebChannelTransport = esm.createWebChannelTransport=function(){return new Od};var getStatEventTarget = esm.getStatEventTarget=function(){return Mb()};var ErrorCode = esm.ErrorCode=Sb;var EventType = esm.EventType=Tb;var Event = esm.Event=E;var Stat = esm.Stat={xb:0,Ab:1,Bb:2,Ub:3,Zb:4,Wb:5,Xb:6,Vb:7,Tb:8,Yb:9,PROXY:10,NOPROXY:11,Rb:12,Nb:13,Ob:14,Mb:15,Pb:16,Qb:17,tb:18,sb:19,ub:20};var FetchXmlHttpFactory = esm.FetchXmlHttpFactory=ld;var WebChannel = esm.WebChannel=Wb;var XhrIo = esm.XhrIo=P;var Md5 = esm.Md5=S;var Integer = esm.Integer=T;
 
 
 //# sourceMappingURL=index.esm2017.js.map
@@ -20816,7 +20816,7 @@ function __PRIVATE_newTextEncoder() {
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-const le = new index_esm2017_Integer([ 4294967295, 4294967295 ], 0);
+const le = new Integer([ 4294967295, 4294967295 ], 0);
 
 // Hash a string using md5 hashing algorithm.
 function __PRIVATE_getMd5HashValue(e) {
@@ -20886,7 +20886,7 @@ class BloomFilter {
     }
 }
 
-class __PRIVATE_BloomFilterError extends (/* unused pure expression or super */ null && (Error)) {
+class __PRIVATE_BloomFilterError extends Error {
     constructor() {
         super(...arguments), this.name = "BloomFilterError";
     }
@@ -29235,7 +29235,7 @@ class __PRIVATE_PersistentStream {
  * Once the Listen stream has called the onOpen() listener, any number of
  * listen() and unlisten() calls can be made to control what changes will be
  * sent from the server for ListenResponses.
- */ class __PRIVATE_PersistentListenStream extends (/* unused pure expression or super */ null && (__PRIVATE_PersistentStream)) {
+ */ class __PRIVATE_PersistentListenStream extends __PRIVATE_PersistentStream {
     constructor(e, t, n, r, i, s) {
         super(e, "listen_stream_connection_backoff" /* TimerId.ListenStreamConnectionBackoff */ , "listen_stream_idle" /* TimerId.ListenStreamIdle */ , "health_check_timeout" /* TimerId.HealthCheckTimeout */ , t, n, r, s), 
         this.serializer = i;
@@ -34362,7 +34362,7 @@ function __PRIVATE_newUserDataReader(e) {
     return new ParsedSetData(new ObjectValue(_), a, u);
 }
 
-class __PRIVATE_DeleteFieldValueImpl extends (/* unused pure expression or super */ null && (FieldValue)) {
+class __PRIVATE_DeleteFieldValueImpl extends FieldValue {
     _toFieldTransform(e) {
         if (2 /* UserDataSource.MergeSet */ !== e.Iu) throw 1 /* UserDataSource.Update */ === e.Iu ? e.mu(`${this._methodName}() can only appear at the top level of your update data`) : e.mu(`${this._methodName}() cannot be used with set() unless you pass {merge:true}`);
         // No transform to add for a delete, but we need to add it to our
@@ -34398,7 +34398,7 @@ class __PRIVATE_DeleteFieldValueImpl extends (/* unused pure expression or super
     }, t.databaseId, t.serializer, t.ignoreUndefinedProperties);
 }
 
-class __PRIVATE_ServerTimestampFieldValueImpl extends (/* unused pure expression or super */ null && (FieldValue)) {
+class __PRIVATE_ServerTimestampFieldValueImpl extends FieldValue {
     _toFieldTransform(e) {
         return new FieldTransform(e.path, new __PRIVATE_ServerTimestampTransform);
     }
@@ -34459,7 +34459,7 @@ class __PRIVATE_NumericIncrementFieldValueImpl extends (/* unused pure expressio
         const _ = __PRIVATE_fieldPathFromDotSeparatedString(t, e, n);
         // For Compat types, we have to "extract" the underlying types before
         // performing validation.
-                r = getModularInstance(r);
+                r = index_esm2017_getModularInstance(r);
         const a = i.Ru(_);
         if (r instanceof __PRIVATE_DeleteFieldValueImpl) 
         // Add it to the field mask, but don't add anything to updateData.
@@ -34485,7 +34485,7 @@ class __PRIVATE_NumericIncrementFieldValueImpl extends (/* unused pure expressio
         let n = a[e];
         // For Compat types, we have to "extract" the underlying types before
         // performing validation.
-                n = getModularInstance(n);
+                n = index_esm2017_getModularInstance(n);
         const r = o.Ru(t);
         if (n instanceof __PRIVATE_DeleteFieldValueImpl) 
         // Add it to the field mask, but don't add anything to updateData.
@@ -34807,7 +34807,7 @@ function __PRIVATE_createError(e, t, n, r, i) {
  * `DocumentSnapshot`. Since query results contain only existing documents, the
  * `exists` property will always be true and `data()` will never return
  * 'undefined'.
- */ class QueryDocumentSnapshot$1 extends (/* unused pure expression or super */ null && (DocumentSnapshot$1)) {
+ */ class QueryDocumentSnapshot$1 extends DocumentSnapshot$1 {
     /**
      * Retrieves all fields in the document as an `Object`.
      *
@@ -35549,7 +35549,7 @@ class __PRIVATE_LiteUserDataWriter extends (/* unused pure expression or super *
  * For a `DocumentSnapshot` that points to a non-existing document, any data
  * access will return 'undefined'. You can use the `exists()` method to
  * explicitly verify a document's existence.
- */ class DocumentSnapshot extends (/* unused pure expression or super */ null && (DocumentSnapshot$1)) {
+ */ class DocumentSnapshot extends DocumentSnapshot$1 {
     /** @hideconstructor protected */
     constructor(e, t, n, r, i, s) {
         super(e, t, n, r, s), this._firestore = e, this._firestoreImpl = e, this.metadata = i;
@@ -35620,7 +35620,7 @@ class __PRIVATE_LiteUserDataWriter extends (/* unused pure expression or super *
  * `DocumentSnapshot`. Since query results contain only existing documents, the
  * `exists` property will always be true and `data()` will never return
  * 'undefined'.
- */ class QueryDocumentSnapshot extends (/* unused pure expression or super */ null && (DocumentSnapshot)) {
+ */ class QueryDocumentSnapshot extends DocumentSnapshot {
     /**
      * Retrieves all fields in the document as an `Object`.
      *
@@ -35781,7 +35781,7 @@ function __PRIVATE_resultChangeType(e) {
     return __PRIVATE_firestoreClientGetDocumentViaSnapshotListener(ensureFirestoreConfigured(t), e._key).then((n => __PRIVATE_convertToDocSnapshot(t, e, n)));
 }
 
-class __PRIVATE_ExpUserDataWriter extends (/* unused pure expression or super */ null && (AbstractUserDataWriter)) {
+class __PRIVATE_ExpUserDataWriter extends AbstractUserDataWriter {
     constructor(e) {
         super(), this.firestore = e;
     }
@@ -35874,7 +35874,7 @@ function updateDoc(e, t, n, ...r) {
     o = "string" == typeof (
     // For Compat types, we have to "extract" the underlying types before
     // performing validation.
-    t = getModularInstance(t)) || t instanceof FieldPath ? __PRIVATE_parseUpdateVarargs(s, "updateDoc", e._key, t, n, r) : __PRIVATE_parseUpdateData(s, "updateDoc", e._key, t);
+    t = index_esm2017_getModularInstance(t)) || t instanceof FieldPath ? __PRIVATE_parseUpdateVarargs(s, "updateDoc", e._key, t, n, r) : __PRIVATE_parseUpdateData(s, "updateDoc", e._key, t);
     return executeWrite(i, [ o.toMutation(e._key, Precondition.exists(!0)) ]);
 }
 
@@ -35904,7 +35904,7 @@ function updateDoc(e, t, n, ...r) {
 
 function onSnapshot(e, ...t) {
     var n, r, i;
-    e = getModularInstance(e);
+    e = index_esm2017_getModularInstance(e);
     let s = {
         includeMetadataChanges: !1
     }, o = 0;
@@ -36846,51 +36846,165 @@ var firebaseConfig = {
   appId: '1:476036969425:web:ef970566295ef8a170a6f0',
   measurementId: 'G-GNVRPSSBN8'
 };
-/* harmony default export */ const firebase_config = (firebaseConfig);
-;// CONCATENATED MODULE: ./src/script/view/signup.js
+var dbCollection = {
+  libraries: 'libraries',
+  users: 'users'
+};
+
+;// CONCATENATED MODULE: ./src/script/view/init.js
 
 
 
 
-initializeApp(firebase_config);
-var signup_db = getFirestore();
+var initApp = initializeApp(firebaseConfig);
+var init_db = getFirestore();
+var libRef = collection(init_db, dbCollection.libraries);
+var userRef = collection(init_db, dbCollection.users);
 var auth = getAuth();
-var userCollection = collection(signup_db, 'users');
 
-// signup
-var signup = document.querySelector('#signup-form');
-signup.addEventListener('submit', function (e) {
+;// CONCATENATED MODULE: ./src/script/view/admin.js
+function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter); }
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i]; return arr2; }
+function ownKeys(e, r) { var t = Object.keys(e); if (Object.getOwnPropertySymbols) { var o = Object.getOwnPropertySymbols(e); r && (o = o.filter(function (r) { return Object.getOwnPropertyDescriptor(e, r).enumerable; })), t.push.apply(t, o); } return t; }
+function _objectSpread(e) { for (var r = 1; r < arguments.length; r++) { var t = null != arguments[r] ? arguments[r] : {}; r % 2 ? ownKeys(Object(t), !0).forEach(function (r) { _defineProperty(e, r, t[r]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys(Object(t)).forEach(function (r) { Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r)); }); } return e; }
+function _defineProperty(obj, key, value) { key = _toPropertyKey(key); if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+function _toPropertyKey(t) { var i = _toPrimitive(t, "string"); return "symbol" == _typeof(i) ? i : String(i); }
+function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r || "default"); if ("object" != _typeof(i)) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); }
+
+
+
+
+var logoutBtn = document.querySelector('#logout');
+logoutBtn.addEventListener('click', function (e) {
   e.preventDefault();
-  var email = signup.email.value;
-  var username = signup.username.value;
-  var password = signup.password.value;
-  createUserWithEmailAndPassword(auth, email, password).then(function (cred) {
-    setDoc(doc(signup_db, 'users', cred.user.uid), {
-      username: username,
-      role: 'user'
-    });
-  })["catch"](function (error) {
+  signOut(auth)["catch"](function (error) {
     var errorCode = error.code;
     var errorMessage = error.message;
-    console.log(errorCode, errorMessage);
+    alert(errorCode, errorMessage);
   });
 });
+onAuthStateChanged(auth, function (user) {
+  if (user) {
+    getDoc(doc(init_db, dbCollection.users, user.uid)).then(function (docSnapshot) {
+      var _docSnapshot$data = docSnapshot.data(),
+        role = _docSnapshot$data.role;
+      if (role === 'user') {
+        window.location.href = 'user-dashboard.html';
+      } else if (role !== 'admin') {
+        alert('Invalid account role!');
+        signOut(auth).then(function () {
+          window.location.href = window.location.origin;
+        })["catch"](function (error) {
+          return console.log(error);
+        });
+      }
+    });
+  } else {
+    window.location.href = window.location.origin;
+  }
+});
+var addForm = document.querySelector('#add-form');
+addForm.addEventListener('submit', function (e) {
+  e.preventDefault();
+  var title = addForm.title.value;
+  var desc = addForm.desc.value;
+  var url = addForm.url.value;
+  var category = addForm.category.value;
+  var tags = Array.from(addForm.querySelectorAll('[name^="tag"]')).map(function (tagInput) {
+    return tagInput.value;
+  }).filter(function (tag) {
+    return tag.trim() !== '';
+  });
+  addDoc(libRef, {
+    title: title,
+    desc: desc,
+    url: url,
+    category: category,
+    rating: 0,
+    voteCount: 0,
+    tags: tags,
+    timestamp: serverTimestamp()
+  }).then(function () {
+    addForm.reset();
+  });
+});
+addForm.resetx.addEventListener('click', function (e) {
+  e.preventDefault();
+  addForm.reset();
+});
+var editForm = document.querySelector('#edit-form');
+function showEditForm(id) {
+  getDoc(doc(init_db, dbCollection.libraries, id)).then(function (docSnapshot) {
+    var data = docSnapshot.data();
+    editForm.id.value = id;
+    editForm.title.value = data.title;
+    editForm.desc.value = data.desc;
+    editForm.url.value = data.url;
+    editForm.category.value = data.category;
+    var tagsElem = Array.from(editForm.querySelectorAll('[name^="tag"]'));
+    tagsElem.forEach(function (tagInput, index) {
+      tagInput.value = data.tags[index] || '';
+    });
+  });
+}
+editForm.addEventListener('submit', function (e) {
+  e.preventDefault();
+  var id = editForm.id.value;
+  updateDoc(doc(init_db, dbCollection.libraries, id), {
+    title: editForm.title.value,
+    desc: editForm.desc.value,
+    url: editForm.url.value,
+    category: editForm.category.value,
+    tags: Array.from(editForm.querySelectorAll('[name^="tag"]')).map(function (tagInput) {
+      return tagInput.value;
+    }).filter(function (tag) {
+      return tag.trim() !== '';
+    })
+  }).then(function () {
+    editForm.reset();
+  });
+});
+editForm.resetx.addEventListener('click', function (e) {
+  e.preventDefault();
+  editForm.reset();
+});
+onSnapshot(libRef, function (snapshot) {
+  var data = [];
+  snapshot.docs.forEach(function (document) {
+    data.push(_objectSpread(_objectSpread({}, document.data()), {}, {
+      id: document.id
+    }));
+  });
+  var libTable = document.querySelector('#lib-table');
+  libTable.innerHTML = "\n    <tr>\n        <th>ID</th>\n        <th>Judul</th>\n        <th>Deskripsi</th>\n        <th>url</th>\n        <th>Kategori</th>\n        <th>Tag</th>\n        <th>Action</th>\n        </tr>\n        ";
+  data.forEach(function (item) {
+    libTable.innerHTML += "\n      <tr data-id=\"".concat(item.id, "\">\n          <td>").concat(item.id, "</td>\n          <td>").concat(item.title, "</td>\n          <td>").concat(item.desc, "</td>\n          <td>").concat(item.url, "</td>\n          <td>").concat(item.category, "</td>  \n          <td>").concat(item.tags, "</td>\n          <td>\n              <button class=\"btn edit\">Edit</button>\n              <button class=\"btn delete\">Delete</button>\n              </td>\n              </tr>\n              ");
+  });
+  var editButtons = _toConsumableArray(document.querySelectorAll('.btn.edit'));
+  editButtons.forEach(function (button) {
+    button.addEventListener('click', function (e) {
+      var id = e.target.parentElement.parentElement.dataset.id;
+      showEditForm(id);
+    });
+  });
+  var deleteButtons = _toConsumableArray(document.querySelectorAll('.btn.delete'));
+  deleteButtons.forEach(function (button) {
+    button.addEventListener('click', function (e) {
+      var id = e.target.parentElement.parentElement.dataset.id;
+      deleteDoc(doc(init_db, 'libraries', id))["catch"](function (err) {
+        return console.log(err);
+      });
+    });
+  });
+});
+;// CONCATENATED MODULE: ./src/admin-dashboard.js
 
-// onAuthStateChanged(auth, (user) => {
-//   if (user) {
-//     onSnapshot(doc(db, 'users', user.uid), (docSnapshot) => {
-//       if (docSnapshot.data().role === 'admin') {
-//         window.location.href = 'admin-dashboard.html';
-//       } else if (docSnapshot.data().role === 'user') {
-//         window.location.href = 'user-dashboard.html';
-//       }
-//     });
-//   } else {
-//     console.log('Logged Out!');
-//   }
-// });
-;// CONCATENATED MODULE: ./src/signup.js
 
-
+// import './styles/main.css';
 /******/ })()
 ;

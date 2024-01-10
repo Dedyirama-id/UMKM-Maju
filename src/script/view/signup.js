@@ -1,16 +1,9 @@
+import { createUserWithEmailAndPassword, onAuthStateChanged, signOut } from 'firebase/auth';
 import {
-  createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword,
-} from 'firebase/auth';
-import {
-  firestore, addDoc, collection, getFirestore, doc, setDoc, onSnapshot,
+  doc, getDoc, setDoc,
 } from 'firebase/firestore';
-import { initializeApp } from 'firebase/app';
-import firebaseConfig from '../data/firebase-config';
-
-initializeApp(firebaseConfig);
-const db = getFirestore();
-const auth = getAuth();
-const userCollection = collection(db, 'users');
+import { auth, db } from './init';
+import { dbCollection } from '../data/firebase-config';
 
 // signup
 const signup = document.querySelector('#signup-form');
@@ -22,7 +15,7 @@ signup.addEventListener('submit', (e) => {
 
   createUserWithEmailAndPassword(auth, email, password)
     .then((cred) => {
-      setDoc(doc(db, 'users', cred.user.uid), {
+      setDoc(doc(db, dbCollection.users, cred.user.uid), {
         username,
         role: 'user',
       });
@@ -34,16 +27,23 @@ signup.addEventListener('submit', (e) => {
     });
 });
 
-// onAuthStateChanged(auth, (user) => {
-//   if (user) {
-//     onSnapshot(doc(db, 'users', user.uid), (docSnapshot) => {
-//       if (docSnapshot.data().role === 'admin') {
-//         window.location.href = 'admin-dashboard.html';
-//       } else if (docSnapshot.data().role === 'user') {
-//         window.location.href = 'user-dashboard.html';
-//       }
-//     });
-//   } else {
-//     console.log('Logged Out!');
-//   }
-// });
+onAuthStateChanged(auth, (user) => {
+  if (user) {
+    getDoc(doc(db, dbCollection.users, user.uid))
+      .then((docSnapshot) => {
+        const { role } = docSnapshot.data();
+        if (role === 'admin') {
+          window.location.href = 'admin-dashboard.html';
+        } else if (role === 'user') {
+          window.location.href = 'user-dashboard.html';
+        } else {
+          alert('Invalid account type!');
+          signOut(auth)
+            .then(() => {
+              window.location.href = window.location.origin;
+            })
+            .catch((error) => console.log(error));
+        }
+      });
+  }
+});

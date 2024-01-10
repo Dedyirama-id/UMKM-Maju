@@ -1,30 +1,15 @@
-import { initializeApp } from 'firebase/app';
-import { signOut, getAuth, onAuthStateChanged } from 'firebase/auth';
+import { signOut, onAuthStateChanged } from 'firebase/auth';
 import {
-  getFirestore, collection, addDoc,
-  serverTimestamp, onSnapshot, doc,
-  deleteDoc,
+  addDoc, serverTimestamp, onSnapshot, doc,
+  deleteDoc, updateDoc, getDoc,
 } from 'firebase/firestore';
-import firebaseConfig from '../data/firebase-config';
-
-const auth = getAuth();
-
-// Initialize Firebase
-initializeApp(firebaseConfig);
-
-// init services
-const db = getFirestore();
-
-// collection ref
-const libRef = collection(db, 'libraries');
+import { db, libRef, auth } from './init';
+import { dbCollection } from '../data/firebase-config';
 
 const logoutBtn = document.querySelector('#logout');
 logoutBtn.addEventListener('click', (e) => {
   e.preventDefault();
   signOut(auth)
-    .then(() => {
-      window.location.href = '/';
-    })
     .catch((error) => {
       const errorCode = error.code;
       const errorMessage = error.message;
@@ -34,23 +19,35 @@ logoutBtn.addEventListener('click', (e) => {
 
 onAuthStateChanged(auth, (user) => {
   if (user) {
-    console.log('Logged in: ', user);
+    getDoc(doc(db, dbCollection.users, user.uid))
+      .then((docSnapshot) => {
+        const { role } = docSnapshot.data();
+        if (role === 'user') {
+          window.location.href = 'user-dashboard.html';
+        } else if (role !== 'admin') {
+          alert('Invalid account role!');
+          signOut(auth)
+            .then(() => {
+              window.location.href = window.location.origin;
+            })
+            .catch((error) => console.log(error));
+        }
+      });
   } else {
-    console.log('Logged Out!');
+    window.location.href = window.location.origin;
   }
 });
 
-const addForm = document.querySelector('#add-book');
+const addForm = document.querySelector('#add-form');
 addForm.addEventListener('submit', (e) => {
   e.preventDefault();
   const title = addForm.title.value;
   const desc = addForm.desc.value;
   const url = addForm.url.value;
   const category = addForm.category.value;
-  const tag1 = addForm.tag1.value;
-  const tag2 = addForm.tag2.value;
-  const tag3 = addForm.tag3.value;
-  const tags = [tag1, tag2, tag3];
+  const tags = Array.from(addForm.querySelectorAll('[name^="tag"]'))
+    .map((tagInput) => tagInput.value)
+    .filter((tag) => tag.trim() !== '');
 
   addDoc(libRef, {
     title,
@@ -61,10 +58,53 @@ addForm.addEventListener('submit', (e) => {
     voteCount: 0,
     tags,
     timestamp: serverTimestamp(),
+  }).then(() => {
+    addForm.reset();
+  });
+});
+
+addForm.resetx.addEventListener('click', (e) => {
+  e.preventDefault();
+  addForm.reset();
+});
+
+const editForm = document.querySelector('#edit-form');
+function showEditForm(id) {
+  getDoc(doc(db, dbCollection.libraries, id)).then((docSnapshot) => {
+    const data = docSnapshot.data();
+    editForm.id.value = id;
+    editForm.title.value = data.title;
+    editForm.desc.value = data.desc;
+    editForm.url.value = data.url;
+    editForm.category.value = data.category;
+    const tagsElem = Array.from(editForm.querySelectorAll('[name^="tag"]'));
+    tagsElem.forEach((tagInput, index) => {
+      tagInput.value = data.tags[index] || '';
+    });
+  });
+}
+
+editForm.addEventListener('submit', (e) => {
+  e.preventDefault();
+  const id = editForm.id.value;
+
+  updateDoc(doc(db, dbCollection.libraries, id), {
+    title: editForm.title.value,
+    desc: editForm.desc.value,
+    url: editForm.url.value,
+    category: editForm.category.value,
+    tags: Array.from(editForm.querySelectorAll('[name^="tag"]'))
+      .map((tagInput) => tagInput.value)
+      .filter((tag) => tag.trim() !== ''),
   })
     .then(() => {
-      addForm.reset();
+      editForm.reset();
     });
+});
+
+editForm.resetx.addEventListener('click', (e) => {
+  e.preventDefault();
+  editForm.reset();
 });
 
 onSnapshot(libRef, (snapshot) => {
@@ -82,8 +122,8 @@ onSnapshot(libRef, (snapshot) => {
         <th>Kategori</th>
         <th>Tag</th>
         <th>Action</th>
-    </tr>
-  `;
+        </tr>
+        `;
 
   data.forEach((item) => {
     libTable.innerHTML += `
@@ -97,55 +137,24 @@ onSnapshot(libRef, (snapshot) => {
           <td>
               <button class="btn edit">Edit</button>
               <button class="btn delete">Delete</button>
-          </td>
-      </tr>
-    `;
+              </td>
+              </tr>
+              `;
   });
 
   const editButtons = [...document.querySelectorAll('.btn.edit')];
   editButtons.forEach((button) => {
     button.addEventListener('click', (e) => {
       const { id } = e.target.parentElement.parentElement.dataset;
-      editData(id);
+      showEditForm(id);
     });
-    const deleteButtons = [...document.querySelectorAll('.btn.delete')];
-    deleteButtons.forEach((button) => {
-      button.addEventListener('click', (e) => {
-        const { id } = e.target.parentElement.parentElement.dataset;
-        resetAddForm();
-        deleteDoc(doc(db, 'libraries', id)).catch((err) => console.log(err));
-      });
+  });
+
+  const deleteButtons = [...document.querySelectorAll('.btn.delete')];
+  deleteButtons.forEach((button) => {
+    button.addEventListener('click', (e) => {
+      const { id } = e.target.parentElement.parentElement.dataset;
+      deleteDoc(doc(db, 'libraries', id)).catch((err) => console.log(err));
     });
   });
 });
-
-function editData(id) {
-  onSnapshot(doc(db, 'libraries', id), (snapshot) => {
-    const data = { ...snapshot.data(), id: snapshot.id };
-    const formTitle = document.getElementById('add-book-title');
-    const form = document.getElementById('add-book');
-    formTitle.innerHTML = 'Edit Data';
-    form.title.value = data.title;
-    form.desc.value = data.desc;
-    form.url.value = data.url;
-    form.category.value = data.category;
-    form.tag1.value = data.tags[0];
-    form.tag2.value = data.tags[1];
-    form.tag3.value = data.tags[2];
-    form.submit.innerHTML = 'Edit Data';
-  });
-}
-
-function resetAddForm() {
-  const formTitle = document.getElementById('add-book-title');
-  const form = document.getElementById('add-book');
-  formTitle.innerHTML = 'Add New Data';
-  form.title.value = '';
-  form.desc.value = '';
-  form.url.value = '';
-  form.category.value = '';
-  form.tag1.value = '';
-  form.tag2.value = '';
-  form.tag3.value = '';
-  form.submit.innerHTML = 'Add Data';
-}

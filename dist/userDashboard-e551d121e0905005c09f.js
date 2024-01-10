@@ -3996,32 +3996,6 @@ registerCoreComponents('');
 
 //# sourceMappingURL=index.esm2017.js.map
 
-;// CONCATENATED MODULE: ./node_modules/firebase/app/dist/esm/index.esm.js
-
-
-
-var index_esm_name = "firebase";
-var index_esm_version = "10.7.1";
-
-/**
- * @license
- * Copyright 2020 Google LLC
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *   http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-registerVersion(index_esm_name, index_esm_version, 'app');
-//# sourceMappingURL=index.esm.js.map
-
 ;// CONCATENATED MODULE: ./node_modules/@firebase/webchannel-wrapper/dist/esm/index.esm2017.js
 var commonjsGlobal = typeof globalThis !== 'undefined' ? globalThis : typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : typeof self !== 'undefined' ? self : {};
 
@@ -9507,7 +9481,7 @@ function __PRIVATE_getPatch(e) {
     }
 }
 
-class __PRIVATE_VerifyMutation extends Mutation {
+class __PRIVATE_VerifyMutation extends (/* unused pure expression or super */ null && (Mutation)) {
     constructor(e, t) {
         super(), this.key = e, this.precondition = t, this.type = 3 /* MutationType.Verify */ , 
         this.fieldTransforms = [];
@@ -18446,7 +18420,7 @@ class __PRIVATE_PersistentStream {
  * okay to use the same streamToken for the calls to writeMutations.
  *
  * TODO(b/33271235): Use proto types
- */ class __PRIVATE_PersistentWriteStream extends __PRIVATE_PersistentStream {
+ */ class __PRIVATE_PersistentWriteStream extends (/* unused pure expression or super */ null && (__PRIVATE_PersistentStream)) {
     constructor(e, t, n, r, i, s) {
         super(e, "write_stream_connection_backoff" /* TimerId.WriteStreamConnectionBackoff */ , "write_stream_idle" /* TimerId.WriteStreamIdle */ , "health_check_timeout" /* TimerId.HealthCheckTimeout */ , t, n, r, s), 
         this.serializer = i, this.l_ = !1;
@@ -23531,7 +23505,7 @@ class __PRIVATE_DeleteFieldValueImpl extends (/* unused pure expression or super
     }, t.databaseId, t.serializer, t.ignoreUndefinedProperties);
 }
 
-class __PRIVATE_ServerTimestampFieldValueImpl extends FieldValue {
+class __PRIVATE_ServerTimestampFieldValueImpl extends (/* unused pure expression or super */ null && (FieldValue)) {
     _toFieldTransform(e) {
         return new FieldTransform(e.path, new __PRIVATE_ServerTimestampTransform);
     }
@@ -23653,7 +23627,7 @@ class __PRIVATE_NumericIncrementFieldValueImpl extends (/* unused pure expressio
     if (__PRIVATE_looksLikeJsonObject(
     // Unwrap the API type from the Compat SDK. This will return the API type
     // from firestore-exp.
-    e = index_esm2017_getModularInstance(e))) return __PRIVATE_validatePlainObject("Unsupported field value:", t, e), 
+    e = getModularInstance(e))) return __PRIVATE_validatePlainObject("Unsupported field value:", t, e), 
     __PRIVATE_parseObject(e, t);
     if (e instanceof FieldValue) 
     // FieldValues usually parse into transforms (except deleteField())
@@ -23713,7 +23687,7 @@ class __PRIVATE_NumericIncrementFieldValueImpl extends (/* unused pure expressio
         }(e, t);
     }
     return function __PRIVATE_parseScalarValue(e, t) {
-        if (null === (e = index_esm2017_getModularInstance(e))) return {
+        if (null === (e = getModularInstance(e))) return {
             nullValue: "NULL_VALUE"
         };
         if ("number" == typeof e) return toNumber(t.serializer, e);
@@ -23799,7 +23773,7 @@ function __PRIVATE_validatePlainObject(e, t, n) {
     if ((
     // If required, replace the FieldPath Compat class with with the firestore-exp
     // FieldPath.
-    t = index_esm2017_getModularInstance(t)) instanceof FieldPath) return t._internalPath;
+    t = getModularInstance(t)) instanceof FieldPath) return t._internalPath;
     if ("string" == typeof t) return __PRIVATE_fieldPathFromDotSeparatedString(e, t);
     throw __PRIVATE_createError("Field path arguments must be of type string or ", e, 
     /* hasConverter= */ !1, 
@@ -25037,7 +25011,7 @@ function updateDoc(e, t, n, ...r) {
 
 function onSnapshot(e, ...t) {
     var n, r, i;
-    e = index_esm2017_getModularInstance(e);
+    e = getModularInstance(e);
     let s = {
         includeMetadataChanges: !1
     }, o = 0;
@@ -25943,31 +25917,6 @@ let Se = null;
 
 //# sourceMappingURL=index.esm.js.map
 
-;// CONCATENATED MODULE: ./src/script/data/firebase-config.js
-var firebaseConfig = {
-  apiKey: 'AIzaSyDWNyKQpMAzdxYrx-6ZMIWLQlOCDYVsRXc',
-  authDomain: 'umkm-maju.firebaseapp.com',
-  projectId: 'umkm-maju',
-  storageBucket: 'umkm-maju.appspot.com',
-  messagingSenderId: '476036969425',
-  appId: '1:476036969425:web:ef970566295ef8a170a6f0',
-  measurementId: 'G-GNVRPSSBN8'
-};
-/* harmony default export */ const firebase_config = (firebaseConfig);
-;// CONCATENATED MODULE: ./src/script/view/main.js
-
-
-
-
-// Initialize Firebase
-initializeApp(firebase_config);
-
-// init services
-var main_db = getFirestore();
-
-// collection ref
-var colRef = collection(main_db, 'libraries');
-/* harmony default export */ const main = ((/* unused pure expression or super */ null && (colRef)));
 ;// CONCATENATED MODULE: ./node_modules/tslib/tslib.es6.mjs
 /******************************************************************************
 Copyright (c) Microsoft Corporation.
@@ -36861,33 +36810,81 @@ registerAuth("Browser" /* ClientPlatform.BROWSER */);
 
 //# sourceMappingURL=index.esm.js.map
 
-;// CONCATENATED MODULE: ./src/script/view/admin.js
-function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
-function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
-function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
-function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
-function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter); }
-function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
-function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i]; return arr2; }
-function ownKeys(e, r) { var t = Object.keys(e); if (Object.getOwnPropertySymbols) { var o = Object.getOwnPropertySymbols(e); r && (o = o.filter(function (r) { return Object.getOwnPropertyDescriptor(e, r).enumerable; })), t.push.apply(t, o); } return t; }
-function _objectSpread(e) { for (var r = 1; r < arguments.length; r++) { var t = null != arguments[r] ? arguments[r] : {}; r % 2 ? ownKeys(Object(t), !0).forEach(function (r) { _defineProperty(e, r, t[r]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys(Object(t)).forEach(function (r) { Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r)); }); } return e; }
-function _defineProperty(obj, key, value) { key = _toPropertyKey(key); if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-function _toPropertyKey(t) { var i = _toPrimitive(t, "string"); return "symbol" == _typeof(i) ? i : String(i); }
-function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r || "default"); if ("object" != _typeof(i)) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); }
+;// CONCATENATED MODULE: ./node_modules/firebase/app/dist/esm/index.esm.js
+
+
+
+var index_esm_name = "firebase";
+var index_esm_version = "10.7.1";
+
+/**
+ * @license
+ * Copyright 2020 Google LLC
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+registerVersion(index_esm_name, index_esm_version, 'app');
+//# sourceMappingURL=index.esm.js.map
+
+;// CONCATENATED MODULE: ./src/script/data/firebase-config.js
+var firebaseConfig = {
+  apiKey: 'AIzaSyDWNyKQpMAzdxYrx-6ZMIWLQlOCDYVsRXc',
+  authDomain: 'umkm-maju.firebaseapp.com',
+  projectId: 'umkm-maju',
+  storageBucket: 'umkm-maju.appspot.com',
+  messagingSenderId: '476036969425',
+  appId: '1:476036969425:web:ef970566295ef8a170a6f0',
+  measurementId: 'G-GNVRPSSBN8'
+};
+var dbCollection = {
+  libraries: 'libraries',
+  users: 'users'
+};
+
+;// CONCATENATED MODULE: ./src/script/view/init.js
 
 
 
 
+var initApp = initializeApp(firebaseConfig);
+var init_db = getFirestore();
+var libRef = collection(init_db, dbCollection.libraries);
+var userRef = collection(init_db, dbCollection.users);
 var auth = getAuth();
 
-// Initialize Firebase
-initializeApp(firebase_config);
+;// CONCATENATED MODULE: ./src/script/view/user.js
 
-// init services
-var admin_db = getFirestore();
 
-// collection ref
-var libRef = collection(admin_db, 'libraries');
+
+
+onAuthStateChanged(auth, function (user) {
+  if (user) {
+    getDoc(doc(init_db, dbCollection.users, user.uid)).then(function (docSnapshot) {
+      var _docSnapshot$data = docSnapshot.data(),
+        role = _docSnapshot$data.role;
+      if (role !== 'admin' && role !== 'user') {
+        alert('Invalid account role!');
+        signOut(auth).then(function () {
+          window.location.href = window.location.origin;
+        })["catch"](function (error) {
+          return console.log(error);
+        });
+      }
+    });
+  } else {
+    window.location.href = window.location.origin;
+  }
+});
 var logoutBtn = document.querySelector('#logout');
 logoutBtn.addEventListener('click', function (e) {
   e.preventDefault();
@@ -36899,102 +36896,8 @@ logoutBtn.addEventListener('click', function (e) {
     alert(errorCode, errorMessage);
   });
 });
-onAuthStateChanged(auth, function (user) {
-  if (user) {
-    console.log('Logged in: ', user);
-  } else {
-    console.log('Logged Out!');
-  }
-});
-var addForm = document.querySelector('#add-book');
-addForm.addEventListener('submit', function (e) {
-  e.preventDefault();
-  var title = addForm.title.value;
-  var desc = addForm.desc.value;
-  var url = addForm.url.value;
-  var category = addForm.category.value;
-  var tag1 = addForm.tag1.value;
-  var tag2 = addForm.tag2.value;
-  var tag3 = addForm.tag3.value;
-  var tags = [tag1, tag2, tag3];
-  addDoc(libRef, {
-    title: title,
-    desc: desc,
-    url: url,
-    category: category,
-    rating: 0,
-    voteCount: 0,
-    tags: tags,
-    timestamp: serverTimestamp()
-  }).then(function () {
-    addForm.reset();
-  });
-});
-onSnapshot(libRef, function (snapshot) {
-  var data = [];
-  snapshot.docs.forEach(function (document) {
-    data.push(_objectSpread(_objectSpread({}, document.data()), {}, {
-      id: document.id
-    }));
-  });
-  var libTable = document.querySelector('#lib-table');
-  libTable.innerHTML = "\n    <tr>\n        <th>ID</th>\n        <th>Judul</th>\n        <th>Deskripsi</th>\n        <th>url</th>\n        <th>Kategori</th>\n        <th>Tag</th>\n        <th>Action</th>\n    </tr>\n  ";
-  data.forEach(function (item) {
-    libTable.innerHTML += "\n      <tr data-id=\"".concat(item.id, "\">\n          <td>").concat(item.id, "</td>\n          <td>").concat(item.title, "</td>\n          <td>").concat(item.desc, "</td>\n          <td>").concat(item.url, "</td>\n          <td>").concat(item.category, "</td>  \n          <td>").concat(item.tags, "</td>\n          <td>\n              <button class=\"btn edit\">Edit</button>\n              <button class=\"btn delete\">Delete</button>\n          </td>\n      </tr>\n    ");
-  });
-  var editButtons = _toConsumableArray(document.querySelectorAll('.btn.edit'));
-  editButtons.forEach(function (button) {
-    button.addEventListener('click', function (e) {
-      var id = e.target.parentElement.parentElement.dataset.id;
-      editData(id);
-    });
-    var deleteButtons = _toConsumableArray(document.querySelectorAll('.btn.delete'));
-    deleteButtons.forEach(function (button) {
-      button.addEventListener('click', function (e) {
-        var id = e.target.parentElement.parentElement.dataset.id;
-        resetAddForm();
-        deleteDoc(doc(admin_db, 'libraries', id))["catch"](function (err) {
-          return console.log(err);
-        });
-      });
-    });
-  });
-});
-function editData(id) {
-  onSnapshot(doc(admin_db, 'libraries', id), function (snapshot) {
-    var data = _objectSpread(_objectSpread({}, snapshot.data()), {}, {
-      id: snapshot.id
-    });
-    var formTitle = document.getElementById('add-book-title');
-    var form = document.getElementById('add-book');
-    formTitle.innerHTML = 'Edit Data';
-    form.title.value = data.title;
-    form.desc.value = data.desc;
-    form.url.value = data.url;
-    form.category.value = data.category;
-    form.tag1.value = data.tags[0];
-    form.tag2.value = data.tags[1];
-    form.tag3.value = data.tags[2];
-    form.submit.innerHTML = 'Edit Data';
-  });
-}
-function resetAddForm() {
-  var formTitle = document.getElementById('add-book-title');
-  var form = document.getElementById('add-book');
-  formTitle.innerHTML = 'Add New Data';
-  form.title.value = '';
-  form.desc.value = '';
-  form.url.value = '';
-  form.category.value = '';
-  form.tag1.value = '';
-  form.tag2.value = '';
-  form.tag3.value = '';
-  form.submit.innerHTML = 'Add Data';
-}
-;// CONCATENATED MODULE: ./src/admin-dashboard.js
+;// CONCATENATED MODULE: ./src/user-dashboard.js
 
 
-
-// import './styles/main.css';
 /******/ })()
 ;
