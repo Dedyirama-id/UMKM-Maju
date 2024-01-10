@@ -1,24 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit Materi</title>
 </head>
+
 <body>
-
-    <div class="navbar">
+    <nav class="navbar">
         <h1 id="home">UMKM MAJU</h1>
-        <ul>
-            <li><a href="mainPageAdmin.html" >Profil</a></li>
-            <li><a href="" >Materi</a></li>
-            <li><a href="adminTable.html" >Edit Materi</a></li>
-        </ul>
-
-    </div>
+        <a id="logout">Log out</a>
+    </nav>
     <main>
+        <h2 id="add-book-title">Add New Book</h2>
+        <form id="add-book" class="add-book-form">
+            <label for="title">Judul: </label>
+            <input type="text" id="title">
+            <br>
+            <label for="desc">Deskripsi: </label>
+            <input type="text" id="desc">
+            <br>
+            <label for="url">Url: </label>
+            <input type="text" id="url">
+            <br>
+            <label for="category">Kategori: </label>
+            <input type="text" id="category">
+            <br>
+            <label for="tags">Tag: </label>
+            <div class="tag-input-container">
+                <input type="text" id="tag1">
+                <input type="text" id="tag2">
+                <input type="text" id="tag3">
+            </div>
+            <button type="submit" id="submit">Submit</button>
+        </form>
         <h2>Tabel Materi</h2>
-        <table>
+        <table id="lib-table">
             <tr>
                 <th>ID</th>
                 <th>Judul</th>
@@ -28,7 +46,7 @@
                 <th>Tag</th>
                 <th>Action</th>
             </tr>
-            <tr>
+            <!-- <tr>
                 <td>ccb1</td>
                 <td>Cara Cepat Bangkrut</td>
                 <td>Buku yang ditulis oleh M Fanny Andriansyah pada tanggal 31 Februari 2069</td>
@@ -39,32 +57,9 @@
                     <button class="btn">Edit</button>
                     <button class="btn">Delete</button>
                 </td>
-            </tr>
-            <tr>
-                <td>ccb2</td>
-                <td>Cara Cepat Bangkrut</td>
-                <td>Buku yang ditulis oleh M Fanny Andriansyah pada tanggal 31 Februari 2069</td>
-                <td>https://loremIpsum.com</td>
-                <td>Marketing</td>
-                <td>Tag 1, Tag 2</td>
-                <td>
-                    <button class="btn">Edit</button>
-                    <button class="btn">Delete</button>
-                </td>
-            </tr>
-            <tr>
-                <td>UMKMAK1</td>
-                <td>UMKM Adalah Kunci</td>
-                <td>Buku yang ditulis oleh M Fanny Andriansyah pada tanggal 31 Februari 2420</td>
-                <td>https://loremIpsum.com</td>
-                <td>Marketing</td>
-                <td>Tag 1, Tag 2</td>
-                <td>
-                    <button class="btn">Edit</button>
-                    <button class="btn">Delete</button>
-                </td>
-            </tr>
+            </tr> -->
         </table>
     </main>
 </body>
+
 </html>

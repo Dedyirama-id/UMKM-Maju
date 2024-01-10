@@ -1,0 +1,93 @@
+[33mcommit 4fdd0691ba51c579af71d362d7f2af6188c1cbf1[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;32mdb[m[33m)[m
+Author: Dedy Irama <dedyirama.ars@gmail.com>
+Date:   Tue Jan 9 08:39:32 2024 +0700
+
+    removed contenthash setting for html file
+
+[33mcommit 09a188a2b3ebd60f46705982edc979044e79119f[m
+Author: Dedy Irama <dedyirama.ars@gmail.com>
+Date:   Tue Jan 9 08:23:42 2024 +0700
+
+    minor update for index.html
+
+[33mcommit 3f45dce51c15223bfb05968641f919f6772da082[m[33m ([m[1;31morigin/main[m[33m)[m
+Author: Dedy Irama <dedyirama.ars@gmail.com>
+Date:   Tue Jan 9 08:15:23 2024 +0700
+
+    Cleaned up and fixed overall project files and Webpack configurations
+
+[33mcommit 67d6f17384bebd9a1cfb30aaf4a49657f9afd309[m
+Merge: a30862e 3a66297
+Author: Dedy Irama <153349665+Dedyirama-id@users.noreply.github.com>
+Date:   Tue Jan 9 07:22:00 2024 +0700
+
+    Merge pull request #1 from alieliexe/new
+    
+    Added FrontEnd
+
+[33mcommit a30862e7c343a7e696def839de9e4f512b9725d3[m
+Author: Dedy Irama <dedyirama.ars@gmail.com>
+Date:   Tue Jan 9 07:19:32 2024 +0700
+
+    added dashboard.html file
+
+[33mcommit 3a6629747ff71d5c7268428bf29e40f331859df4[m
+Author: alieliexe <rizky.23118@mhs.unesa.ac.id>
+Date:   Mon Jan 8 21:52:43 2024 +0700
+
+    Added FrontEnd
+
+[33mcommit 87ea4fb7929bec470fca9c0b62d6909c640cf835[m
+Author: Dedy Irama <dedyirama.ars@gmail.com>
+Date:   Mon Jan 8 11:51:38 2024 +0700
+
+    Add .firebase/ to .gitignore
+
+[33mcommit 88e4bcd124d37846a53baa9ee1131a4e00c41dad[m
+Merge: 0637c88 30b503b
+Author: Dedy Irama <dedyirama.ars@gmail.com>
+Date:   Mon Jan 8 11:50:16 2024 +0700
+
+    Merge branch 'main' of https://github.com/Dedyirama-id/UMKM-Maju
+
+[33mcommit 0637c8874b640803a3a1c3a7c2fd199d5d8cfa02[m
+Author: Dedy Irama <dedyirama.ars@gmail.com>
+Date:   Mon Jan 8 11:49:08 2024 +0700
+
+    Add .firebase/ to .gitignore
+
+[33mcommit 30b503bda6f1645531a24a168d5ed92918da0780[m
+Author: Dedy Irama <153349665+Dedyirama-id@users.noreply.github.com>
+Date:   Mon Jan 8 11:42:52 2024 +0700
+
+    Update README.md
+
+[33mcommit c4348a3a30cbd90160167bf88e1c590ba79bf3f1[m
+Author: Dedy Irama <dedyirama.ars@gmail.com>
+Date:   Mon Jan 8 11:40:19 2024 +0700
+
+    added README.md Description
+
+[33mcommit 23e6dfbe163167c1cbed2489204c4ec205407dc2[m
+Author: Dedy Irama <dedyirama.ars@gmail.com>
+Date:   Mon Jan 8 11:36:00 2024 +0700
+
+    setting up firebase hosting
+
+[33mcommit eb32b84cdff05f87217f207701a0071e7cb5565f[m
+Author: Dedy Irama <dedyirama.ars@gmail.com>
+Date:   Mon Jan 8 11:15:45 2024 +0700
+
+    Setting up firestore
+
+[33mcommit 545b398495468a9dc189ee55e659c05e727ae3ee[m
+Author: Dedy Irama <dedyirama.ars@gmail.com>
+Date:   Mon Jan 8 09:34:45 2024 +0700
+
+    first commit
+
+[33mcommit 1eac34cc72333b85edc56f4dbc4cfe9b000ae02a[m
+Author: Dedy Irama <dedyirama.ars@gmail.com>
+Date:   Mon Jan 8 09:33:07 2024 +0700
+
+    first commit

@@ -9507,7 +9507,7 @@ function __PRIVATE_getPatch(e) {
     }
 }
 
-class __PRIVATE_VerifyMutation extends (/* unused pure expression or super */ null && (Mutation)) {
+class __PRIVATE_VerifyMutation extends Mutation {
     constructor(e, t) {
         super(), this.key = e, this.precondition = t, this.type = 3 /* MutationType.Verify */ , 
         this.fieldTransforms = [];
@@ -18446,7 +18446,7 @@ class __PRIVATE_PersistentStream {
  * okay to use the same streamToken for the calls to writeMutations.
  *
  * TODO(b/33271235): Use proto types
- */ class __PRIVATE_PersistentWriteStream extends (/* unused pure expression or super */ null && (__PRIVATE_PersistentStream)) {
+ */ class __PRIVATE_PersistentWriteStream extends __PRIVATE_PersistentStream {
     constructor(e, t, n, r, i, s) {
         super(e, "write_stream_connection_backoff" /* TimerId.WriteStreamConnectionBackoff */ , "write_stream_idle" /* TimerId.WriteStreamIdle */ , "health_check_timeout" /* TimerId.HealthCheckTimeout */ , t, n, r, s), 
         this.serializer = i, this.l_ = !1;
@@ -22346,7 +22346,7 @@ function collection(e, t, ...n) {
 }
 
 function doc(e, t, ...n) {
-    if (e = getModularInstance(e), 
+    if (e = index_esm2017_getModularInstance(e), 
     // We allow omission of 'pathString' but explicitly prohibit passing in both
     // 'undefined' and 'null'.
     1 === arguments.length && (t = __PRIVATE_AutoId.newId()), __PRIVATE_validateNonEmptyArgument("doc", "path", t), 
@@ -23531,7 +23531,7 @@ class __PRIVATE_DeleteFieldValueImpl extends (/* unused pure expression or super
     }, t.databaseId, t.serializer, t.ignoreUndefinedProperties);
 }
 
-class __PRIVATE_ServerTimestampFieldValueImpl extends (/* unused pure expression or super */ null && (FieldValue)) {
+class __PRIVATE_ServerTimestampFieldValueImpl extends FieldValue {
     _toFieldTransform(e) {
         return new FieldTransform(e.path, new __PRIVATE_ServerTimestampTransform);
     }
@@ -23799,7 +23799,7 @@ function __PRIVATE_validatePlainObject(e, t, n) {
     if ((
     // If required, replace the FieldPath Compat class with with the firestore-exp
     // FieldPath.
-    t = getModularInstance(t)) instanceof FieldPath) return t._internalPath;
+    t = index_esm2017_getModularInstance(t)) instanceof FieldPath) return t._internalPath;
     if ("string" == typeof t) return __PRIVATE_fieldPathFromDotSeparatedString(e, t);
     throw __PRIVATE_createError("Field path arguments must be of type string or ", e, 
     /* hasConverter= */ !1, 
@@ -23989,7 +23989,7 @@ function __PRIVATE_createError(e, t, n, r, i) {
  * (endBefore:1)}, {@link (endAt:1)}, {@link limit}, {@link limitToLast} and
  * can then be passed to {@link (query:1)} to create a new query instance that
  * also contains this `QueryConstraint`.
- */ class QueryConstraint extends AppliableConstraint {}
+ */ class QueryConstraint extends (/* unused pure expression or super */ null && (AppliableConstraint)) {}
 
 function query(e, t, ...n) {
     let r = [];
@@ -24029,7 +24029,7 @@ function query(e, t, ...n) {
  * `QueryFieldFilterConstraint`s are created by invoking {@link where} and can then
  * be passed to {@link (query:1)} to create a new query instance that also contains
  * this `QueryFieldFilterConstraint`.
- */ class QueryFieldFilterConstraint extends QueryConstraint {
+ */ class QueryFieldFilterConstraint extends (/* unused pure expression or super */ null && (QueryConstraint)) {
     /**
      * @internal
      */
@@ -24091,7 +24091,7 @@ function query(e, t, ...n) {
  * `QueryCompositeFilterConstraint`s are created by invoking {@link or} or
  * {@link and} and can then be passed to {@link (query:1)} to create a new query
  * instance that also contains the `QueryCompositeFilterConstraint`.
- */ class QueryCompositeFilterConstraint extends AppliableConstraint {
+ */ class QueryCompositeFilterConstraint extends (/* unused pure expression or super */ null && (AppliableConstraint)) {
     /**
      * @internal
      */
@@ -24390,7 +24390,7 @@ function endAt(...e) {
 }
 
 function __PRIVATE_parseDocumentIdValue(e, t, n) {
-    if ("string" == typeof (n = index_esm2017_getModularInstance(n))) {
+    if ("string" == typeof (n = getModularInstance(n))) {
         if ("" === n) throw new FirestoreError(index_esm2017_D.INVALID_ARGUMENT, "Invalid query. When querying with documentId(), you must provide a valid document ID, but it was an empty string.");
         if (!__PRIVATE_isCollectionGroupQuery(t) && -1 !== n.indexOf("/")) throw new FirestoreError(index_esm2017_D.INVALID_ARGUMENT, `Invalid query. When querying a collection by documentId(), you must provide a plain document ID, but '${n}' contains a '/' character.`);
         const r = t.path.child(ResourcePath.fromString(n));
@@ -25943,6 +25943,31 @@ let Se = null;
 
 //# sourceMappingURL=index.esm.js.map
 
+;// CONCATENATED MODULE: ./src/script/data/firebase-config.js
+var firebaseConfig = {
+  apiKey: 'AIzaSyDWNyKQpMAzdxYrx-6ZMIWLQlOCDYVsRXc',
+  authDomain: 'umkm-maju.firebaseapp.com',
+  projectId: 'umkm-maju',
+  storageBucket: 'umkm-maju.appspot.com',
+  messagingSenderId: '476036969425',
+  appId: '1:476036969425:web:ef970566295ef8a170a6f0',
+  measurementId: 'G-GNVRPSSBN8'
+};
+/* harmony default export */ const firebase_config = (firebaseConfig);
+;// CONCATENATED MODULE: ./src/script/view/main.js
+
+
+
+
+// Initialize Firebase
+initializeApp(firebase_config);
+
+// init services
+var main_db = getFirestore();
+
+// collection ref
+var colRef = collection(main_db, 'libraries');
+/* harmony default export */ const main = ((/* unused pure expression or super */ null && (colRef)));
 ;// CONCATENATED MODULE: ./node_modules/tslib/tslib.es6.mjs
 /******************************************************************************
 Copyright (c) Microsoft Corporation.
@@ -32869,7 +32894,7 @@ function updateCurrentUser(auth, user) {
  * @public
  */
 function signOut(auth) {
-    return getModularInstance(auth).signOut();
+    return index_esm2017_getModularInstance(auth).signOut();
 }
 /**
  * Revokes the given access token. Currently only supports Apple OAuth access tokens.
@@ -36836,19 +36861,14 @@ registerAuth("Browser" /* ClientPlatform.BROWSER */);
 
 //# sourceMappingURL=index.esm.js.map
 
-;// CONCATENATED MODULE: ./src/script/data/firebase-config.js
-var firebaseConfig = {
-  apiKey: 'AIzaSyDWNyKQpMAzdxYrx-6ZMIWLQlOCDYVsRXc',
-  authDomain: 'umkm-maju.firebaseapp.com',
-  projectId: 'umkm-maju',
-  storageBucket: 'umkm-maju.appspot.com',
-  messagingSenderId: '476036969425',
-  appId: '1:476036969425:web:ef970566295ef8a170a6f0',
-  measurementId: 'G-GNVRPSSBN8'
-};
-/* harmony default export */ const firebase_config = (firebaseConfig);
-;// CONCATENATED MODULE: ./src/script/view/main.js
+;// CONCATENATED MODULE: ./src/script/view/admin.js
 function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter); }
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i]; return arr2; }
 function ownKeys(e, r) { var t = Object.keys(e); if (Object.getOwnPropertySymbols) { var o = Object.getOwnPropertySymbols(e); r && (o = o.filter(function (r) { return Object.getOwnPropertyDescriptor(e, r).enumerable; })), t.push.apply(t, o); } return t; }
 function _objectSpread(e) { for (var r = 1; r < arguments.length; r++) { var t = null != arguments[r] ? arguments[r] : {}; r % 2 ? ownKeys(Object(t), !0).forEach(function (r) { _defineProperty(e, r, t[r]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys(Object(t)).forEach(function (r) { Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r)); }); } return e; }
 function _defineProperty(obj, key, value) { key = _toPropertyKey(key); if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
@@ -36858,69 +36878,123 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 
 
 
+var auth = getAuth();
 
 // Initialize Firebase
 initializeApp(firebase_config);
 
 // init services
-var main_db = getFirestore();
-var auth = getAuth();
+var admin_db = getFirestore();
 
 // collection ref
-var colRef = collection(main_db, 'libraries');
-
-// queries
-var main_q = query(colRef);
-onSnapshot(colRef, function (snapshot) {
-  var libraries = [];
-  snapshot.docs.forEach(function (document) {
-    libraries.push(_objectSpread(_objectSpread({}, document.data()), {}, {
-      id: document.id
-    }));
-  });
-  console.log(libraries);
-});
-
-// const addLib = addDoc(colRef, {
-//   title: 'title',
-//   desc: 'desc',
-//   rating: 5,
-//   voteCount: 0,
-//   timestamp: serverTimestamp(),
-// });
-
-// Function to redirect to the dashboard
-function redirectToDashboard() {
-  window.location.href = 'dashboard.html';
-  console.log('to dashboard');
-}
-
-// Sign-up
-var signupForm = document.querySelector('#signup-form');
-signupForm.addEventListener('submit', function (e) {
+var libRef = collection(admin_db, 'libraries');
+var logoutBtn = document.querySelector('#logout');
+logoutBtn.addEventListener('click', function (e) {
   e.preventDefault();
-  var email = signupForm['signup-email'].value;
-  var password = signupForm['signup-password'].value;
-  createUserWithEmailAndPassword(auth, email, password).then(function () {
-    redirectToDashboard();
+  signOut(auth).then(function () {
+    window.location.href = '/';
   })["catch"](function (error) {
     var errorCode = error.code;
     var errorMessage = error.message;
-    console.log(errorCode, errorMessage);
+    alert(errorCode, errorMessage);
   });
 });
 onAuthStateChanged(auth, function (user) {
   if (user) {
     console.log('Logged in: ', user);
-
-    // Redirect to the dashboard if the user is already logged in
-    redirectToDashboard();
   } else {
     console.log('Logged Out!');
   }
 });
-;// CONCATENATED MODULE: ./src/index.js
+var addForm = document.querySelector('#add-book');
+addForm.addEventListener('submit', function (e) {
+  e.preventDefault();
+  var title = addForm.title.value;
+  var desc = addForm.desc.value;
+  var url = addForm.url.value;
+  var category = addForm.category.value;
+  var tag1 = addForm.tag1.value;
+  var tag2 = addForm.tag2.value;
+  var tag3 = addForm.tag3.value;
+  var tags = [tag1, tag2, tag3];
+  addDoc(libRef, {
+    title: title,
+    desc: desc,
+    url: url,
+    category: category,
+    rating: 0,
+    voteCount: 0,
+    tags: tags,
+    timestamp: serverTimestamp()
+  }).then(function () {
+    addForm.reset();
+  });
+});
+onSnapshot(libRef, function (snapshot) {
+  var data = [];
+  snapshot.docs.forEach(function (document) {
+    data.push(_objectSpread(_objectSpread({}, document.data()), {}, {
+      id: document.id
+    }));
+  });
+  var libTable = document.querySelector('#lib-table');
+  libTable.innerHTML = "\n    <tr>\n        <th>ID</th>\n        <th>Judul</th>\n        <th>Deskripsi</th>\n        <th>url</th>\n        <th>Kategori</th>\n        <th>Tag</th>\n        <th>Action</th>\n    </tr>\n  ";
+  data.forEach(function (item) {
+    libTable.innerHTML += "\n      <tr data-id=\"".concat(item.id, "\">\n          <td>").concat(item.id, "</td>\n          <td>").concat(item.title, "</td>\n          <td>").concat(item.desc, "</td>\n          <td>").concat(item.url, "</td>\n          <td>").concat(item.category, "</td>  \n          <td>").concat(item.tags, "</td>\n          <td>\n              <button class=\"btn edit\">Edit</button>\n              <button class=\"btn delete\">Delete</button>\n          </td>\n      </tr>\n    ");
+  });
+  var editButtons = _toConsumableArray(document.querySelectorAll('.btn.edit'));
+  editButtons.forEach(function (button) {
+    button.addEventListener('click', function (e) {
+      var id = e.target.parentElement.parentElement.dataset.id;
+      editData(id);
+    });
+    var deleteButtons = _toConsumableArray(document.querySelectorAll('.btn.delete'));
+    deleteButtons.forEach(function (button) {
+      button.addEventListener('click', function (e) {
+        var id = e.target.parentElement.parentElement.dataset.id;
+        resetAddForm();
+        deleteDoc(doc(admin_db, 'libraries', id))["catch"](function (err) {
+          return console.log(err);
+        });
+      });
+    });
+  });
+});
+function editData(id) {
+  onSnapshot(doc(admin_db, 'libraries', id), function (snapshot) {
+    var data = _objectSpread(_objectSpread({}, snapshot.data()), {}, {
+      id: snapshot.id
+    });
+    var formTitle = document.getElementById('add-book-title');
+    var form = document.getElementById('add-book');
+    formTitle.innerHTML = 'Edit Data';
+    form.title.value = data.title;
+    form.desc.value = data.desc;
+    form.url.value = data.url;
+    form.category.value = data.category;
+    form.tag1.value = data.tags[0];
+    form.tag2.value = data.tags[1];
+    form.tag3.value = data.tags[2];
+    form.submit.innerHTML = 'Edit Data';
+  });
+}
+function resetAddForm() {
+  var formTitle = document.getElementById('add-book-title');
+  var form = document.getElementById('add-book');
+  formTitle.innerHTML = 'Add New Data';
+  form.title.value = '';
+  form.desc.value = '';
+  form.url.value = '';
+  form.category.value = '';
+  form.tag1.value = '';
+  form.tag2.value = '';
+  form.tag3.value = '';
+  form.submit.innerHTML = 'Add Data';
+}
+;// CONCATENATED MODULE: ./src/admin-dashboard.js
 
 
+
+// import './styles/main.css';
 /******/ })()
 ;

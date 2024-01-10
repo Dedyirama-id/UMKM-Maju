@@ -34,25 +34,30 @@ module.exports = {
       template: './src/html/index.html',
       filename: 'index.html',
       chunks: ['index'],
+      inject: 'body',
     }),
     new HtmlWebpackPlugin({
       template: './src/html/404.html',
       filename: '404.html',
+      inject: 'body',
     }),
     new HtmlWebpackPlugin({
       template: './src/html/admin-dashboard.html',
       filename: 'admin-dashboard.html',
       chunks: ['adminDashboard'],
+      inject: 'body',
     }),
     new HtmlWebpackPlugin({
       template: './src/html/signup.html',
       filename: 'signup.html',
       chunks: ['signup'],
+      inject: 'body',
     }),
     new HtmlWebpackPlugin({
       template: './src/html/user-dashboard.html',
       filename: 'user-dashboard.html',
       chunks: ['userDashboard'],
+      inject: 'body',
     }),
     new MiniCssExtractPlugin({
       filename: '[name]-[contenthash].css',
