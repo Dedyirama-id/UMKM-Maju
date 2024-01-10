@@ -7,9 +7,9 @@ Access Link: https://umkm-maju.web.app/
 ## Dummy Account
 #### Admin:
 - Username  : Admin
-- Email     : admin.umkm-maju.co
+- Email     : admin@umkm-maju.co
 - password  : abcd1234
 #### User:
 - Username  : User
-- Email     : admin.umkm-maju.co
+- Email     : user@umkm-maju.co
 - password  : abcd1234
