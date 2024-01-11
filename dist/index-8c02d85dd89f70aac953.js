@@ -36875,9 +36875,14 @@ loginForm.addEventListener('submit', function (e) {
   var email = loginForm.email.value;
   var password = loginForm.password.value;
   signInWithEmailAndPassword(auth, email, password)["catch"](function (error) {
-    var errorCode = error.code;
-    var errorMessage = error.message;
-    console.log(errorCode, errorMessage);
+    var parts = error.code.split('/');
+    var filteredText = parts[parts.length - 1].replace(/-/g, ' ');
+    var errMessage = filteredText.replace(/\b\w/g, function (_char) {
+      return _char.toUpperCase();
+    });
+    var errText = document.getElementById('error-message');
+    errText.textContent = errMessage;
+    errText.style.display = 'block';
   });
 });
 onAuthStateChanged(auth, function (user) {
@@ -36901,6 +36906,7 @@ onAuthStateChanged(auth, function (user) {
   }
 });
 ;// CONCATENATED MODULE: ./src/index.js
+
 
 
 /******/ })()
