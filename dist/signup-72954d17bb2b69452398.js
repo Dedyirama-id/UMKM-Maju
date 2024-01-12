@@ -36868,22 +36868,27 @@ var auth = getAuth();
 
 
 
-// signup
-var signup = document.querySelector('#signup-form');
-signup.addEventListener('submit', function (e) {
+// signupForm
+var signupForm = document.querySelector('#signup-form');
+signupForm.addEventListener('submit', function (e) {
   e.preventDefault();
-  var email = signup.email.value;
-  var username = signup.username.value;
-  var password = signup.password.value;
+  var email = signupForm.email.value;
+  var username = signupForm.username.value;
+  var password = signupForm.password.value;
   createUserWithEmailAndPassword(auth, email, password).then(function (cred) {
     setDoc(doc(init_db, dbCollection.users, cred.user.uid), {
       username: username,
       role: 'user'
     });
   })["catch"](function (error) {
-    var errorCode = error.code;
-    var errorMessage = error.message;
-    console.log(errorCode, errorMessage);
+    var parts = error.code.split('/');
+    var filteredText = parts[parts.length - 1].replace(/-/g, ' ');
+    var errMessage = filteredText.replace(/\b\w/g, function (_char) {
+      return _char.toUpperCase();
+    });
+    var errText = document.getElementById('error-message');
+    errText.textContent = errMessage;
+    errText.style.display = 'block';
   });
 });
 onAuthStateChanged(auth, function (user) {
@@ -36907,6 +36912,7 @@ onAuthStateChanged(auth, function (user) {
   }
 });
 ;// CONCATENATED MODULE: ./src/signup.js
+
 
 
 /******/ })()
