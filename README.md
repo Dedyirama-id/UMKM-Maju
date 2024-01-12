@@ -4,6 +4,12 @@ UMKM Maju  is a digital portal designed to facilitate Micro, Small, and Medium E
 
 Access Link: https://umkm-maju.web.app/
 
+## Developer Team - Servis AC
+1. Dedy Irama - Hacker
+2. Luhung Dewangkoro - Hipster
+3. Moch. Fanny Andriansyah - Hustler
+4. Rizky Alay Hermawan - Hacker
+
 ## Dummy Account
 #### Admin:
 - Username  : Admin
