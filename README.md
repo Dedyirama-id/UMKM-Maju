@@ -45,5 +45,4 @@ To experience the features of UMKM Maju, follow these steps:
 5. Logout: When done, securely log out to protect your account information.
 
 ## Admin Dashboard Preview
-![image](https://github.com/Dedyirama-id/UMKM-Maju/assets/153349665/b26f9f79-91c5-4358-8b63-1231c3d6aca9)
-
+![image](https://github.com/Dedyirama-id/UMKM-Maju/assets/153349665/14d8cb7d-75fd-48e2-8f63-1d26185afc9d)
