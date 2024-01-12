@@ -43,3 +43,7 @@ To experience the features of UMKM Maju, follow these steps:
 3. Log In: Access your account securely through the login feature.
 4. Explore: Browse the existing resources.
 5. Logout: When done, securely log out to protect your account information.
+
+## Admin Dashboard Preview
+![image](https://github.com/Dedyirama-id/UMKM-Maju/assets/153349665/b26f9f79-91c5-4358-8b63-1231c3d6aca9)
+
