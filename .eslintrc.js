@@ -22,17 +22,10 @@ module.exports = {
     sourceType: 'module',
   },
   rules: {
-    'import/no-extraneous-dependencies': [
-      'error',
-      {
-        devDependencies: [
-          '**/*.js',
-          '**/*.js',
-        ],
-      },
-    ],
+    'import/no-extraneous-dependencies': ['error', { devDependencies: true, optionalDependencies: false, peerDependencies: false }],
     'no-param-reassign': 'off',
     'no-console': 'off',
     'no-alert': 'off',
+    'global-require': 'off',
   },
 };

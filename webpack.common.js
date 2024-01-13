@@ -5,10 +5,23 @@ const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 
 module.exports = {
   entry: {
-    index: './src/index.js',
-    adminDashboard: './src/admin-dashboard.js',
-    signup: './src/signup.js',
-    userDashboard: './src/user-dashboard.js',
+    index: {
+      import: './src/index.js',
+      dependOn: 'shared',
+    },
+    adminDashboard: {
+      import: './src/admin-dashboard.js',
+      dependOn: 'shared',
+    },
+    signup: {
+      import: './src/signup.js',
+      dependOn: 'shared',
+    },
+    userDashboard: {
+      import: './src/user-dashboard.js',
+      dependOn: 'shared',
+    },
+    shared: './src/shared.js',
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -21,7 +34,7 @@ module.exports = {
     rules: [
       {
         test: /\.css$/i,
-        use: [MiniCssExtractPlugin.loader, 'css-loader'],
+        use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader'],
       },
       {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
@@ -33,7 +46,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: './src/html/index.html',
       filename: 'index.html',
-      chunks: ['index'],
+      chunks: ['index', 'shared'],
       inject: 'body',
     }),
     new HtmlWebpackPlugin({
@@ -44,28 +57,29 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: './src/html/admin-dashboard.html',
       filename: 'admin-dashboard.html',
-      chunks: ['adminDashboard'],
+      chunks: ['adminDashboard', 'shared'],
       inject: 'body',
     }),
     new HtmlWebpackPlugin({
       template: './src/html/signup.html',
       filename: 'signup.html',
-      chunks: ['signup'],
+      chunks: ['signup', 'shared'],
       inject: 'body',
     }),
     new HtmlWebpackPlugin({
       template: './src/html/user-dashboard.html',
       filename: 'user-dashboard.html',
-      chunks: ['userDashboard'],
+      chunks: ['userDashboard', 'shared'],
       inject: 'body',
     }),
     new MiniCssExtractPlugin({
-      filename: '[name]-[contenthash].css',
+      filename: 'style-[contenthash].css',
     }),
   ],
   optimization: {
     minimizer: [
       new CssMinimizerPlugin(),
     ],
+    runtimeChunk: 'single',
   },
 };

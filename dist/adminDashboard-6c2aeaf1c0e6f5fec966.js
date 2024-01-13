@@ -1,25 +1,36 @@
-/******/ (() => { // webpackBootstrap
-/******/ 	"use strict";
-/******/ 	// The require scope
-/******/ 	var __webpack_require__ = {};
-/******/ 	
-/************************************************************************/
-/******/ 	/* webpack/runtime/global */
-/******/ 	(() => {
-/******/ 		__webpack_require__.g = (function() {
-/******/ 			if (typeof globalThis === 'object') return globalThis;
-/******/ 			try {
-/******/ 				return this || new Function('return this')();
-/******/ 			} catch (e) {
-/******/ 				if (typeof window === 'object') return window;
-/******/ 			}
-/******/ 		})();
-/******/ 	})();
-/******/ 	
-/************************************************************************/
-var __webpack_exports__ = {};
+"use strict";
+(self["webpackChunkumkm_maju"] = self["webpackChunkumkm_maju"] || []).push([[708],{
 
-;// CONCATENATED MODULE: ./node_modules/@firebase/util/dist/index.esm2017.js
+/***/ 444:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   BH: () => (/* binding */ Deferred),
+/* harmony export */   L: () => (/* binding */ base64urlEncodeWithoutPadding),
+/* harmony export */   LL: () => (/* binding */ ErrorFactory),
+/* harmony export */   P0: () => (/* binding */ getDefaultEmulatorHostnameAndPort),
+/* harmony export */   Pz: () => (/* binding */ getExperimentalSetting),
+/* harmony export */   Sg: () => (/* binding */ createMockUserToken),
+/* harmony export */   ZR: () => (/* binding */ FirebaseError),
+/* harmony export */   aH: () => (/* binding */ getDefaultAppConfig),
+/* harmony export */   b$: () => (/* binding */ isReactNative),
+/* harmony export */   eu: () => (/* binding */ validateIndexedDBOpenable),
+/* harmony export */   hl: () => (/* binding */ isIndexedDBAvailable),
+/* harmony export */   m9: () => (/* binding */ getModularInstance),
+/* harmony export */   ne: () => (/* binding */ createSubscribe),
+/* harmony export */   pd: () => (/* binding */ extractQuerystring),
+/* harmony export */   q4: () => (/* binding */ getDefaultEmulatorHost),
+/* harmony export */   ru: () => (/* binding */ isBrowserExtension),
+/* harmony export */   tV: () => (/* binding */ base64Decode),
+/* harmony export */   uI: () => (/* binding */ isMobileCordova),
+/* harmony export */   vZ: () => (/* binding */ deepEqual),
+/* harmony export */   w1: () => (/* binding */ isIE),
+/* harmony export */   xO: () => (/* binding */ querystring),
+/* harmony export */   xb: () => (/* binding */ isEmpty),
+/* harmony export */   z$: () => (/* binding */ getUA),
+/* harmony export */   zd: () => (/* binding */ querystringDecode)
+/* harmony export */ });
+/* unused harmony exports CONSTANTS, DecodeBase64StringError, MAX_VALUE_MILLIS, RANDOM_FACTOR, Sha1, areCookiesEnabled, assert, assertionError, async, base64, base64Encode, calculateBackoffMillis, contains, decode, deepCopy, deepExtend, errorPrefix, getDefaults, getGlobal, isAdmin, isBrowser, isElectron, isNode, isNodeSdk, isSafari, isUWP, isValidFormat, isValidTimestamp, issuedAtTime, jsonEval, map, ordinal, promiseWithTimeout, safeGet, stringLength, stringToByteArray, stringify, uuidv4, validateArgCount, validateCallback, validateContextObject, validateNamespace */
 /**
  * @license
  * Copyright 2017 Google LLC
@@ -751,7 +762,7 @@ function createMockUserToken(token, projectId) {
  * Returns navigator.userAgent string or '' if it's not defined.
  * @return user agent string
  */
-function index_esm2017_getUA() {
+function getUA() {
     if (typeof navigator !== 'undefined' &&
         typeof navigator['userAgent'] === 'string') {
         return navigator['userAgent'];
@@ -772,7 +783,7 @@ function isMobileCordova() {
         // @ts-ignore Setting up an broadly applicable index signature for Window
         // just to deal with this case would probably be a bad idea.
         !!(window['cordova'] || window['phonegap'] || window['PhoneGap']) &&
-        /ios|iphone|ipod|ipad|android|blackberry|iemobile/i.test(index_esm2017_getUA()));
+        /ios|iphone|ipod|ipad|android|blackberry|iemobile/i.test(getUA()));
 }
 /**
  * Detect Node.js.
@@ -820,16 +831,16 @@ function isReactNative() {
 }
 /** Detects Electron apps. */
 function isElectron() {
-    return index_esm2017_getUA().indexOf('Electron/') >= 0;
+    return getUA().indexOf('Electron/') >= 0;
 }
 /** Detects Internet Explorer. */
 function isIE() {
-    const ua = index_esm2017_getUA();
+    const ua = getUA();
     return ua.indexOf('MSIE ') >= 0 || ua.indexOf('Trident/') >= 0;
 }
 /** Detects Universal Windows Platform apps. */
 function isUWP() {
-    return index_esm2017_getUA().indexOf('MSAppHost/') >= 0;
+    return getUA().indexOf('MSAppHost/') >= 0;
 }
 /**
  * Detect whether the current SDK build is the Node version.
@@ -840,7 +851,7 @@ function isNodeSdk() {
     return CONSTANTS.NODE_CLIENT === true || CONSTANTS.NODE_ADMIN === true;
 }
 /** Returns true if we are running in Safari. */
-function index_esm2017_isSafari() {
+function isSafari() {
     return (!isNode() &&
         navigator.userAgent.includes('Safari') &&
         !navigator.userAgent.includes('Chrome'));
@@ -849,7 +860,7 @@ function index_esm2017_isSafari() {
  * This method checks if indexedDB is supported by current browser/service worker context
  * @return true if indexedDB is supported by current browser/service worker context
  */
-function index_esm2017_isIndexedDBAvailable() {
+function isIndexedDBAvailable() {
     try {
         return typeof indexedDB === 'object';
     }
@@ -1200,7 +1211,7 @@ function map(obj, fn, contextObj) {
 /**
  * Deep equal two objects. Support Arrays and Objects.
  */
-function index_esm2017_deepEqual(a, b) {
+function deepEqual(a, b) {
     if (a === b) {
         return true;
     }
@@ -1213,7 +1224,7 @@ function index_esm2017_deepEqual(a, b) {
         const aProp = a[k];
         const bProp = b[k];
         if (isObject(aProp) && isObject(bProp)) {
-            if (!index_esm2017_deepEqual(aProp, bProp)) {
+            if (!deepEqual(aProp, bProp)) {
                 return false;
             }
         }
@@ -1280,7 +1291,7 @@ function promiseWithTimeout(promise, timeInMS = 2000) {
  * params object (e.g. {arg: 'val', arg2: 'val2'})
  * Note: You must prepend it with ? when adding it to a URL.
  */
-function index_esm2017_querystring(querystringParams) {
+function querystring(querystringParams) {
     const params = [];
     for (const [key, value] of Object.entries(querystringParams)) {
         if (Array.isArray(value)) {
@@ -1759,7 +1770,7 @@ class ObserverProxy {
 }
 /** Turn synchronous function into one called asynchronously. */
 // eslint-disable-next-line @typescript-eslint/ban-types
-function index_esm2017_async(fn, onError) {
+function async(fn, onError) {
     return (...args) => {
         Promise.resolve(true)
             .then(() => {
@@ -2121,7 +2132,7 @@ function indicator(i) {
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-function index_esm2017_getModularInstance(service) {
+function getModularInstance(service) {
     if (service && service._delegate) {
         return service._delegate;
     }
@@ -2133,638 +2144,273 @@ function index_esm2017_getModularInstance(service) {
 
 //# sourceMappingURL=index.esm2017.js.map
 
-;// CONCATENATED MODULE: ./node_modules/@firebase/component/dist/esm/index.esm2017.js
+
+/***/ }),
+
+/***/ 235:
+/***/ ((__unused_webpack_module, __unused_webpack___webpack_exports__, __webpack_require__) => {
 
 
-/**
- * Component for service name T, e.g. `auth`, `auth-internal`
- */
-class Component {
-    /**
-     *
-     * @param name The public service name, e.g. app, auth, firestore, database
-     * @param instanceFactory Service factory responsible for creating the public interface
-     * @param type whether the service provided by the component is public or private
-     */
-    constructor(name, instanceFactory, type) {
-        this.name = name;
-        this.instanceFactory = instanceFactory;
-        this.type = type;
-        this.multipleInstances = false;
-        /**
-         * Properties to be added to the service namespace
-         */
-        this.serviceProps = {};
-        this.instantiationMode = "LAZY" /* InstantiationMode.LAZY */;
-        this.onInstanceCreated = null;
-    }
-    setInstantiationMode(mode) {
-        this.instantiationMode = mode;
-        return this;
-    }
-    setMultipleInstances(multipleInstances) {
-        this.multipleInstances = multipleInstances;
-        return this;
-    }
-    setServiceProps(props) {
-        this.serviceProps = props;
-        return this;
-    }
-    setInstanceCreatedCallback(callback) {
-        this.onInstanceCreated = callback;
-        return this;
-    }
-}
+// EXTERNAL MODULE: ./node_modules/firebase/auth/dist/esm/index.esm.js + 3 modules
+var index_esm = __webpack_require__(858);
+// EXTERNAL MODULE: ./node_modules/firebase/firestore/dist/esm/index.esm.js + 2 modules
+var esm_index_esm = __webpack_require__(953);
+// EXTERNAL MODULE: ./src/script/view/init.js + 1 modules
+var init = __webpack_require__(761);
+// EXTERNAL MODULE: ./src/script/data/firebase-config.js
+var firebase_config = __webpack_require__(708);
+;// CONCATENATED MODULE: ./src/script/view/admin.js
+function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter); }
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i]; return arr2; }
+function ownKeys(e, r) { var t = Object.keys(e); if (Object.getOwnPropertySymbols) { var o = Object.getOwnPropertySymbols(e); r && (o = o.filter(function (r) { return Object.getOwnPropertyDescriptor(e, r).enumerable; })), t.push.apply(t, o); } return t; }
+function _objectSpread(e) { for (var r = 1; r < arguments.length; r++) { var t = null != arguments[r] ? arguments[r] : {}; r % 2 ? ownKeys(Object(t), !0).forEach(function (r) { _defineProperty(e, r, t[r]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys(Object(t)).forEach(function (r) { Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r)); }); } return e; }
+function _defineProperty(obj, key, value) { key = _toPropertyKey(key); if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+function _toPropertyKey(t) { var i = _toPrimitive(t, "string"); return "symbol" == _typeof(i) ? i : String(i); }
+function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r || "default"); if ("object" != _typeof(i)) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); }
 
-/**
- * @license
- * Copyright 2019 Google LLC
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *   http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-const DEFAULT_ENTRY_NAME = '[DEFAULT]';
 
-/**
- * @license
- * Copyright 2019 Google LLC
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *   http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-/**
- * Provider for instance for service name T, e.g. 'auth', 'auth-internal'
- * NameServiceMapping[T] is an alias for the type of the instance
- */
-class Provider {
-    constructor(name, container) {
-        this.name = name;
-        this.container = container;
-        this.component = null;
-        this.instances = new Map();
-        this.instancesDeferred = new Map();
-        this.instancesOptions = new Map();
-        this.onInitCallbacks = new Map();
-    }
-    /**
-     * @param identifier A provider can provide mulitple instances of a service
-     * if this.component.multipleInstances is true.
-     */
-    get(identifier) {
-        // if multipleInstances is not supported, use the default name
-        const normalizedIdentifier = this.normalizeInstanceIdentifier(identifier);
-        if (!this.instancesDeferred.has(normalizedIdentifier)) {
-            const deferred = new Deferred();
-            this.instancesDeferred.set(normalizedIdentifier, deferred);
-            if (this.isInitialized(normalizedIdentifier) ||
-                this.shouldAutoInitialize()) {
-                // initialize the service if it can be auto-initialized
-                try {
-                    const instance = this.getOrInitializeService({
-                        instanceIdentifier: normalizedIdentifier
-                    });
-                    if (instance) {
-                        deferred.resolve(instance);
-                    }
-                }
-                catch (e) {
-                    // when the instance factory throws an exception during get(), it should not cause
-                    // a fatal error. We just return the unresolved promise in this case.
-                }
-            }
-        }
-        return this.instancesDeferred.get(normalizedIdentifier).promise;
-    }
-    getImmediate(options) {
-        var _a;
-        // if multipleInstances is not supported, use the default name
-        const normalizedIdentifier = this.normalizeInstanceIdentifier(options === null || options === void 0 ? void 0 : options.identifier);
-        const optional = (_a = options === null || options === void 0 ? void 0 : options.optional) !== null && _a !== void 0 ? _a : false;
-        if (this.isInitialized(normalizedIdentifier) ||
-            this.shouldAutoInitialize()) {
-            try {
-                return this.getOrInitializeService({
-                    instanceIdentifier: normalizedIdentifier
-                });
-            }
-            catch (e) {
-                if (optional) {
-                    return null;
-                }
-                else {
-                    throw e;
-                }
-            }
-        }
-        else {
-            // In case a component is not initialized and should/can not be auto-initialized at the moment, return null if the optional flag is set, or throw
-            if (optional) {
-                return null;
-            }
-            else {
-                throw Error(`Service ${this.name} is not available`);
-            }
-        }
-    }
-    getComponent() {
-        return this.component;
-    }
-    setComponent(component) {
-        if (component.name !== this.name) {
-            throw Error(`Mismatching Component ${component.name} for Provider ${this.name}.`);
-        }
-        if (this.component) {
-            throw Error(`Component for ${this.name} has already been provided`);
-        }
-        this.component = component;
-        // return early without attempting to initialize the component if the component requires explicit initialization (calling `Provider.initialize()`)
-        if (!this.shouldAutoInitialize()) {
-            return;
-        }
-        // if the service is eager, initialize the default instance
-        if (isComponentEager(component)) {
-            try {
-                this.getOrInitializeService({ instanceIdentifier: DEFAULT_ENTRY_NAME });
-            }
-            catch (e) {
-                // when the instance factory for an eager Component throws an exception during the eager
-                // initialization, it should not cause a fatal error.
-                // TODO: Investigate if we need to make it configurable, because some component may want to cause
-                // a fatal error in this case?
-            }
-        }
-        // Create service instances for the pending promises and resolve them
-        // NOTE: if this.multipleInstances is false, only the default instance will be created
-        // and all promises with resolve with it regardless of the identifier.
-        for (const [instanceIdentifier, instanceDeferred] of this.instancesDeferred.entries()) {
-            const normalizedIdentifier = this.normalizeInstanceIdentifier(instanceIdentifier);
-            try {
-                // `getOrInitializeService()` should always return a valid instance since a component is guaranteed. use ! to make typescript happy.
-                const instance = this.getOrInitializeService({
-                    instanceIdentifier: normalizedIdentifier
-                });
-                instanceDeferred.resolve(instance);
-            }
-            catch (e) {
-                // when the instance factory throws an exception, it should not cause
-                // a fatal error. We just leave the promise unresolved.
-            }
-        }
-    }
-    clearInstance(identifier = DEFAULT_ENTRY_NAME) {
-        this.instancesDeferred.delete(identifier);
-        this.instancesOptions.delete(identifier);
-        this.instances.delete(identifier);
-    }
-    // app.delete() will call this method on every provider to delete the services
-    // TODO: should we mark the provider as deleted?
-    async delete() {
-        const services = Array.from(this.instances.values());
-        await Promise.all([
-            ...services
-                .filter(service => 'INTERNAL' in service) // legacy services
-                // eslint-disable-next-line @typescript-eslint/no-explicit-any
-                .map(service => service.INTERNAL.delete()),
-            ...services
-                .filter(service => '_delete' in service) // modularized services
-                // eslint-disable-next-line @typescript-eslint/no-explicit-any
-                .map(service => service._delete())
-        ]);
-    }
-    isComponentSet() {
-        return this.component != null;
-    }
-    isInitialized(identifier = DEFAULT_ENTRY_NAME) {
-        return this.instances.has(identifier);
-    }
-    getOptions(identifier = DEFAULT_ENTRY_NAME) {
-        return this.instancesOptions.get(identifier) || {};
-    }
-    initialize(opts = {}) {
-        const { options = {} } = opts;
-        const normalizedIdentifier = this.normalizeInstanceIdentifier(opts.instanceIdentifier);
-        if (this.isInitialized(normalizedIdentifier)) {
-            throw Error(`${this.name}(${normalizedIdentifier}) has already been initialized`);
-        }
-        if (!this.isComponentSet()) {
-            throw Error(`Component ${this.name} has not been registered yet`);
-        }
-        const instance = this.getOrInitializeService({
-            instanceIdentifier: normalizedIdentifier,
-            options
+
+
+var logoutBtn = document.querySelector('#logout');
+logoutBtn.addEventListener('click', function (e) {
+  e.preventDefault();
+  (0,index_esm/* signOut */.w7)(init/* auth */.I8)["catch"](function (error) {
+    var errorCode = error.code;
+    var errorMessage = error.message;
+    alert(errorCode, errorMessage);
+  });
+});
+(0,index_esm/* onAuthStateChanged */.Aj)(init/* auth */.I8, function (user) {
+  if (user) {
+    (0,esm_index_esm/* getDoc */.QT)((0,esm_index_esm/* doc */.JU)(init.db, firebase_config/* dbCollection */.$.users, user.uid)).then(function (docSnapshot) {
+      var _docSnapshot$data = docSnapshot.data(),
+        role = _docSnapshot$data.role;
+      if (role === 'user') {
+        window.location.href = 'user-dashboard.html';
+      } else if (role !== 'admin') {
+        alert('Invalid account role!');
+        (0,index_esm/* signOut */.w7)(init/* auth */.I8).then(function () {
+          window.location.href = window.location.origin;
+        })["catch"](function (error) {
+          return console.log(error);
         });
-        // resolve any pending promise waiting for the service instance
-        for (const [instanceIdentifier, instanceDeferred] of this.instancesDeferred.entries()) {
-            const normalizedDeferredIdentifier = this.normalizeInstanceIdentifier(instanceIdentifier);
-            if (normalizedIdentifier === normalizedDeferredIdentifier) {
-                instanceDeferred.resolve(instance);
-            }
-        }
-        return instance;
-    }
-    /**
-     *
-     * @param callback - a function that will be invoked  after the provider has been initialized by calling provider.initialize().
-     * The function is invoked SYNCHRONOUSLY, so it should not execute any longrunning tasks in order to not block the program.
-     *
-     * @param identifier An optional instance identifier
-     * @returns a function to unregister the callback
-     */
-    onInit(callback, identifier) {
-        var _a;
-        const normalizedIdentifier = this.normalizeInstanceIdentifier(identifier);
-        const existingCallbacks = (_a = this.onInitCallbacks.get(normalizedIdentifier)) !== null && _a !== void 0 ? _a : new Set();
-        existingCallbacks.add(callback);
-        this.onInitCallbacks.set(normalizedIdentifier, existingCallbacks);
-        const existingInstance = this.instances.get(normalizedIdentifier);
-        if (existingInstance) {
-            callback(existingInstance, normalizedIdentifier);
-        }
-        return () => {
-            existingCallbacks.delete(callback);
-        };
-    }
-    /**
-     * Invoke onInit callbacks synchronously
-     * @param instance the service instance`
-     */
-    invokeOnInitCallbacks(instance, identifier) {
-        const callbacks = this.onInitCallbacks.get(identifier);
-        if (!callbacks) {
-            return;
-        }
-        for (const callback of callbacks) {
-            try {
-                callback(instance, identifier);
-            }
-            catch (_a) {
-                // ignore errors in the onInit callback
-            }
-        }
-    }
-    getOrInitializeService({ instanceIdentifier, options = {} }) {
-        let instance = this.instances.get(instanceIdentifier);
-        if (!instance && this.component) {
-            instance = this.component.instanceFactory(this.container, {
-                instanceIdentifier: normalizeIdentifierForFactory(instanceIdentifier),
-                options
-            });
-            this.instances.set(instanceIdentifier, instance);
-            this.instancesOptions.set(instanceIdentifier, options);
-            /**
-             * Invoke onInit listeners.
-             * Note this.component.onInstanceCreated is different, which is used by the component creator,
-             * while onInit listeners are registered by consumers of the provider.
-             */
-            this.invokeOnInitCallbacks(instance, instanceIdentifier);
-            /**
-             * Order is important
-             * onInstanceCreated() should be called after this.instances.set(instanceIdentifier, instance); which
-             * makes `isInitialized()` return true.
-             */
-            if (this.component.onInstanceCreated) {
-                try {
-                    this.component.onInstanceCreated(this.container, instanceIdentifier, instance);
-                }
-                catch (_a) {
-                    // ignore errors in the onInstanceCreatedCallback
-                }
-            }
-        }
-        return instance || null;
-    }
-    normalizeInstanceIdentifier(identifier = DEFAULT_ENTRY_NAME) {
-        if (this.component) {
-            return this.component.multipleInstances ? identifier : DEFAULT_ENTRY_NAME;
-        }
-        else {
-            return identifier; // assume multiple instances are supported before the component is provided.
-        }
-    }
-    shouldAutoInitialize() {
-        return (!!this.component &&
-            this.component.instantiationMode !== "EXPLICIT" /* InstantiationMode.EXPLICIT */);
-    }
-}
-// undefined should be passed to the service factory for the default instance
-function normalizeIdentifierForFactory(identifier) {
-    return identifier === DEFAULT_ENTRY_NAME ? undefined : identifier;
-}
-function isComponentEager(component) {
-    return component.instantiationMode === "EAGER" /* InstantiationMode.EAGER */;
-}
-
-/**
- * @license
- * Copyright 2019 Google LLC
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *   http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-/**
- * ComponentContainer that provides Providers for service name T, e.g. `auth`, `auth-internal`
- */
-class ComponentContainer {
-    constructor(name) {
-        this.name = name;
-        this.providers = new Map();
-    }
-    /**
-     *
-     * @param component Component being added
-     * @param overwrite When a component with the same name has already been registered,
-     * if overwrite is true: overwrite the existing component with the new component and create a new
-     * provider with the new component. It can be useful in tests where you want to use different mocks
-     * for different tests.
-     * if overwrite is false: throw an exception
-     */
-    addComponent(component) {
-        const provider = this.getProvider(component.name);
-        if (provider.isComponentSet()) {
-            throw new Error(`Component ${component.name} has already been registered with ${this.name}`);
-        }
-        provider.setComponent(component);
-    }
-    addOrOverwriteComponent(component) {
-        const provider = this.getProvider(component.name);
-        if (provider.isComponentSet()) {
-            // delete the existing provider from the container, so we can register the new component
-            this.providers.delete(component.name);
-        }
-        this.addComponent(component);
-    }
-    /**
-     * getProvider provides a type safe interface where it can only be called with a field name
-     * present in NameServiceMapping interface.
-     *
-     * Firebase SDKs providing services should extend NameServiceMapping interface to register
-     * themselves.
-     */
-    getProvider(name) {
-        if (this.providers.has(name)) {
-            return this.providers.get(name);
-        }
-        // create a Provider for a service that hasn't registered with Firebase
-        const provider = new Provider(name, this);
-        this.providers.set(name, provider);
-        return provider;
-    }
-    getProviders() {
-        return Array.from(this.providers.values());
-    }
-}
-
-
-//# sourceMappingURL=index.esm2017.js.map
-
-;// CONCATENATED MODULE: ./node_modules/@firebase/logger/dist/esm/index.esm2017.js
-/**
- * @license
- * Copyright 2017 Google LLC
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *   http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-/**
- * A container for all of the Logger instances
- */
-const instances = [];
-/**
- * The JS SDK supports 5 log levels and also allows a user the ability to
- * silence the logs altogether.
- *
- * The order is a follows:
- * DEBUG < VERBOSE < INFO < WARN < ERROR
- *
- * All of the log types above the current log level will be captured (i.e. if
- * you set the log level to `INFO`, errors will still be logged, but `DEBUG` and
- * `VERBOSE` logs will not)
- */
-var index_esm2017_LogLevel;
-(function (LogLevel) {
-    LogLevel[LogLevel["DEBUG"] = 0] = "DEBUG";
-    LogLevel[LogLevel["VERBOSE"] = 1] = "VERBOSE";
-    LogLevel[LogLevel["INFO"] = 2] = "INFO";
-    LogLevel[LogLevel["WARN"] = 3] = "WARN";
-    LogLevel[LogLevel["ERROR"] = 4] = "ERROR";
-    LogLevel[LogLevel["SILENT"] = 5] = "SILENT";
-})(index_esm2017_LogLevel || (index_esm2017_LogLevel = {}));
-const levelStringToEnum = {
-    'debug': index_esm2017_LogLevel.DEBUG,
-    'verbose': index_esm2017_LogLevel.VERBOSE,
-    'info': index_esm2017_LogLevel.INFO,
-    'warn': index_esm2017_LogLevel.WARN,
-    'error': index_esm2017_LogLevel.ERROR,
-    'silent': index_esm2017_LogLevel.SILENT
-};
-/**
- * The default log level
- */
-const defaultLogLevel = index_esm2017_LogLevel.INFO;
-/**
- * By default, `console.debug` is not displayed in the developer console (in
- * chrome). To avoid forcing users to have to opt-in to these logs twice
- * (i.e. once for firebase, and once in the console), we are sending `DEBUG`
- * logs to the `console.log` function.
- */
-const ConsoleMethod = {
-    [index_esm2017_LogLevel.DEBUG]: 'log',
-    [index_esm2017_LogLevel.VERBOSE]: 'log',
-    [index_esm2017_LogLevel.INFO]: 'info',
-    [index_esm2017_LogLevel.WARN]: 'warn',
-    [index_esm2017_LogLevel.ERROR]: 'error'
-};
-/**
- * The default log handler will forward DEBUG, VERBOSE, INFO, WARN, and ERROR
- * messages on to their corresponding console counterparts (if the log method
- * is supported by the current log level)
- */
-const defaultLogHandler = (instance, logType, ...args) => {
-    if (logType < instance.logLevel) {
-        return;
-    }
-    const now = new Date().toISOString();
-    const method = ConsoleMethod[logType];
-    if (method) {
-        console[method](`[${now}]  ${instance.name}:`, ...args);
-    }
-    else {
-        throw new Error(`Attempted to log a message with an invalid logType (value: ${logType})`);
-    }
-};
-class Logger {
-    /**
-     * Gives you an instance of a Logger to capture messages according to
-     * Firebase's logging scheme.
-     *
-     * @param name The name that the logs will be associated with
-     */
-    constructor(name) {
-        this.name = name;
-        /**
-         * The log level of the given Logger instance.
-         */
-        this._logLevel = defaultLogLevel;
-        /**
-         * The main (internal) log handler for the Logger instance.
-         * Can be set to a new function in internal package code but not by user.
-         */
-        this._logHandler = defaultLogHandler;
-        /**
-         * The optional, additional, user-defined log handler for the Logger instance.
-         */
-        this._userLogHandler = null;
-        /**
-         * Capture the current instance for later use
-         */
-        instances.push(this);
-    }
-    get logLevel() {
-        return this._logLevel;
-    }
-    set logLevel(val) {
-        if (!(val in index_esm2017_LogLevel)) {
-            throw new TypeError(`Invalid value "${val}" assigned to \`logLevel\``);
-        }
-        this._logLevel = val;
-    }
-    // Workaround for setter/getter having to be the same type.
-    setLogLevel(val) {
-        this._logLevel = typeof val === 'string' ? levelStringToEnum[val] : val;
-    }
-    get logHandler() {
-        return this._logHandler;
-    }
-    set logHandler(val) {
-        if (typeof val !== 'function') {
-            throw new TypeError('Value assigned to `logHandler` must be a function');
-        }
-        this._logHandler = val;
-    }
-    get userLogHandler() {
-        return this._userLogHandler;
-    }
-    set userLogHandler(val) {
-        this._userLogHandler = val;
-    }
-    /**
-     * The functions below are all based on the `console` interface
-     */
-    debug(...args) {
-        this._userLogHandler && this._userLogHandler(this, index_esm2017_LogLevel.DEBUG, ...args);
-        this._logHandler(this, index_esm2017_LogLevel.DEBUG, ...args);
-    }
-    log(...args) {
-        this._userLogHandler &&
-            this._userLogHandler(this, index_esm2017_LogLevel.VERBOSE, ...args);
-        this._logHandler(this, index_esm2017_LogLevel.VERBOSE, ...args);
-    }
-    info(...args) {
-        this._userLogHandler && this._userLogHandler(this, index_esm2017_LogLevel.INFO, ...args);
-        this._logHandler(this, index_esm2017_LogLevel.INFO, ...args);
-    }
-    warn(...args) {
-        this._userLogHandler && this._userLogHandler(this, index_esm2017_LogLevel.WARN, ...args);
-        this._logHandler(this, index_esm2017_LogLevel.WARN, ...args);
-    }
-    error(...args) {
-        this._userLogHandler && this._userLogHandler(this, index_esm2017_LogLevel.ERROR, ...args);
-        this._logHandler(this, index_esm2017_LogLevel.ERROR, ...args);
-    }
-}
-function setLogLevel(level) {
-    instances.forEach(inst => {
-        inst.setLogLevel(level);
+      }
     });
+  } else {
+    window.location.href = window.location.origin;
+  }
+});
+var addForm = document.querySelector('#add-form');
+addForm.addEventListener('submit', function (e) {
+  e.preventDefault();
+  var title = addForm.title.value;
+  var desc = addForm.desc.value;
+  var url = addForm.url.value;
+  var category = addForm.category.value;
+  var tags = Array.from(addForm.querySelectorAll('[name^="tag"]')).map(function (tagInput) {
+    return tagInput.value;
+  }).filter(function (tag) {
+    return tag.trim() !== '';
+  });
+  (0,esm_index_esm/* addDoc */.ET)(init/* libRef */.dV, {
+    title: title,
+    desc: desc,
+    url: url,
+    category: category,
+    rating: 0,
+    voteCount: 0,
+    tags: tags,
+    timestamp: (0,esm_index_esm/* serverTimestamp */.Bt)()
+  }).then(function () {
+    addForm.reset();
+  });
+});
+addForm.resetx.addEventListener('click', function (e) {
+  e.preventDefault();
+  addForm.reset();
+});
+var editForm = document.querySelector('#edit-form');
+function showEditForm(id) {
+  (0,esm_index_esm/* getDoc */.QT)((0,esm_index_esm/* doc */.JU)(init.db, firebase_config/* dbCollection */.$.libraries, id)).then(function (docSnapshot) {
+    var data = docSnapshot.data();
+    editForm.id.value = id;
+    editForm.title.value = data.title;
+    editForm.desc.value = data.desc;
+    editForm.url.value = data.url;
+    editForm.category.value = data.category;
+    var tagsElem = Array.from(editForm.querySelectorAll('[name^="tag"]'));
+    tagsElem.forEach(function (tagInput, index) {
+      tagInput.value = data.tags[index] || '';
+    });
+  });
 }
-function index_esm2017_setUserLogHandler(logCallback, options) {
-    for (const instance of instances) {
-        let customLogLevel = null;
-        if (options && options.level) {
-            customLogLevel = levelStringToEnum[options.level];
-        }
-        if (logCallback === null) {
-            instance.userLogHandler = null;
-        }
-        else {
-            instance.userLogHandler = (instance, level, ...args) => {
-                const message = args
-                    .map(arg => {
-                    if (arg == null) {
-                        return null;
-                    }
-                    else if (typeof arg === 'string') {
-                        return arg;
-                    }
-                    else if (typeof arg === 'number' || typeof arg === 'boolean') {
-                        return arg.toString();
-                    }
-                    else if (arg instanceof Error) {
-                        return arg.message;
-                    }
-                    else {
-                        try {
-                            return JSON.stringify(arg);
-                        }
-                        catch (ignored) {
-                            return null;
-                        }
-                    }
-                })
-                    .filter(arg => arg)
-                    .join(' ');
-                if (level >= (customLogLevel !== null && customLogLevel !== void 0 ? customLogLevel : instance.logLevel)) {
-                    logCallback({
-                        level: index_esm2017_LogLevel[level].toLowerCase(),
-                        message,
-                        args,
-                        type: instance.name
-                    });
-                }
-            };
-        }
-    }
-}
+editForm.addEventListener('submit', function (e) {
+  e.preventDefault();
+  var id = editForm.id.value;
+  (0,esm_index_esm/* updateDoc */.r7)((0,esm_index_esm/* doc */.JU)(init.db, firebase_config/* dbCollection */.$.libraries, id), {
+    title: editForm.title.value,
+    desc: editForm.desc.value,
+    url: editForm.url.value,
+    category: editForm.category.value,
+    tags: Array.from(editForm.querySelectorAll('[name^="tag"]')).map(function (tagInput) {
+      return tagInput.value;
+    }).filter(function (tag) {
+      return tag.trim() !== '';
+    })
+  }).then(function () {
+    editForm.reset();
+  });
+});
+editForm.resetx.addEventListener('click', function (e) {
+  e.preventDefault();
+  editForm.reset();
+});
+(0,esm_index_esm/* onSnapshot */.cf)(init/* libRef */.dV, function (snapshot) {
+  var data = [];
+  snapshot.docs.forEach(function (document) {
+    data.push(_objectSpread(_objectSpread({}, document.data()), {}, {
+      id: document.id
+    }));
+  });
+  var libTable = document.querySelector('#lib-table');
+  libTable.innerHTML = "\n    <tr>\n        <th>ID</th>\n        <th>Judul</th>\n        <th>Deskripsi</th>\n        <th>url</th>\n        <th>Kategori</th>\n        <th>Tag</th>\n        <th>Action</th>\n        </tr>\n        ";
+  data.forEach(function (item) {
+    libTable.innerHTML += "\n      <tr data-id=\"".concat(item.id, "\">\n          <td>").concat(item.id, "</td>\n          <td>").concat(item.title, "</td>\n          <td>").concat(item.desc, "</td>\n          <td>").concat(item.url, "</td>\n          <td>").concat(item.category, "</td>  \n          <td>").concat(item.tags, "</td>\n          <td>\n              <button class=\"btn edit\">Edit</button>\n              <button class=\"btn delete\">Delete</button>\n              </td>\n              </tr>\n              ");
+  });
+  var editButtons = _toConsumableArray(document.querySelectorAll('.btn.edit'));
+  editButtons.forEach(function (button) {
+    button.addEventListener('click', function (e) {
+      var id = e.target.parentElement.parentElement.dataset.id;
+      showEditForm(id);
+    });
+  });
+  var deleteButtons = _toConsumableArray(document.querySelectorAll('.btn.delete'));
+  deleteButtons.forEach(function (button) {
+    button.addEventListener('click', function (e) {
+      var id = e.target.parentElement.parentElement.dataset.id;
+      (0,esm_index_esm/* deleteDoc */.oe)((0,esm_index_esm/* doc */.JU)(init.db, 'libraries', id))["catch"](function (err) {
+        return console.log(err);
+      });
+    });
+  });
+});
+;// CONCATENATED MODULE: ./src/admin-dashboard.js
 
 
-//# sourceMappingURL=index.esm2017.js.map
+/***/ }),
 
+/***/ 708:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   $: () => (/* binding */ dbCollection),
+/* harmony export */   q: () => (/* binding */ firebaseConfig)
+/* harmony export */ });
+var firebaseConfig = {
+  apiKey: 'AIzaSyDWNyKQpMAzdxYrx-6ZMIWLQlOCDYVsRXc',
+  authDomain: 'umkm-maju.firebaseapp.com',
+  projectId: 'umkm-maju',
+  storageBucket: 'umkm-maju.appspot.com',
+  messagingSenderId: '476036969425',
+  appId: '1:476036969425:web:ef970566295ef8a170a6f0',
+  measurementId: 'G-GNVRPSSBN8'
+};
+var dbCollection = {
+  libraries: 'libraries',
+  users: 'users'
+};
+
+
+/***/ }),
+
+/***/ 761:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+
+// EXPORTS
+__webpack_require__.d(__webpack_exports__, {
+  I8: () => (/* binding */ auth),
+  db: () => (/* binding */ db),
+  dV: () => (/* binding */ libRef)
+});
+
+// UNUSED EXPORTS: initApp, userRef
+
+// EXTERNAL MODULE: ./node_modules/@firebase/app/dist/esm/index.esm2017.js + 2 modules
+var index_esm2017 = __webpack_require__(389);
+;// CONCATENATED MODULE: ./node_modules/firebase/app/dist/esm/index.esm.js
+
+
+
+var index_esm_name = "firebase";
+var version = "10.7.1";
+
+/**
+ * @license
+ * Copyright 2020 Google LLC
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+(0,index_esm2017/* registerVersion */.KN)(index_esm_name, version, 'app');
+//# sourceMappingURL=index.esm.js.map
+
+// EXTERNAL MODULE: ./node_modules/firebase/firestore/dist/esm/index.esm.js + 2 modules
+var index_esm = __webpack_require__(953);
+// EXTERNAL MODULE: ./node_modules/firebase/auth/dist/esm/index.esm.js + 3 modules
+var esm_index_esm = __webpack_require__(858);
+// EXTERNAL MODULE: ./src/script/data/firebase-config.js
+var firebase_config = __webpack_require__(708);
+;// CONCATENATED MODULE: ./src/script/view/init.js
+
+
+
+
+var initApp = (0,index_esm2017/* initializeApp */.ZF)(firebase_config/* firebaseConfig */.q);
+var db = (0,index_esm/* getFirestore */.ad)();
+var libRef = (0,index_esm/* collection */.hJ)(db, firebase_config/* dbCollection */.$.libraries);
+var userRef = (0,index_esm/* collection */.hJ)(db, firebase_config/* dbCollection */.$.users);
+var auth = (0,esm_index_esm/* getAuth */.v0)();
+
+
+/***/ }),
+
+/***/ 389:
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+
+// EXPORTS
+__webpack_require__.d(__webpack_exports__, {
+  Jn: () => (/* binding */ SDK_VERSION),
+  qX: () => (/* binding */ _getProvider),
+  Xd: () => (/* binding */ _registerComponent),
+  Mq: () => (/* binding */ getApp),
+  ZF: () => (/* binding */ initializeApp),
+  KN: () => (/* binding */ registerVersion)
+});
+
+// UNUSED EXPORTS: FirebaseError, _DEFAULT_ENTRY_NAME, _addComponent, _addOrOverwriteComponent, _apps, _clearComponents, _components, _removeServiceInstance, deleteApp, getApps, onLog, setLogLevel
+
+// EXTERNAL MODULE: ./node_modules/@firebase/component/dist/esm/index.esm2017.js
+var index_esm2017 = __webpack_require__(463);
+// EXTERNAL MODULE: ./node_modules/@firebase/logger/dist/esm/index.esm2017.js
+var esm_index_esm2017 = __webpack_require__(333);
+// EXTERNAL MODULE: ./node_modules/@firebase/util/dist/index.esm2017.js
+var dist_index_esm2017 = __webpack_require__(444);
 ;// CONCATENATED MODULE: ./node_modules/idb/build/wrap-idb-value.js
 const instanceOfAny = (object, constructors) => constructors.some((c) => object instanceof c);
 
@@ -3128,7 +2774,7 @@ const version$1 = "0.9.25";
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-const logger = new Logger('@firebase/app');
+const logger = new esm_index_esm2017/* Logger */.Yd('@firebase/app');
 
 const name$n = "@firebase/app-compat";
 
@@ -3200,7 +2846,7 @@ const version = "10.7.1";
  *
  * @internal
  */
-const index_esm2017_DEFAULT_ENTRY_NAME = '[DEFAULT]';
+const DEFAULT_ENTRY_NAME = '[DEFAULT]';
 const PLATFORM_LOG_STRING = {
     [name$o]: 'fire-core',
     [name$n]: 'fire-core-compat',
@@ -3306,7 +2952,7 @@ function _registerComponent(component) {
  *
  * @internal
  */
-function index_esm2017_getProvider(app, name) {
+function _getProvider(app, name) {
     const heartbeatController = app.container
         .getProvider('heartbeat')
         .getImmediate({ optional: true });
@@ -3323,8 +2969,8 @@ function index_esm2017_getProvider(app, name) {
  *
  * @internal
  */
-function index_esm2017_removeServiceInstance(app, name, instanceIdentifier = index_esm2017_DEFAULT_ENTRY_NAME) {
-    index_esm2017_getProvider(app, name).clearInstance(instanceIdentifier);
+function _removeServiceInstance(app, name, instanceIdentifier = DEFAULT_ENTRY_NAME) {
+    _getProvider(app, name).clearInstance(instanceIdentifier);
 }
 /**
  * Test only
@@ -3366,7 +3012,7 @@ const ERRORS = {
     ["idb-set" /* AppError.IDB_WRITE */]: 'Error thrown when writing to IndexedDB. Original error: {$originalErrorMessage}.',
     ["idb-delete" /* AppError.IDB_DELETE */]: 'Error thrown when deleting from IndexedDB. Original error: {$originalErrorMessage}.'
 };
-const ERROR_FACTORY = new ErrorFactory('app', 'Firebase', ERRORS);
+const ERROR_FACTORY = new dist_index_esm2017/* ErrorFactory */.LL('app', 'Firebase', ERRORS);
 
 /**
  * @license
@@ -3393,7 +3039,7 @@ class FirebaseAppImpl {
         this._automaticDataCollectionEnabled =
             config.automaticDataCollectionEnabled;
         this._container = container;
-        this.container.addComponent(new Component('app', () => this, "PUBLIC" /* ComponentType.PUBLIC */));
+        this.container.addComponent(new index_esm2017/* Component */.wA('app', () => this, "PUBLIC" /* ComponentType.PUBLIC */));
     }
     get automaticDataCollectionEnabled() {
         this.checkDestroyed();
@@ -3463,29 +3109,29 @@ function initializeApp(_options, rawConfig = {}) {
         const name = rawConfig;
         rawConfig = { name };
     }
-    const config = Object.assign({ name: index_esm2017_DEFAULT_ENTRY_NAME, automaticDataCollectionEnabled: false }, rawConfig);
+    const config = Object.assign({ name: DEFAULT_ENTRY_NAME, automaticDataCollectionEnabled: false }, rawConfig);
     const name = config.name;
     if (typeof name !== 'string' || !name) {
         throw ERROR_FACTORY.create("bad-app-name" /* AppError.BAD_APP_NAME */, {
             appName: String(name)
         });
     }
-    options || (options = getDefaultAppConfig());
+    options || (options = (0,dist_index_esm2017/* getDefaultAppConfig */.aH)());
     if (!options) {
         throw ERROR_FACTORY.create("no-options" /* AppError.NO_OPTIONS */);
     }
     const existingApp = _apps.get(name);
     if (existingApp) {
         // return the existing app if options and config deep equal the ones in the existing app.
-        if (index_esm2017_deepEqual(options, existingApp.options) &&
-            index_esm2017_deepEqual(config, existingApp.config)) {
+        if ((0,dist_index_esm2017/* deepEqual */.vZ)(options, existingApp.options) &&
+            (0,dist_index_esm2017/* deepEqual */.vZ)(config, existingApp.config)) {
             return existingApp;
         }
         else {
             throw ERROR_FACTORY.create("duplicate-app" /* AppError.DUPLICATE_APP */, { appName: name });
         }
     }
-    const container = new ComponentContainer(name);
+    const container = new index_esm2017/* ComponentContainer */.H0(name);
     for (const component of _components.values()) {
         container.addComponent(component);
     }
@@ -3522,9 +3168,9 @@ function initializeApp(_options, rawConfig = {}) {
  *
  * @public
  */
-function getApp(name = index_esm2017_DEFAULT_ENTRY_NAME) {
+function getApp(name = DEFAULT_ENTRY_NAME) {
     const app = _apps.get(name);
-    if (!app && name === index_esm2017_DEFAULT_ENTRY_NAME && getDefaultAppConfig()) {
+    if (!app && name === DEFAULT_ENTRY_NAME && (0,dist_index_esm2017/* getDefaultAppConfig */.aH)()) {
         return initializeApp();
     }
     if (!app) {
@@ -3600,7 +3246,7 @@ function registerVersion(libraryKeyOrName, version, variant) {
         logger.warn(warning.join(' '));
         return;
     }
-    _registerComponent(new Component(`${library}-version`, () => ({ library, version }), "VERSION" /* ComponentType.VERSION */));
+    _registerComponent(new index_esm2017/* Component */.wA(`${library}-version`, () => ({ library, version }), "VERSION" /* ComponentType.VERSION */));
 }
 /**
  * Sets log handler for all Firebase SDKs.
@@ -3624,7 +3270,7 @@ function onLog(logCallback, options) {
  *
  * @public
  */
-function index_esm2017_setLogLevel(logLevel) {
+function setLogLevel(logLevel) {
     setLogLevel$1(logLevel);
 }
 
@@ -3680,7 +3326,7 @@ async function readHeartbeatsFromIndexedDB(app) {
         return result;
     }
     catch (e) {
-        if (e instanceof FirebaseError) {
+        if (e instanceof dist_index_esm2017/* FirebaseError */.ZR) {
             logger.warn(e.message);
         }
         else {
@@ -3700,7 +3346,7 @@ async function writeHeartbeatsToIndexedDB(app, heartbeatObject) {
         await tx.done;
     }
     catch (e) {
-        if (e instanceof FirebaseError) {
+        if (e instanceof dist_index_esm2017/* FirebaseError */.ZR) {
             logger.warn(e.message);
         }
         else {
@@ -3815,7 +3461,7 @@ class HeartbeatServiceImpl {
         const date = getUTCDateString();
         // Extract as many heartbeats from the cache as will fit under the size limit.
         const { heartbeatsToSend, unsentEntries } = extractHeartbeatsForHeader(this._heartbeatsCache.heartbeats);
-        const headerString = base64urlEncodeWithoutPadding(JSON.stringify({ version: 2, heartbeats: heartbeatsToSend }));
+        const headerString = (0,dist_index_esm2017/* base64urlEncodeWithoutPadding */.L)(JSON.stringify({ version: 2, heartbeats: heartbeatsToSend }));
         // Store last sent date to prevent another being logged/sent for the same day.
         this._heartbeatsCache.lastSentHeartbeatDate = date;
         if (unsentEntries.length > 0) {
@@ -3885,11 +3531,11 @@ class HeartbeatStorageImpl {
         this._canUseIndexedDBPromise = this.runIndexedDBEnvironmentCheck();
     }
     async runIndexedDBEnvironmentCheck() {
-        if (!index_esm2017_isIndexedDBAvailable()) {
+        if (!(0,dist_index_esm2017/* isIndexedDBAvailable */.hl)()) {
             return false;
         }
         else {
-            return validateIndexedDBOpenable()
+            return (0,dist_index_esm2017/* validateIndexedDBOpenable */.eu)()
                 .then(() => true)
                 .catch(() => false);
         }
@@ -3953,7 +3599,7 @@ class HeartbeatStorageImpl {
  */
 function countBytes(heartbeatsCache) {
     // base64 has a restricted set of characters, all of which should be 1 byte.
-    return base64urlEncodeWithoutPadding(
+    return (0,dist_index_esm2017/* base64urlEncodeWithoutPadding */.L)(
     // heartbeatsCache wrapper properties
     JSON.stringify({ version: 2, heartbeats: heartbeatsCache })).length;
 }
@@ -3975,8 +3621,8 @@ function countBytes(heartbeatsCache) {
  * limitations under the License.
  */
 function registerCoreComponents(variant) {
-    _registerComponent(new Component('platform-logger', container => new PlatformLoggerServiceImpl(container), "PRIVATE" /* ComponentType.PRIVATE */));
-    _registerComponent(new Component('heartbeat', container => new HeartbeatServiceImpl(container), "PRIVATE" /* ComponentType.PRIVATE */));
+    _registerComponent(new index_esm2017/* Component */.wA('platform-logger', container => new PlatformLoggerServiceImpl(container), "PRIVATE" /* ComponentType.PRIVATE */));
+    _registerComponent(new index_esm2017/* Component */.wA('heartbeat', container => new HeartbeatServiceImpl(container), "PRIVATE" /* ComponentType.PRIVATE */));
     // Register `app` package.
     registerVersion(name$o, version$1, variant);
     // BUILD_TARGET will be replaced by values like esm5, esm2017, cjs5, etc during the compilation
@@ -3996,6 +3642,683 @@ registerCoreComponents('');
 
 //# sourceMappingURL=index.esm2017.js.map
 
+
+/***/ }),
+
+/***/ 463:
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   H0: () => (/* binding */ ComponentContainer),
+/* harmony export */   wA: () => (/* binding */ Component)
+/* harmony export */ });
+/* unused harmony export Provider */
+/* harmony import */ var _firebase_util__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(444);
+
+
+/**
+ * Component for service name T, e.g. `auth`, `auth-internal`
+ */
+class Component {
+    /**
+     *
+     * @param name The public service name, e.g. app, auth, firestore, database
+     * @param instanceFactory Service factory responsible for creating the public interface
+     * @param type whether the service provided by the component is public or private
+     */
+    constructor(name, instanceFactory, type) {
+        this.name = name;
+        this.instanceFactory = instanceFactory;
+        this.type = type;
+        this.multipleInstances = false;
+        /**
+         * Properties to be added to the service namespace
+         */
+        this.serviceProps = {};
+        this.instantiationMode = "LAZY" /* InstantiationMode.LAZY */;
+        this.onInstanceCreated = null;
+    }
+    setInstantiationMode(mode) {
+        this.instantiationMode = mode;
+        return this;
+    }
+    setMultipleInstances(multipleInstances) {
+        this.multipleInstances = multipleInstances;
+        return this;
+    }
+    setServiceProps(props) {
+        this.serviceProps = props;
+        return this;
+    }
+    setInstanceCreatedCallback(callback) {
+        this.onInstanceCreated = callback;
+        return this;
+    }
+}
+
+/**
+ * @license
+ * Copyright 2019 Google LLC
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+const DEFAULT_ENTRY_NAME = '[DEFAULT]';
+
+/**
+ * @license
+ * Copyright 2019 Google LLC
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/**
+ * Provider for instance for service name T, e.g. 'auth', 'auth-internal'
+ * NameServiceMapping[T] is an alias for the type of the instance
+ */
+class Provider {
+    constructor(name, container) {
+        this.name = name;
+        this.container = container;
+        this.component = null;
+        this.instances = new Map();
+        this.instancesDeferred = new Map();
+        this.instancesOptions = new Map();
+        this.onInitCallbacks = new Map();
+    }
+    /**
+     * @param identifier A provider can provide mulitple instances of a service
+     * if this.component.multipleInstances is true.
+     */
+    get(identifier) {
+        // if multipleInstances is not supported, use the default name
+        const normalizedIdentifier = this.normalizeInstanceIdentifier(identifier);
+        if (!this.instancesDeferred.has(normalizedIdentifier)) {
+            const deferred = new _firebase_util__WEBPACK_IMPORTED_MODULE_0__/* .Deferred */ .BH();
+            this.instancesDeferred.set(normalizedIdentifier, deferred);
+            if (this.isInitialized(normalizedIdentifier) ||
+                this.shouldAutoInitialize()) {
+                // initialize the service if it can be auto-initialized
+                try {
+                    const instance = this.getOrInitializeService({
+                        instanceIdentifier: normalizedIdentifier
+                    });
+                    if (instance) {
+                        deferred.resolve(instance);
+                    }
+                }
+                catch (e) {
+                    // when the instance factory throws an exception during get(), it should not cause
+                    // a fatal error. We just return the unresolved promise in this case.
+                }
+            }
+        }
+        return this.instancesDeferred.get(normalizedIdentifier).promise;
+    }
+    getImmediate(options) {
+        var _a;
+        // if multipleInstances is not supported, use the default name
+        const normalizedIdentifier = this.normalizeInstanceIdentifier(options === null || options === void 0 ? void 0 : options.identifier);
+        const optional = (_a = options === null || options === void 0 ? void 0 : options.optional) !== null && _a !== void 0 ? _a : false;
+        if (this.isInitialized(normalizedIdentifier) ||
+            this.shouldAutoInitialize()) {
+            try {
+                return this.getOrInitializeService({
+                    instanceIdentifier: normalizedIdentifier
+                });
+            }
+            catch (e) {
+                if (optional) {
+                    return null;
+                }
+                else {
+                    throw e;
+                }
+            }
+        }
+        else {
+            // In case a component is not initialized and should/can not be auto-initialized at the moment, return null if the optional flag is set, or throw
+            if (optional) {
+                return null;
+            }
+            else {
+                throw Error(`Service ${this.name} is not available`);
+            }
+        }
+    }
+    getComponent() {
+        return this.component;
+    }
+    setComponent(component) {
+        if (component.name !== this.name) {
+            throw Error(`Mismatching Component ${component.name} for Provider ${this.name}.`);
+        }
+        if (this.component) {
+            throw Error(`Component for ${this.name} has already been provided`);
+        }
+        this.component = component;
+        // return early without attempting to initialize the component if the component requires explicit initialization (calling `Provider.initialize()`)
+        if (!this.shouldAutoInitialize()) {
+            return;
+        }
+        // if the service is eager, initialize the default instance
+        if (isComponentEager(component)) {
+            try {
+                this.getOrInitializeService({ instanceIdentifier: DEFAULT_ENTRY_NAME });
+            }
+            catch (e) {
+                // when the instance factory for an eager Component throws an exception during the eager
+                // initialization, it should not cause a fatal error.
+                // TODO: Investigate if we need to make it configurable, because some component may want to cause
+                // a fatal error in this case?
+            }
+        }
+        // Create service instances for the pending promises and resolve them
+        // NOTE: if this.multipleInstances is false, only the default instance will be created
+        // and all promises with resolve with it regardless of the identifier.
+        for (const [instanceIdentifier, instanceDeferred] of this.instancesDeferred.entries()) {
+            const normalizedIdentifier = this.normalizeInstanceIdentifier(instanceIdentifier);
+            try {
+                // `getOrInitializeService()` should always return a valid instance since a component is guaranteed. use ! to make typescript happy.
+                const instance = this.getOrInitializeService({
+                    instanceIdentifier: normalizedIdentifier
+                });
+                instanceDeferred.resolve(instance);
+            }
+            catch (e) {
+                // when the instance factory throws an exception, it should not cause
+                // a fatal error. We just leave the promise unresolved.
+            }
+        }
+    }
+    clearInstance(identifier = DEFAULT_ENTRY_NAME) {
+        this.instancesDeferred.delete(identifier);
+        this.instancesOptions.delete(identifier);
+        this.instances.delete(identifier);
+    }
+    // app.delete() will call this method on every provider to delete the services
+    // TODO: should we mark the provider as deleted?
+    async delete() {
+        const services = Array.from(this.instances.values());
+        await Promise.all([
+            ...services
+                .filter(service => 'INTERNAL' in service) // legacy services
+                // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                .map(service => service.INTERNAL.delete()),
+            ...services
+                .filter(service => '_delete' in service) // modularized services
+                // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                .map(service => service._delete())
+        ]);
+    }
+    isComponentSet() {
+        return this.component != null;
+    }
+    isInitialized(identifier = DEFAULT_ENTRY_NAME) {
+        return this.instances.has(identifier);
+    }
+    getOptions(identifier = DEFAULT_ENTRY_NAME) {
+        return this.instancesOptions.get(identifier) || {};
+    }
+    initialize(opts = {}) {
+        const { options = {} } = opts;
+        const normalizedIdentifier = this.normalizeInstanceIdentifier(opts.instanceIdentifier);
+        if (this.isInitialized(normalizedIdentifier)) {
+            throw Error(`${this.name}(${normalizedIdentifier}) has already been initialized`);
+        }
+        if (!this.isComponentSet()) {
+            throw Error(`Component ${this.name} has not been registered yet`);
+        }
+        const instance = this.getOrInitializeService({
+            instanceIdentifier: normalizedIdentifier,
+            options
+        });
+        // resolve any pending promise waiting for the service instance
+        for (const [instanceIdentifier, instanceDeferred] of this.instancesDeferred.entries()) {
+            const normalizedDeferredIdentifier = this.normalizeInstanceIdentifier(instanceIdentifier);
+            if (normalizedIdentifier === normalizedDeferredIdentifier) {
+                instanceDeferred.resolve(instance);
+            }
+        }
+        return instance;
+    }
+    /**
+     *
+     * @param callback - a function that will be invoked  after the provider has been initialized by calling provider.initialize().
+     * The function is invoked SYNCHRONOUSLY, so it should not execute any longrunning tasks in order to not block the program.
+     *
+     * @param identifier An optional instance identifier
+     * @returns a function to unregister the callback
+     */
+    onInit(callback, identifier) {
+        var _a;
+        const normalizedIdentifier = this.normalizeInstanceIdentifier(identifier);
+        const existingCallbacks = (_a = this.onInitCallbacks.get(normalizedIdentifier)) !== null && _a !== void 0 ? _a : new Set();
+        existingCallbacks.add(callback);
+        this.onInitCallbacks.set(normalizedIdentifier, existingCallbacks);
+        const existingInstance = this.instances.get(normalizedIdentifier);
+        if (existingInstance) {
+            callback(existingInstance, normalizedIdentifier);
+        }
+        return () => {
+            existingCallbacks.delete(callback);
+        };
+    }
+    /**
+     * Invoke onInit callbacks synchronously
+     * @param instance the service instance`
+     */
+    invokeOnInitCallbacks(instance, identifier) {
+        const callbacks = this.onInitCallbacks.get(identifier);
+        if (!callbacks) {
+            return;
+        }
+        for (const callback of callbacks) {
+            try {
+                callback(instance, identifier);
+            }
+            catch (_a) {
+                // ignore errors in the onInit callback
+            }
+        }
+    }
+    getOrInitializeService({ instanceIdentifier, options = {} }) {
+        let instance = this.instances.get(instanceIdentifier);
+        if (!instance && this.component) {
+            instance = this.component.instanceFactory(this.container, {
+                instanceIdentifier: normalizeIdentifierForFactory(instanceIdentifier),
+                options
+            });
+            this.instances.set(instanceIdentifier, instance);
+            this.instancesOptions.set(instanceIdentifier, options);
+            /**
+             * Invoke onInit listeners.
+             * Note this.component.onInstanceCreated is different, which is used by the component creator,
+             * while onInit listeners are registered by consumers of the provider.
+             */
+            this.invokeOnInitCallbacks(instance, instanceIdentifier);
+            /**
+             * Order is important
+             * onInstanceCreated() should be called after this.instances.set(instanceIdentifier, instance); which
+             * makes `isInitialized()` return true.
+             */
+            if (this.component.onInstanceCreated) {
+                try {
+                    this.component.onInstanceCreated(this.container, instanceIdentifier, instance);
+                }
+                catch (_a) {
+                    // ignore errors in the onInstanceCreatedCallback
+                }
+            }
+        }
+        return instance || null;
+    }
+    normalizeInstanceIdentifier(identifier = DEFAULT_ENTRY_NAME) {
+        if (this.component) {
+            return this.component.multipleInstances ? identifier : DEFAULT_ENTRY_NAME;
+        }
+        else {
+            return identifier; // assume multiple instances are supported before the component is provided.
+        }
+    }
+    shouldAutoInitialize() {
+        return (!!this.component &&
+            this.component.instantiationMode !== "EXPLICIT" /* InstantiationMode.EXPLICIT */);
+    }
+}
+// undefined should be passed to the service factory for the default instance
+function normalizeIdentifierForFactory(identifier) {
+    return identifier === DEFAULT_ENTRY_NAME ? undefined : identifier;
+}
+function isComponentEager(component) {
+    return component.instantiationMode === "EAGER" /* InstantiationMode.EAGER */;
+}
+
+/**
+ * @license
+ * Copyright 2019 Google LLC
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/**
+ * ComponentContainer that provides Providers for service name T, e.g. `auth`, `auth-internal`
+ */
+class ComponentContainer {
+    constructor(name) {
+        this.name = name;
+        this.providers = new Map();
+    }
+    /**
+     *
+     * @param component Component being added
+     * @param overwrite When a component with the same name has already been registered,
+     * if overwrite is true: overwrite the existing component with the new component and create a new
+     * provider with the new component. It can be useful in tests where you want to use different mocks
+     * for different tests.
+     * if overwrite is false: throw an exception
+     */
+    addComponent(component) {
+        const provider = this.getProvider(component.name);
+        if (provider.isComponentSet()) {
+            throw new Error(`Component ${component.name} has already been registered with ${this.name}`);
+        }
+        provider.setComponent(component);
+    }
+    addOrOverwriteComponent(component) {
+        const provider = this.getProvider(component.name);
+        if (provider.isComponentSet()) {
+            // delete the existing provider from the container, so we can register the new component
+            this.providers.delete(component.name);
+        }
+        this.addComponent(component);
+    }
+    /**
+     * getProvider provides a type safe interface where it can only be called with a field name
+     * present in NameServiceMapping interface.
+     *
+     * Firebase SDKs providing services should extend NameServiceMapping interface to register
+     * themselves.
+     */
+    getProvider(name) {
+        if (this.providers.has(name)) {
+            return this.providers.get(name);
+        }
+        // create a Provider for a service that hasn't registered with Firebase
+        const provider = new Provider(name, this);
+        this.providers.set(name, provider);
+        return provider;
+    }
+    getProviders() {
+        return Array.from(this.providers.values());
+    }
+}
+
+
+//# sourceMappingURL=index.esm2017.js.map
+
+
+/***/ }),
+
+/***/ 333:
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   Yd: () => (/* binding */ Logger),
+/* harmony export */   "in": () => (/* binding */ LogLevel)
+/* harmony export */ });
+/* unused harmony exports setLogLevel, setUserLogHandler */
+/**
+ * @license
+ * Copyright 2017 Google LLC
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/**
+ * A container for all of the Logger instances
+ */
+const instances = [];
+/**
+ * The JS SDK supports 5 log levels and also allows a user the ability to
+ * silence the logs altogether.
+ *
+ * The order is a follows:
+ * DEBUG < VERBOSE < INFO < WARN < ERROR
+ *
+ * All of the log types above the current log level will be captured (i.e. if
+ * you set the log level to `INFO`, errors will still be logged, but `DEBUG` and
+ * `VERBOSE` logs will not)
+ */
+var LogLevel;
+(function (LogLevel) {
+    LogLevel[LogLevel["DEBUG"] = 0] = "DEBUG";
+    LogLevel[LogLevel["VERBOSE"] = 1] = "VERBOSE";
+    LogLevel[LogLevel["INFO"] = 2] = "INFO";
+    LogLevel[LogLevel["WARN"] = 3] = "WARN";
+    LogLevel[LogLevel["ERROR"] = 4] = "ERROR";
+    LogLevel[LogLevel["SILENT"] = 5] = "SILENT";
+})(LogLevel || (LogLevel = {}));
+const levelStringToEnum = {
+    'debug': LogLevel.DEBUG,
+    'verbose': LogLevel.VERBOSE,
+    'info': LogLevel.INFO,
+    'warn': LogLevel.WARN,
+    'error': LogLevel.ERROR,
+    'silent': LogLevel.SILENT
+};
+/**
+ * The default log level
+ */
+const defaultLogLevel = LogLevel.INFO;
+/**
+ * By default, `console.debug` is not displayed in the developer console (in
+ * chrome). To avoid forcing users to have to opt-in to these logs twice
+ * (i.e. once for firebase, and once in the console), we are sending `DEBUG`
+ * logs to the `console.log` function.
+ */
+const ConsoleMethod = {
+    [LogLevel.DEBUG]: 'log',
+    [LogLevel.VERBOSE]: 'log',
+    [LogLevel.INFO]: 'info',
+    [LogLevel.WARN]: 'warn',
+    [LogLevel.ERROR]: 'error'
+};
+/**
+ * The default log handler will forward DEBUG, VERBOSE, INFO, WARN, and ERROR
+ * messages on to their corresponding console counterparts (if the log method
+ * is supported by the current log level)
+ */
+const defaultLogHandler = (instance, logType, ...args) => {
+    if (logType < instance.logLevel) {
+        return;
+    }
+    const now = new Date().toISOString();
+    const method = ConsoleMethod[logType];
+    if (method) {
+        console[method](`[${now}]  ${instance.name}:`, ...args);
+    }
+    else {
+        throw new Error(`Attempted to log a message with an invalid logType (value: ${logType})`);
+    }
+};
+class Logger {
+    /**
+     * Gives you an instance of a Logger to capture messages according to
+     * Firebase's logging scheme.
+     *
+     * @param name The name that the logs will be associated with
+     */
+    constructor(name) {
+        this.name = name;
+        /**
+         * The log level of the given Logger instance.
+         */
+        this._logLevel = defaultLogLevel;
+        /**
+         * The main (internal) log handler for the Logger instance.
+         * Can be set to a new function in internal package code but not by user.
+         */
+        this._logHandler = defaultLogHandler;
+        /**
+         * The optional, additional, user-defined log handler for the Logger instance.
+         */
+        this._userLogHandler = null;
+        /**
+         * Capture the current instance for later use
+         */
+        instances.push(this);
+    }
+    get logLevel() {
+        return this._logLevel;
+    }
+    set logLevel(val) {
+        if (!(val in LogLevel)) {
+            throw new TypeError(`Invalid value "${val}" assigned to \`logLevel\``);
+        }
+        this._logLevel = val;
+    }
+    // Workaround for setter/getter having to be the same type.
+    setLogLevel(val) {
+        this._logLevel = typeof val === 'string' ? levelStringToEnum[val] : val;
+    }
+    get logHandler() {
+        return this._logHandler;
+    }
+    set logHandler(val) {
+        if (typeof val !== 'function') {
+            throw new TypeError('Value assigned to `logHandler` must be a function');
+        }
+        this._logHandler = val;
+    }
+    get userLogHandler() {
+        return this._userLogHandler;
+    }
+    set userLogHandler(val) {
+        this._userLogHandler = val;
+    }
+    /**
+     * The functions below are all based on the `console` interface
+     */
+    debug(...args) {
+        this._userLogHandler && this._userLogHandler(this, LogLevel.DEBUG, ...args);
+        this._logHandler(this, LogLevel.DEBUG, ...args);
+    }
+    log(...args) {
+        this._userLogHandler &&
+            this._userLogHandler(this, LogLevel.VERBOSE, ...args);
+        this._logHandler(this, LogLevel.VERBOSE, ...args);
+    }
+    info(...args) {
+        this._userLogHandler && this._userLogHandler(this, LogLevel.INFO, ...args);
+        this._logHandler(this, LogLevel.INFO, ...args);
+    }
+    warn(...args) {
+        this._userLogHandler && this._userLogHandler(this, LogLevel.WARN, ...args);
+        this._logHandler(this, LogLevel.WARN, ...args);
+    }
+    error(...args) {
+        this._userLogHandler && this._userLogHandler(this, LogLevel.ERROR, ...args);
+        this._logHandler(this, LogLevel.ERROR, ...args);
+    }
+}
+function setLogLevel(level) {
+    instances.forEach(inst => {
+        inst.setLogLevel(level);
+    });
+}
+function setUserLogHandler(logCallback, options) {
+    for (const instance of instances) {
+        let customLogLevel = null;
+        if (options && options.level) {
+            customLogLevel = levelStringToEnum[options.level];
+        }
+        if (logCallback === null) {
+            instance.userLogHandler = null;
+        }
+        else {
+            instance.userLogHandler = (instance, level, ...args) => {
+                const message = args
+                    .map(arg => {
+                    if (arg == null) {
+                        return null;
+                    }
+                    else if (typeof arg === 'string') {
+                        return arg;
+                    }
+                    else if (typeof arg === 'number' || typeof arg === 'boolean') {
+                        return arg.toString();
+                    }
+                    else if (arg instanceof Error) {
+                        return arg.message;
+                    }
+                    else {
+                        try {
+                            return JSON.stringify(arg);
+                        }
+                        catch (ignored) {
+                            return null;
+                        }
+                    }
+                })
+                    .filter(arg => arg)
+                    .join(' ');
+                if (level >= (customLogLevel !== null && customLogLevel !== void 0 ? customLogLevel : instance.logLevel)) {
+                    logCallback({
+                        level: LogLevel[level].toLowerCase(),
+                        message,
+                        args,
+                        type: instance.name
+                    });
+                }
+            };
+        }
+    }
+}
+
+
+//# sourceMappingURL=index.esm2017.js.map
+
+
+/***/ }),
+
+/***/ 858:
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+
+// EXPORTS
+__webpack_require__.d(__webpack_exports__, {
+  Xb: () => (/* reexport */ createUserWithEmailAndPassword),
+  v0: () => (/* reexport */ getAuth),
+  Aj: () => (/* reexport */ onAuthStateChanged),
+  e5: () => (/* reexport */ signInWithEmailAndPassword),
+  w7: () => (/* reexport */ signOut)
+});
+
+// UNUSED EXPORTS: ActionCodeOperation, ActionCodeURL, AuthCredential, AuthErrorCodes, EmailAuthCredential, EmailAuthProvider, FacebookAuthProvider, FactorId, GithubAuthProvider, GoogleAuthProvider, OAuthCredential, OAuthProvider, OperationType, PhoneAuthCredential, PhoneAuthProvider, PhoneMultiFactorGenerator, ProviderId, RecaptchaVerifier, SAMLAuthProvider, SignInMethod, TotpMultiFactorGenerator, TotpSecret, TwitterAuthProvider, applyActionCode, beforeAuthStateChanged, browserLocalPersistence, browserPopupRedirectResolver, browserSessionPersistence, checkActionCode, confirmPasswordReset, connectAuthEmulator, debugErrorMap, deleteUser, fetchSignInMethodsForEmail, getAdditionalUserInfo, getIdToken, getIdTokenResult, getMultiFactorResolver, getRedirectResult, inMemoryPersistence, indexedDBLocalPersistence, initializeAuth, initializeRecaptchaConfig, isSignInWithEmailLink, linkWithCredential, linkWithPhoneNumber, linkWithPopup, linkWithRedirect, multiFactor, onIdTokenChanged, parseActionCodeURL, prodErrorMap, reauthenticateWithCredential, reauthenticateWithPhoneNumber, reauthenticateWithPopup, reauthenticateWithRedirect, reload, revokeAccessToken, sendEmailVerification, sendPasswordResetEmail, sendSignInLinkToEmail, setPersistence, signInAnonymously, signInWithCredential, signInWithCustomToken, signInWithEmailLink, signInWithPhoneNumber, signInWithPopup, signInWithRedirect, unlink, updateCurrentUser, updateEmail, updatePassword, updatePhoneNumber, updateProfile, useDeviceLanguage, validatePassword, verifyBeforeUpdateEmail, verifyPasswordResetCode
+
+// EXTERNAL MODULE: ./node_modules/@firebase/util/dist/index.esm2017.js
+var index_esm2017 = __webpack_require__(444);
+// EXTERNAL MODULE: ./node_modules/@firebase/app/dist/esm/index.esm2017.js + 2 modules
+var esm_index_esm2017 = __webpack_require__(389);
+// EXTERNAL MODULE: ./node_modules/@firebase/logger/dist/esm/index.esm2017.js
+var dist_esm_index_esm2017 = __webpack_require__(333);
 ;// CONCATENATED MODULE: ./node_modules/tslib/tslib.es6.mjs
 /******************************************************************************
 Copyright (c) Microsoft Corporation.
@@ -4368,6 +4691,8 @@ function __disposeResources(env) {
   __disposeResources,
 });
 
+// EXTERNAL MODULE: ./node_modules/@firebase/component/dist/esm/index.esm2017.js
+var component_dist_esm_index_esm2017 = __webpack_require__(463);
 ;// CONCATENATED MODULE: ./node_modules/@firebase/auth/dist/esm2017/index-dd468b12.js
 
 
@@ -4675,7 +5000,7 @@ const debugErrorMap = (/* unused pure expression or super */ null && (_debugErro
  * @public
  */
 const prodErrorMap = _prodErrorMap;
-const _DEFAULT_AUTH_ERROR_FACTORY = new ErrorFactory('auth', 'Firebase', _prodErrorMap());
+const _DEFAULT_AUTH_ERROR_FACTORY = new index_esm2017/* ErrorFactory */.LL('auth', 'Firebase', _prodErrorMap());
 /**
  * A map of potential `Auth` error codes, for easier comparison with errors
  * thrown by the SDK.
@@ -4810,15 +5135,15 @@ const AUTH_ERROR_CODES_MAP_DO_NOT_USE_INTERNALLY = {
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-const logClient = new Logger('@firebase/auth');
+const logClient = new dist_esm_index_esm2017/* Logger */.Yd('@firebase/auth');
 function _logWarn(msg, ...args) {
-    if (logClient.logLevel <= index_esm2017_LogLevel.WARN) {
-        logClient.warn(`Auth (${SDK_VERSION}): ${msg}`, ...args);
+    if (logClient.logLevel <= dist_esm_index_esm2017/* LogLevel */["in"].WARN) {
+        logClient.warn(`Auth (${esm_index_esm2017/* SDK_VERSION */.Jn}): ${msg}`, ...args);
     }
 }
 function _logError(msg, ...args) {
-    if (logClient.logLevel <= index_esm2017_LogLevel.ERROR) {
-        logClient.error(`Auth (${SDK_VERSION}): ${msg}`, ...args);
+    if (logClient.logLevel <= dist_esm_index_esm2017/* LogLevel */["in"].ERROR) {
+        logClient.error(`Auth (${esm_index_esm2017/* SDK_VERSION */.Jn}): ${msg}`, ...args);
     }
 }
 
@@ -4846,7 +5171,7 @@ function _createError(authOrCode, ...rest) {
 }
 function _errorWithCustomMessage(auth, code, message) {
     const errorMap = Object.assign(Object.assign({}, prodErrorMap()), { [code]: message });
-    const factory = new ErrorFactory('auth', 'Firebase', errorMap);
+    const factory = new index_esm2017/* ErrorFactory */.LL('auth', 'Firebase', errorMap);
     return factory.create(code, {
         appName: auth.name
     });
@@ -4963,7 +5288,7 @@ function _isOnline() {
         // navigator.onLine behavior unless cordova-plugin-network-information is
         // installed which overwrites the native navigator.onLine value and
         // defines navigator.connection.
-        (_isHttpOrHttps() || isBrowserExtension() || 'connection' in navigator)) {
+        (_isHttpOrHttps() || (0,index_esm2017/* isBrowserExtension */.ru)() || 'connection' in navigator)) {
         return navigator.onLine;
     }
     // If we can't determine the state, assume it is online.
@@ -5011,7 +5336,7 @@ class Delay {
         this.longDelay = longDelay;
         // Internal error when improperly initialized.
         debugAssert(longDelay > shortDelay, 'Short delay should be less than long delay!');
-        this.isMobile = isMobileCordova() || isReactNative();
+        this.isMobile = (0,index_esm2017/* isMobileCordova */.uI)() || (0,index_esm2017/* isReactNative */.b$)();
     }
     get() {
         if (!_isOnline()) {
@@ -5255,7 +5580,7 @@ async function _performApiRequest(auth, method, path, request, customErrorMap = 
                 };
             }
         }
-        const query = index_esm2017_querystring(Object.assign({ key: auth.config.apiKey }, params)).slice(1);
+        const query = (0,index_esm2017/* querystring */.xO)(Object.assign({ key: auth.config.apiKey }, params)).slice(1);
         const headers = await auth._getAdditionalHeaders();
         headers["Content-Type" /* HttpHeader.CONTENT_TYPE */] = 'application/json';
         if (auth.languageCode) {
@@ -5309,7 +5634,7 @@ async function _performFetchWithErrorHandling(auth, customErrorMap, fetchFn) {
         }
     }
     catch (e) {
-        if (e instanceof FirebaseError) {
+        if (e instanceof index_esm2017/* FirebaseError */.ZR) {
             throw e;
         }
         // Changing this to a different error code will log user out when there is a network error
@@ -5580,7 +5905,7 @@ function getIdToken(user, forceRefresh = false) {
  * @public
  */
 async function getIdTokenResult(user, forceRefresh = false) {
-    const userInternal = index_esm2017_getModularInstance(user);
+    const userInternal = (0,index_esm2017/* getModularInstance */.m9)(user);
     const token = await userInternal.getIdToken(forceRefresh);
     const claims = _parseToken(token);
     _assert(claims && claims.exp && claims.auth_time && claims.iat, userInternal.auth, "internal-error" /* AuthErrorCode.INTERNAL_ERROR */);
@@ -5608,7 +5933,7 @@ function _parseToken(token) {
         return null;
     }
     try {
-        const decoded = base64Decode(payload);
+        const decoded = (0,index_esm2017/* base64Decode */.tV)(payload);
         if (!decoded) {
             _logError('Failed to decode base64 JWT payload');
             return null;
@@ -5655,7 +5980,7 @@ async function _logoutIfInvalidated(user, promise, bypassAuthState = false) {
         return await promise;
     }
     catch (e) {
-        if (e instanceof FirebaseError && isUserInvalidated(e)) {
+        if (e instanceof index_esm2017/* FirebaseError */.ZR && isUserInvalidated(e)) {
             if (user.auth.currentUser === user) {
                 await user.auth.signOut();
             }
@@ -5849,7 +6174,7 @@ async function _reloadWithoutSaving(user) {
  * @public
  */
 async function reload(user) {
-    const userInternal = index_esm2017_getModularInstance(user);
+    const userInternal = (0,index_esm2017/* getModularInstance */.m9)(user);
     await _reloadWithoutSaving(userInternal);
     // Even though the current user hasn't changed, update
     // current user will trigger a persistence update w/ the
@@ -5893,7 +6218,7 @@ function extractProviderData(providers) {
  */
 async function requestStsToken(auth, refreshToken) {
     const response = await _performFetchWithErrorHandling(auth, {}, async () => {
-        const body = index_esm2017_querystring({
+        const body = (0,index_esm2017/* querystring */.xO)({
             'grant_type': 'refresh_token',
             'refresh_token': refreshToken
         }).slice(1);
@@ -6497,32 +6822,32 @@ function _getBrowserName(userAgent) {
     }
     return "Other" /* BrowserName.OTHER */;
 }
-function _isFirefox(ua = index_esm2017_getUA()) {
+function _isFirefox(ua = (0,index_esm2017/* getUA */.z$)()) {
     return /firefox\//i.test(ua);
 }
-function _isSafari(userAgent = index_esm2017_getUA()) {
+function _isSafari(userAgent = (0,index_esm2017/* getUA */.z$)()) {
     const ua = userAgent.toLowerCase();
     return (ua.includes('safari/') &&
         !ua.includes('chrome/') &&
         !ua.includes('crios/') &&
         !ua.includes('android'));
 }
-function _isChromeIOS(ua = index_esm2017_getUA()) {
+function _isChromeIOS(ua = (0,index_esm2017/* getUA */.z$)()) {
     return /crios\//i.test(ua);
 }
-function _isIEMobile(ua = index_esm2017_getUA()) {
+function _isIEMobile(ua = (0,index_esm2017/* getUA */.z$)()) {
     return /iemobile/i.test(ua);
 }
-function _isAndroid(ua = index_esm2017_getUA()) {
+function _isAndroid(ua = (0,index_esm2017/* getUA */.z$)()) {
     return /android/i.test(ua);
 }
-function _isBlackBerry(ua = index_esm2017_getUA()) {
+function _isBlackBerry(ua = (0,index_esm2017/* getUA */.z$)()) {
     return /blackberry/i.test(ua);
 }
-function _isWebOS(ua = index_esm2017_getUA()) {
+function _isWebOS(ua = (0,index_esm2017/* getUA */.z$)()) {
     return /webos/i.test(ua);
 }
-function _isIOS(ua = index_esm2017_getUA()) {
+function _isIOS(ua = (0,index_esm2017/* getUA */.z$)()) {
     return (/iphone|ipad|ipod/i.test(ua) ||
         (/macintosh/i.test(ua) && /mobile/i.test(ua)));
 }
@@ -6530,14 +6855,14 @@ function _isIOS7Or8(ua = getUA()) {
     return (/(iPad|iPhone|iPod).*OS 7_\d/i.test(ua) ||
         /(iPad|iPhone|iPod).*OS 8_\d/i.test(ua));
 }
-function _isIOSStandalone(ua = index_esm2017_getUA()) {
+function _isIOSStandalone(ua = (0,index_esm2017/* getUA */.z$)()) {
     var _a;
     return _isIOS(ua) && !!((_a = window.navigator) === null || _a === void 0 ? void 0 : _a.standalone);
 }
 function _isIE10() {
-    return isIE() && document.documentMode === 10;
+    return (0,index_esm2017/* isIE */.w1)() && document.documentMode === 10;
 }
-function _isMobileBrowser(ua = index_esm2017_getUA()) {
+function _isMobileBrowser(ua = (0,index_esm2017/* getUA */.z$)()) {
     // TODO: implement getBrowserName equivalent for OS.
     return (_isIOS(ua) ||
         _isAndroid(ua) ||
@@ -6581,13 +6906,13 @@ function _getClientVersion(clientPlatform, frameworks = []) {
     switch (clientPlatform) {
         case "Browser" /* ClientPlatform.BROWSER */:
             // In a browser environment, report the browser name.
-            reportedPlatform = _getBrowserName(index_esm2017_getUA());
+            reportedPlatform = _getBrowserName((0,index_esm2017/* getUA */.z$)());
             break;
         case "Worker" /* ClientPlatform.WORKER */:
             // Technically a worker runs from a browser but we need to differentiate a
             // worker from a browser.
             // For example: Chrome-Worker/JsCore/4.9.1/FirebaseCore-web.
-            reportedPlatform = `${_getBrowserName(index_esm2017_getUA())}-${clientPlatform}`;
+            reportedPlatform = `${_getBrowserName((0,index_esm2017/* getUA */.z$)())}-${clientPlatform}`;
             break;
         default:
             reportedPlatform = clientPlatform;
@@ -6595,7 +6920,7 @@ function _getClientVersion(clientPlatform, frameworks = []) {
     const reportedFrameworks = frameworks.length
         ? frameworks.join(',')
         : 'FirebaseCore-web'; /* default value if no other framework is used */
-    return `${reportedPlatform}/${"JsCore" /* ClientImplementation.CORE */}/${SDK_VERSION}/${reportedFrameworks}`;
+    return `${reportedPlatform}/${"JsCore" /* ClientImplementation.CORE */}/${esm_index_esm2017/* SDK_VERSION */.Jn}/${reportedFrameworks}`;
 }
 
 /**
@@ -7079,7 +7404,7 @@ class AuthImpl {
         // The public updateCurrentUser method needs to make a copy of the user,
         // and also check that the project matches
         const user = userExtern
-            ? index_esm2017_getModularInstance(userExtern)
+            ? (0,index_esm2017/* getModularInstance */.m9)(userExtern)
             : null;
         if (user) {
             _assert(user.auth.config.apiKey === this.config.apiKey, this, "invalid-user-token" /* AuthErrorCode.INVALID_AUTH */);
@@ -7161,7 +7486,7 @@ class AuthImpl {
         return this.assertedPersistence.persistence.type;
     }
     _updateErrorMap(errorMap) {
-        this._errorFactory = new ErrorFactory('auth', 'Firebase', errorMap());
+        this._errorFactory = new index_esm2017/* ErrorFactory */.LL('auth', 'Firebase', errorMap());
     }
     onAuthStateChanged(nextOrObserver, error, completed) {
         return this.registerStateListener(this.authStateSubscription, nextOrObserver, error, completed);
@@ -7410,14 +7735,14 @@ class AuthImpl {
  * @param auth Auth object passed in from developer
  */
 function _castAuth(auth) {
-    return index_esm2017_getModularInstance(auth);
+    return (0,index_esm2017/* getModularInstance */.m9)(auth);
 }
 /** Helper class to wrap subscriber logic */
 class Subscription {
     constructor(auth) {
         this.auth = auth;
         this.observer = null;
-        this.addObserver = createSubscribe(observer => (this.observer = observer));
+        this.addObserver = (0,index_esm2017/* createSubscribe */.ne)(observer => (this.observer = observer));
     }
     get next() {
         _assert(this.observer, this.auth, "internal-error" /* AuthErrorCode.INTERNAL_ERROR */);
@@ -7670,11 +7995,11 @@ async function _initializeRecaptchaConfig(auth) {
  * @public
  */
 function initializeAuth(app, deps) {
-    const provider = index_esm2017_getProvider(app, 'auth');
+    const provider = (0,esm_index_esm2017/* _getProvider */.qX)(app, 'auth');
     if (provider.isInitialized()) {
         const auth = provider.getImmediate();
         const initialOptions = provider.getOptions();
-        if (index_esm2017_deepEqual(initialOptions, deps !== null && deps !== void 0 ? deps : {})) {
+        if ((0,index_esm2017/* deepEqual */.vZ)(initialOptions, deps !== null && deps !== void 0 ? deps : {})) {
             return auth;
         }
         else {
@@ -8240,7 +8565,7 @@ class OAuthCredential extends AuthCredential {
             if (this.nonce && !this.pendingToken) {
                 postBody['nonce'] = this.nonce;
             }
-            request.postBody = index_esm2017_querystring(postBody);
+            request.postBody = (0,index_esm2017/* querystring */.xO)(postBody);
         }
         return request;
     }
@@ -8425,15 +8750,15 @@ function parseMode(mode) {
  * @param url
  */
 function parseDeepLink(url) {
-    const link = querystringDecode(extractQuerystring(url))['link'];
+    const link = (0,index_esm2017/* querystringDecode */.zd)((0,index_esm2017/* extractQuerystring */.pd)(url))['link'];
     // Double link case (automatic redirect).
     const doubleDeepLink = link
-        ? querystringDecode(extractQuerystring(link))['deep_link_id']
+        ? (0,index_esm2017/* querystringDecode */.zd)((0,index_esm2017/* extractQuerystring */.pd)(link))['deep_link_id']
         : null;
     // iOS custom scheme links.
-    const iOSDeepLink = querystringDecode(extractQuerystring(url))['deep_link_id'];
+    const iOSDeepLink = (0,index_esm2017/* querystringDecode */.zd)((0,index_esm2017/* extractQuerystring */.pd)(url))['deep_link_id'];
     const iOSDoubleDeepLink = iOSDeepLink
-        ? querystringDecode(extractQuerystring(iOSDeepLink))['link']
+        ? (0,index_esm2017/* querystringDecode */.zd)((0,index_esm2017/* extractQuerystring */.pd)(iOSDeepLink))['link']
         : null;
     return iOSDoubleDeepLink || iOSDeepLink || doubleDeepLink || link || url;
 }
@@ -8452,7 +8777,7 @@ class ActionCodeURL {
      */
     constructor(actionLink) {
         var _a, _b, _c, _d, _e, _f;
-        const searchParams = querystringDecode(extractQuerystring(actionLink));
+        const searchParams = (0,index_esm2017/* querystringDecode */.zd)((0,index_esm2017/* extractQuerystring */.pd)(actionLink));
         const apiKey = (_a = searchParams["apiKey" /* QueryField.API_KEY */]) !== null && _a !== void 0 ? _a : null;
         const code = (_b = searchParams["oobCode" /* QueryField.CODE */]) !== null && _b !== void 0 ? _b : null;
         const operation = parseMode((_c = searchParams["mode" /* QueryField.MODE */]) !== null && _c !== void 0 ? _c : null);
@@ -9592,7 +9917,7 @@ async function signInAnonymously(auth) {
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-class MultiFactorError extends FirebaseError {
+class MultiFactorError extends index_esm2017/* FirebaseError */.ZR {
     constructor(auth, error, operationType, user) {
         var _a;
         super(error.code, error.message);
@@ -10196,7 +10521,7 @@ async function createUserWithEmailAndPassword(auth, email, password) {
  * @public
  */
 function signInWithEmailAndPassword(auth, email, password) {
-    return signInWithCredential(getModularInstance(auth), EmailAuthProvider.credential(email, password)).catch(async (error) => {
+    return signInWithCredential((0,index_esm2017/* getModularInstance */.m9)(auth), EmailAuthProvider.credential(email, password)).catch(async (error) => {
         if (error.code === `auth/${"password-does-not-meet-requirements" /* AuthErrorCode.PASSWORD_DOES_NOT_MEET_REQUIREMENTS */}`) {
             void recachePasswordPolicy(auth);
         }
@@ -10850,7 +11175,7 @@ async function validatePassword(auth, password) {
  * @public
  */
 function onIdTokenChanged(auth, nextOrObserver, error, completed) {
-    return index_esm2017_getModularInstance(auth).onIdTokenChanged(nextOrObserver, error, completed);
+    return (0,index_esm2017/* getModularInstance */.m9)(auth).onIdTokenChanged(nextOrObserver, error, completed);
 }
 /**
  * Adds a blocking callback that runs before an auth state change
@@ -10863,7 +11188,7 @@ function onIdTokenChanged(auth, nextOrObserver, error, completed) {
  *   callback throws, allowing you to undo any side effects.
  */
 function beforeAuthStateChanged(auth, callback, onAbort) {
-    return index_esm2017_getModularInstance(auth).beforeAuthStateChanged(callback, onAbort);
+    return (0,index_esm2017/* getModularInstance */.m9)(auth).beforeAuthStateChanged(callback, onAbort);
 }
 /**
  * Adds an observer for changes to the user's sign-in state.
@@ -10881,7 +11206,7 @@ function beforeAuthStateChanged(auth, callback, onAbort) {
  * @public
  */
 function onAuthStateChanged(auth, nextOrObserver, error, completed) {
-    return index_esm2017_getModularInstance(auth).onAuthStateChanged(nextOrObserver, error, completed);
+    return (0,index_esm2017/* getModularInstance */.m9)(auth).onAuthStateChanged(nextOrObserver, error, completed);
 }
 /**
  * Sets the current language to the default device/browser preference.
@@ -10922,7 +11247,7 @@ function updateCurrentUser(auth, user) {
  * @public
  */
 function signOut(auth) {
-    return index_esm2017_getModularInstance(auth).signOut();
+    return (0,index_esm2017/* getModularInstance */.m9)(auth).signOut();
 }
 /**
  * Revokes the given access token. Currently only supports Apple OAuth access tokens.
@@ -11252,7 +11577,7 @@ class BrowserPersistenceClass {
  * limitations under the License.
  */
 function _iframeCannotSyncWebStorage() {
-    const ua = index_esm2017_getUA();
+    const ua = (0,index_esm2017/* getUA */.z$)();
     return _isSafari(ua) || _isIOS(ua);
 }
 // The polling period in case events are not supported
@@ -11853,8 +12178,8 @@ function _getWorkerGlobalScope() {
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-const index_dd468b12_DB_NAME = 'firebaseLocalStorageDb';
-const index_dd468b12_DB_VERSION = 1;
+const DB_NAME = 'firebaseLocalStorageDb';
+const DB_VERSION = 1;
 const DB_OBJECTSTORE_NAME = 'firebaseLocalStorage';
 const DB_DATA_KEYPATH = 'fbase_key';
 /**
@@ -11884,11 +12209,11 @@ function getObjectStore(db, isReadWrite) {
         .objectStore(DB_OBJECTSTORE_NAME);
 }
 function _deleteDatabase() {
-    const request = indexedDB.deleteDatabase(index_dd468b12_DB_NAME);
+    const request = indexedDB.deleteDatabase(DB_NAME);
     return new DBPromise(request).toPromise();
 }
 function _openDatabase() {
-    const request = indexedDB.open(index_dd468b12_DB_NAME, index_dd468b12_DB_VERSION);
+    const request = indexedDB.open(DB_NAME, DB_VERSION);
     return new Promise((resolve, reject) => {
         request.addEventListener('error', () => {
             reject(request.error);
@@ -12918,7 +13243,7 @@ class PhoneAuthProvider {
      * {@link PhoneAuthProvider.credential} to identify this flow..
      */
     verifyPhoneNumber(phoneOptions, applicationVerifier) {
-        return _verifyPhoneNumber(this.auth, phoneOptions, index_esm2017_getModularInstance(applicationVerifier));
+        return _verifyPhoneNumber(this.auth, phoneOptions, (0,index_esm2017/* getModularInstance */.m9)(applicationVerifier));
     }
     /**
      * Creates a phone auth credential, given the verification ID from
@@ -14102,7 +14427,7 @@ function getIframeUrl(auth) {
     const params = {
         apiKey: config.apiKey,
         appName: auth.name,
-        v: SDK_VERSION
+        v: esm_index_esm2017/* SDK_VERSION */.Jn
     };
     const eid = EID_FROM_APIHOST.get(auth.config.apiHost);
     if (eid) {
@@ -14112,7 +14437,7 @@ function getIframeUrl(auth) {
     if (frameworks.length) {
         params.fw = frameworks.join(',');
     }
-    return `${url}?${index_esm2017_querystring(params).slice(1)}`;
+    return `${url}?${(0,index_esm2017/* querystring */.xO)(params).slice(1)}`;
 }
 async function _openIframe(auth) {
     const context = await _loadGapi(auth);
@@ -14196,7 +14521,7 @@ function _open(auth, url, name, width = DEFAULT_WIDTH, height = DEFAULT_HEIGHT) 
         left });
     // Chrome iOS 7 and 8 is returning an undefined popup win when target is
     // specified, even though the popup is not necessarily blocked.
-    const ua = index_esm2017_getUA().toLowerCase();
+    const ua = (0,index_esm2017/* getUA */.z$)().toLowerCase();
     if (name) {
         target = _isChromeIOS(ua) ? TARGET_BLANK : name;
     }
@@ -14274,13 +14599,13 @@ async function _getRedirectUrl(auth, provider, authType, redirectUrl, eventId, a
         appName: auth.name,
         authType,
         redirectUrl,
-        v: SDK_VERSION,
+        v: esm_index_esm2017/* SDK_VERSION */.Jn,
         eventId
     };
     if (provider instanceof FederatedAuthProvider) {
         provider.setDefaultLanguage(auth.languageCode);
         params.providerId = provider.providerId || '';
-        if (!isEmpty(provider.getCustomParameters())) {
+        if (!(0,index_esm2017/* isEmpty */.xb)(provider.getCustomParameters())) {
             params.customParameters = JSON.stringify(provider.getCustomParameters());
         }
         // TODO set additionalParams from the provider as well?
@@ -14311,7 +14636,7 @@ async function _getRedirectUrl(auth, provider, authType, redirectUrl, eventId, a
         ? `#${FIREBASE_APP_CHECK_FRAGMENT_ID}=${encodeURIComponent(appCheckToken)}`
         : '';
     // Start at index 1 to skip the leading '&' in the query string
-    return `${getHandlerBase(auth)}?${index_esm2017_querystring(paramsDict).slice(1)}${appCheckTokenFragment}`;
+    return `${getHandlerBase(auth)}?${(0,index_esm2017/* querystring */.xO)(paramsDict).slice(1)}${appCheckTokenFragment}`;
 }
 function getHandlerBase({ config }) {
     if (!config.emulator) {
@@ -14653,7 +14978,7 @@ function _isEmptyString(input) {
 }
 
 var index_dd468b12_name = "@firebase/auth";
-var index_dd468b12_version = "1.5.1";
+var version = "1.5.1";
 
 /**
  * @license
@@ -14756,7 +15081,7 @@ function getVersionForPlatform(clientPlatform) {
 }
 /** @internal */
 function registerAuth(clientPlatform) {
-    _registerComponent(new Component("auth" /* _ComponentName.AUTH */, (container, { options: deps }) => {
+    (0,esm_index_esm2017/* _registerComponent */.Xd)(new component_dist_esm_index_esm2017/* Component */.wA("auth" /* _ComponentName.AUTH */, (container, { options: deps }) => {
         const app = container.getProvider('app').getImmediate();
         const heartbeatServiceProvider = container.getProvider('heartbeat');
         const appCheckServiceProvider = container.getProvider('app-check-internal');
@@ -14788,13 +15113,13 @@ function registerAuth(clientPlatform) {
         const authInternalProvider = container.getProvider("auth-internal" /* _ComponentName.AUTH_INTERNAL */);
         authInternalProvider.initialize();
     }));
-    _registerComponent(new Component("auth-internal" /* _ComponentName.AUTH_INTERNAL */, container => {
+    (0,esm_index_esm2017/* _registerComponent */.Xd)(new component_dist_esm_index_esm2017/* Component */.wA("auth-internal" /* _ComponentName.AUTH_INTERNAL */, container => {
         const auth = _castAuth(container.getProvider("auth" /* _ComponentName.AUTH */).getImmediate());
         return (auth => new AuthInterop(auth))(auth);
     }, "PRIVATE" /* ComponentType.PRIVATE */).setInstantiationMode("EXPLICIT" /* InstantiationMode.EXPLICIT */));
-    registerVersion(index_dd468b12_name, index_dd468b12_version, getVersionForPlatform(clientPlatform));
+    (0,esm_index_esm2017/* registerVersion */.KN)(index_dd468b12_name, version, getVersionForPlatform(clientPlatform));
     // BUILD_TARGET will be replaced by values like esm5, esm2017, cjs5, etc during the compilation
-    registerVersion(index_dd468b12_name, index_dd468b12_version, 'esm2017');
+    (0,esm_index_esm2017/* registerVersion */.KN)(index_dd468b12_name, version, 'esm2017');
 }
 
 /**
@@ -14814,7 +15139,7 @@ function registerAuth(clientPlatform) {
  * limitations under the License.
  */
 const DEFAULT_ID_TOKEN_MAX_AGE = 5 * 60;
-const authIdTokenMaxAge = getExperimentalSetting('authIdTokenMaxAge') || DEFAULT_ID_TOKEN_MAX_AGE;
+const authIdTokenMaxAge = (0,index_esm2017/* getExperimentalSetting */.Pz)('authIdTokenMaxAge') || DEFAULT_ID_TOKEN_MAX_AGE;
 let lastPostedIdToken = null;
 const mintCookieFactory = (url) => async (user) => {
     const idTokenResult = user && (await user.getIdTokenResult());
@@ -14846,8 +15171,8 @@ const mintCookieFactory = (url) => async (user) => {
  *
  * @public
  */
-function getAuth(app = getApp()) {
-    const provider = index_esm2017_getProvider(app, 'auth');
+function getAuth(app = (0,esm_index_esm2017/* getApp */.Mq)()) {
+    const provider = (0,esm_index_esm2017/* _getProvider */.qX)(app, 'auth');
     if (provider.isInitialized()) {
         return provider.getImmediate();
     }
@@ -14859,13 +15184,13 @@ function getAuth(app = getApp()) {
             browserSessionPersistence
         ]
     });
-    const authTokenSyncUrl = getExperimentalSetting('authTokenSyncURL');
+    const authTokenSyncUrl = (0,index_esm2017/* getExperimentalSetting */.Pz)('authTokenSyncURL');
     if (authTokenSyncUrl) {
         const mintCookie = mintCookieFactory(authTokenSyncUrl);
         beforeAuthStateChanged(auth, mintCookie, () => mintCookie(auth.currentUser));
         onIdTokenChanged(auth, user => mintCookie(user));
     }
-    const authEmulatorHost = getDefaultEmulatorHost('auth');
+    const authEmulatorHost = (0,index_esm2017/* getDefaultEmulatorHost */.q4)('auth');
     if (authEmulatorHost) {
         connectAuthEmulator(auth, `http://${authEmulatorHost}`);
     }
@@ -14889,6 +15214,37 @@ registerAuth("Browser" /* ClientPlatform.BROWSER */);
 
 //# sourceMappingURL=index.esm.js.map
 
+
+/***/ }),
+
+/***/ 953:
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+
+// EXPORTS
+__webpack_require__.d(__webpack_exports__, {
+  ET: () => (/* reexport */ addDoc),
+  hJ: () => (/* reexport */ collection),
+  oe: () => (/* reexport */ deleteDoc),
+  JU: () => (/* reexport */ doc),
+  QT: () => (/* reexport */ getDoc),
+  ad: () => (/* reexport */ getFirestore),
+  cf: () => (/* reexport */ onSnapshot),
+  Bt: () => (/* reexport */ serverTimestamp),
+  pl: () => (/* reexport */ setDoc),
+  r7: () => (/* reexport */ updateDoc)
+});
+
+// UNUSED EXPORTS: AbstractUserDataWriter, AggregateField, AggregateQuerySnapshot, Bytes, CACHE_SIZE_UNLIMITED, CollectionReference, DocumentReference, DocumentSnapshot, FieldPath, FieldValue, Firestore, FirestoreError, GeoPoint, LoadBundleTask, PersistentCacheIndexManager, Query, QueryCompositeFilterConstraint, QueryConstraint, QueryDocumentSnapshot, QueryEndAtConstraint, QueryFieldFilterConstraint, QueryLimitConstraint, QueryOrderByConstraint, QuerySnapshot, QueryStartAtConstraint, SnapshotMetadata, Timestamp, Transaction, WriteBatch, _AutoId, _ByteString, _DatabaseId, _DocumentKey, _EmptyAppCheckTokenProvider, _EmptyAuthCredentialsProvider, _FieldPath, _TestingHooks, _cast, _debugAssert, _isBase64Available, _logWarn, _validateIsNotUsedTogether, aggregateFieldEqual, aggregateQuerySnapshotEqual, and, arrayRemove, arrayUnion, average, clearIndexedDbPersistence, collectionGroup, connectFirestoreEmulator, count, deleteAllPersistentCacheIndexes, deleteField, disableNetwork, disablePersistentCacheIndexAutoCreation, documentId, enableIndexedDbPersistence, enableMultiTabIndexedDbPersistence, enableNetwork, enablePersistentCacheIndexAutoCreation, endAt, endBefore, ensureFirestoreConfigured, executeWrite, getAggregateFromServer, getCountFromServer, getDocFromCache, getDocFromServer, getDocs, getDocsFromCache, getDocsFromServer, getPersistentCacheIndexManager, increment, initializeFirestore, limit, limitToLast, loadBundle, memoryEagerGarbageCollector, memoryLocalCache, memoryLruGarbageCollector, namedQuery, onSnapshotsInSync, or, orderBy, persistentLocalCache, persistentMultipleTabManager, persistentSingleTabManager, query, queryEqual, refEqual, runTransaction, setIndexConfiguration, setLogLevel, snapshotEqual, startAfter, startAt, sum, terminate, waitForPendingWrites, where, writeBatch
+
+// EXTERNAL MODULE: ./node_modules/@firebase/app/dist/esm/index.esm2017.js + 2 modules
+var index_esm2017 = __webpack_require__(389);
+// EXTERNAL MODULE: ./node_modules/@firebase/component/dist/esm/index.esm2017.js
+var esm_index_esm2017 = __webpack_require__(463);
+// EXTERNAL MODULE: ./node_modules/@firebase/logger/dist/esm/index.esm2017.js
+var dist_esm_index_esm2017 = __webpack_require__(333);
+// EXTERNAL MODULE: ./node_modules/@firebase/util/dist/index.esm2017.js
+var dist_index_esm2017 = __webpack_require__(444);
 ;// CONCATENATED MODULE: ./node_modules/@firebase/webchannel-wrapper/dist/esm/index.esm2017.js
 var commonjsGlobal = typeof globalThis !== 'undefined' ? globalThis : typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : typeof self !== 'undefined' ? self : {};
 
@@ -15090,7 +15446,7 @@ let index_esm2017_S = "10.7.0";
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-const b = new Logger("@firebase/firestore");
+const b = new dist_esm_index_esm2017/* Logger */.Yd("@firebase/firestore");
 
 // Helper methods are needed because variables can't be exported as read/write
 function __PRIVATE_getLogLevel() {
@@ -15109,19 +15465,19 @@ function __PRIVATE_getLogLevel() {
  *     <li>`error` to log errors only.</li>
  *     <li><code>`silent` to turn off logging.</li>
  *   </ul>
- */ function dist_index_esm2017_setLogLevel(e) {
+ */ function setLogLevel(e) {
     b.setLogLevel(e);
 }
 
 function __PRIVATE_logDebug(e, ...t) {
-    if (b.logLevel <= index_esm2017_LogLevel.DEBUG) {
+    if (b.logLevel <= dist_esm_index_esm2017/* LogLevel */["in"].DEBUG) {
         const n = t.map(__PRIVATE_argToString);
         b.debug(`Firestore (${index_esm2017_S}): ${e}`, ...n);
     }
 }
 
 function __PRIVATE_logError(e, ...t) {
-    if (b.logLevel <= index_esm2017_LogLevel.ERROR) {
+    if (b.logLevel <= dist_esm_index_esm2017/* LogLevel */["in"].ERROR) {
         const n = t.map(__PRIVATE_argToString);
         b.error(`Firestore (${index_esm2017_S}): ${e}`, ...n);
     }
@@ -15130,7 +15486,7 @@ function __PRIVATE_logError(e, ...t) {
 /**
  * @internal
  */ function __PRIVATE_logWarn(e, ...t) {
-    if (b.logLevel <= index_esm2017_LogLevel.WARN) {
+    if (b.logLevel <= dist_esm_index_esm2017/* LogLevel */["in"].WARN) {
         const n = t.map(__PRIVATE_argToString);
         b.warn(`Firestore (${index_esm2017_S}): ${e}`, ...n);
     }
@@ -15359,7 +15715,7 @@ t) {
     DATA_LOSS: "data-loss"
 };
 
-/** An error returned by a Firestore operation. */ class FirestoreError extends FirebaseError {
+/** An error returned by a Firestore operation. */ class FirestoreError extends dist_index_esm2017/* FirebaseError */.ZR {
     /** @hideconstructor */
     constructor(
     /**
@@ -17354,7 +17710,7 @@ function forEach(e, t) {
     for (const n in e) Object.prototype.hasOwnProperty.call(e, n) && t(n, e[n]);
 }
 
-function index_esm2017_isEmpty(e) {
+function isEmpty(e) {
     for (const t in e) if (Object.prototype.hasOwnProperty.call(e, t)) return !1;
     return !0;
 }
@@ -19737,7 +20093,7 @@ function __PRIVATE_compareDocs(e, t, n) {
         }));
     }
     isEmpty() {
-        return index_esm2017_isEmpty(this.inner);
+        return isEmpty(this.inner);
     }
     size() {
         return this.innerSize;
@@ -27280,9 +27636,9 @@ class __PRIVATE_QueryEngine {
         })).next((() => i.result));
     }
     Ji(e, t, n, r) {
-        return n.documentReadCount < this.Ui ? (__PRIVATE_getLogLevel() <= index_esm2017_LogLevel.DEBUG && __PRIVATE_logDebug("QueryEngine", "SDK will not create cache indexes for query:", __PRIVATE_stringifyQuery(t), "since it only creates cache indexes for collection contains", "more than or equal to", this.Ui, "documents"), 
-        PersistencePromise.resolve()) : (__PRIVATE_getLogLevel() <= index_esm2017_LogLevel.DEBUG && __PRIVATE_logDebug("QueryEngine", "Query:", __PRIVATE_stringifyQuery(t), "scans", n.documentReadCount, "local documents and returns", r, "documents as results."), 
-        n.documentReadCount > this.Wi * r ? (__PRIVATE_getLogLevel() <= index_esm2017_LogLevel.DEBUG && __PRIVATE_logDebug("QueryEngine", "The SDK decides to create cache indexes for query:", __PRIVATE_stringifyQuery(t), "as using cache indexes may help improve performance."), 
+        return n.documentReadCount < this.Ui ? (__PRIVATE_getLogLevel() <= dist_esm_index_esm2017/* LogLevel */["in"].DEBUG && __PRIVATE_logDebug("QueryEngine", "SDK will not create cache indexes for query:", __PRIVATE_stringifyQuery(t), "since it only creates cache indexes for collection contains", "more than or equal to", this.Ui, "documents"), 
+        PersistencePromise.resolve()) : (__PRIVATE_getLogLevel() <= dist_esm_index_esm2017/* LogLevel */["in"].DEBUG && __PRIVATE_logDebug("QueryEngine", "Query:", __PRIVATE_stringifyQuery(t), "scans", n.documentReadCount, "local documents and returns", r, "documents as results."), 
+        n.documentReadCount > this.Wi * r ? (__PRIVATE_getLogLevel() <= dist_esm_index_esm2017/* LogLevel */["in"].DEBUG && __PRIVATE_logDebug("QueryEngine", "The SDK decides to create cache indexes for query:", __PRIVATE_stringifyQuery(t), "as using cache indexes may help improve performance."), 
         this.indexManager.createTargetIndexes(e, __PRIVATE_queryToTarget(t))) : PersistencePromise.resolve());
     }
     /**
@@ -27318,7 +27674,7 @@ class __PRIVATE_QueryEngine {
      */    ji(e, t, n, r) {
         return __PRIVATE_queryMatchesAllDocuments(t) || r.isEqual(SnapshotVersion.min()) ? PersistencePromise.resolve(null) : this.Gi.getDocuments(e, n).next((i => {
             const s = this.Yi(t, i);
-            return this.Zi(t, s, n, r) ? PersistencePromise.resolve(null) : (__PRIVATE_getLogLevel() <= index_esm2017_LogLevel.DEBUG && __PRIVATE_logDebug("QueryEngine", "Re-using previous result from %s to execute query: %s", r.toString(), __PRIVATE_stringifyQuery(t)), 
+            return this.Zi(t, s, n, r) ? PersistencePromise.resolve(null) : (__PRIVATE_getLogLevel() <= dist_esm_index_esm2017/* LogLevel */["in"].DEBUG && __PRIVATE_logDebug("QueryEngine", "Re-using previous result from %s to execute query: %s", r.toString(), __PRIVATE_stringifyQuery(t)), 
             this.Xi(e, s, t, __PRIVATE_newIndexOffsetSuccessorFromReadTime(r, -1)).next((e => e)));
         }));
         // Queries that have never seen a snapshot without limbo free documents
@@ -27363,7 +27719,7 @@ class __PRIVATE_QueryEngine {
         return !!i && (i.hasPendingWrites || i.version.compareTo(r) > 0);
     }
     Hi(e, t, n) {
-        return __PRIVATE_getLogLevel() <= index_esm2017_LogLevel.DEBUG && __PRIVATE_logDebug("QueryEngine", "Using full collection scan to execute query:", __PRIVATE_stringifyQuery(t)), 
+        return __PRIVATE_getLogLevel() <= dist_esm_index_esm2017/* LogLevel */["in"].DEBUG && __PRIVATE_logDebug("QueryEngine", "Using full collection scan to execute query:", __PRIVATE_stringifyQuery(t)), 
         this.Gi.getDocumentsMatchingQuery(e, t, IndexOffset.min(), n);
     }
     /**
@@ -33062,7 +33418,7 @@ class Firestore$1 {
         if ("string" == typeof r.mockUserToken) t = r.mockUserToken, n = User.MOCK_USER; else {
             // Let createMockUserToken validate first (catches common mistakes like
             // invalid field "uid" and missing field "sub" / "user_id".)
-            t = createMockUserToken(r.mockUserToken, null === (i = e._app) || void 0 === i ? void 0 : i.options.projectId);
+            t = (0,dist_index_esm2017/* createMockUserToken */.Sg)(r.mockUserToken, null === (i = e._app) || void 0 === i ? void 0 : i.options.projectId);
             const s = r.mockUserToken.sub || r.mockUserToken.user_id;
             if (!s) throw new FirestoreError(index_esm2017_D.INVALID_ARGUMENT, "mockUserToken must contain 'sub' or 'user_id' field!");
             n = new User(s);
@@ -33179,7 +33535,7 @@ class Firestore$1 {
 }
 
 function collection(e, t, ...n) {
-    if (e = index_esm2017_getModularInstance(e), __PRIVATE_validateNonEmptyArgument("collection", "path", t), e instanceof Firestore$1) {
+    if (e = (0,dist_index_esm2017/* getModularInstance */.m9)(e), __PRIVATE_validateNonEmptyArgument("collection", "path", t), e instanceof Firestore$1) {
         const r = ResourcePath.fromString(t, ...n);
         return __PRIVATE_validateCollectionPath(r), new CollectionReference(e, /* converter= */ null, r);
     }
@@ -33213,7 +33569,7 @@ function collection(e, t, ...n) {
 }
 
 function doc(e, t, ...n) {
-    if (e = index_esm2017_getModularInstance(e), 
+    if (e = (0,dist_index_esm2017/* getModularInstance */.m9)(e), 
     // We allow omission of 'pathString' but explicitly prohibit passing in both
     // 'undefined' and 'null'.
     1 === arguments.length && (t = __PRIVATE_AutoId.newId()), __PRIVATE_validateNonEmptyArgument("doc", "path", t), 
@@ -33638,11 +33994,11 @@ class LoadBundleTask {
 }
 
 function getFirestore(t, n) {
-    const r = "object" == typeof t ? t : getApp(), i = "string" == typeof t ? t : n || "(default)", s = index_esm2017_getProvider(r, "firestore").getImmediate({
+    const r = "object" == typeof t ? t : (0,index_esm2017/* getApp */.Mq)(), i = "string" == typeof t ? t : n || "(default)", s = (0,index_esm2017/* _getProvider */.qX)(r, "firestore").getImmediate({
         identifier: i
     });
     if (!s._initialized) {
-        const e = getDefaultEmulatorHostnameAndPort("firestore");
+        const e = (0,dist_index_esm2017/* getDefaultEmulatorHostnameAndPort */.P0)("firestore");
         e && connectFirestoreEmulator(s, ...e);
     }
     return s;
@@ -34459,7 +34815,7 @@ class __PRIVATE_NumericIncrementFieldValueImpl extends (/* unused pure expressio
         const _ = __PRIVATE_fieldPathFromDotSeparatedString(t, e, n);
         // For Compat types, we have to "extract" the underlying types before
         // performing validation.
-                r = index_esm2017_getModularInstance(r);
+                r = (0,dist_index_esm2017/* getModularInstance */.m9)(r);
         const a = i.Ru(_);
         if (r instanceof __PRIVATE_DeleteFieldValueImpl) 
         // Add it to the field mask, but don't add anything to updateData.
@@ -34485,7 +34841,7 @@ class __PRIVATE_NumericIncrementFieldValueImpl extends (/* unused pure expressio
         let n = a[e];
         // For Compat types, we have to "extract" the underlying types before
         // performing validation.
-                n = index_esm2017_getModularInstance(n);
+                n = (0,dist_index_esm2017/* getModularInstance */.m9)(n);
         const r = o.Ru(t);
         if (n instanceof __PRIVATE_DeleteFieldValueImpl) 
         // Add it to the field mask, but don't add anything to updateData.
@@ -34520,7 +34876,7 @@ class __PRIVATE_NumericIncrementFieldValueImpl extends (/* unused pure expressio
     if (__PRIVATE_looksLikeJsonObject(
     // Unwrap the API type from the Compat SDK. This will return the API type
     // from firestore-exp.
-    e = index_esm2017_getModularInstance(e))) return __PRIVATE_validatePlainObject("Unsupported field value:", t, e), 
+    e = (0,dist_index_esm2017/* getModularInstance */.m9)(e))) return __PRIVATE_validatePlainObject("Unsupported field value:", t, e), 
     __PRIVATE_parseObject(e, t);
     if (e instanceof FieldValue) 
     // FieldValues usually parse into transforms (except deleteField())
@@ -34580,7 +34936,7 @@ class __PRIVATE_NumericIncrementFieldValueImpl extends (/* unused pure expressio
         }(e, t);
     }
     return function __PRIVATE_parseScalarValue(e, t) {
-        if (null === (e = index_esm2017_getModularInstance(e))) return {
+        if (null === (e = (0,dist_index_esm2017/* getModularInstance */.m9)(e))) return {
             nullValue: "NULL_VALUE"
         };
         if ("number" == typeof e) return toNumber(t.serializer, e);
@@ -34634,7 +34990,7 @@ class __PRIVATE_NumericIncrementFieldValueImpl extends (/* unused pure expressio
 
 function __PRIVATE_parseObject(e, t) {
     const n = {};
-    return index_esm2017_isEmpty(e) ? 
+    return isEmpty(e) ? 
     // If we encounter an empty object, we explicitly add it to the update
     // mask to ensure that the server creates a map entry.
     t.path && t.path.length > 0 && t.fieldMask.push(t.path) : forEach(e, ((e, r) => {
@@ -34666,7 +35022,7 @@ function __PRIVATE_validatePlainObject(e, t, n) {
     if ((
     // If required, replace the FieldPath Compat class with with the firestore-exp
     // FieldPath.
-    t = index_esm2017_getModularInstance(t)) instanceof FieldPath) return t._internalPath;
+    t = (0,dist_index_esm2017/* getModularInstance */.m9)(t)) instanceof FieldPath) return t._internalPath;
     if ("string" == typeof t) return __PRIVATE_fieldPathFromDotSeparatedString(e, t);
     throw __PRIVATE_createError("Field path arguments must be of type string or ", e, 
     /* hasConverter= */ !1, 
@@ -35874,7 +36230,7 @@ function updateDoc(e, t, n, ...r) {
     o = "string" == typeof (
     // For Compat types, we have to "extract" the underlying types before
     // performing validation.
-    t = index_esm2017_getModularInstance(t)) || t instanceof FieldPath ? __PRIVATE_parseUpdateVarargs(s, "updateDoc", e._key, t, n, r) : __PRIVATE_parseUpdateData(s, "updateDoc", e._key, t);
+    t = (0,dist_index_esm2017/* getModularInstance */.m9)(t)) || t instanceof FieldPath ? __PRIVATE_parseUpdateVarargs(s, "updateDoc", e._key, t, n, r) : __PRIVATE_parseUpdateData(s, "updateDoc", e._key, t);
     return executeWrite(i, [ o.toMutation(e._key, Precondition.exists(!0)) ]);
 }
 
@@ -35904,7 +36260,7 @@ function updateDoc(e, t, n, ...r) {
 
 function onSnapshot(e, ...t) {
     var n, r, i;
-    e = index_esm2017_getModularInstance(e);
+    e = (0,dist_index_esm2017/* getModularInstance */.m9)(e);
     let s = {
         includeMetadataChanges: !1
     }, o = 0;
@@ -36790,7 +37146,7 @@ let Se = null;
  */ !function __PRIVATE_registerFirestore(e, t = !0) {
     !function __PRIVATE_setSDKVersion(e) {
         index_esm2017_S = e;
-    }(SDK_VERSION), _registerComponent(new Component("firestore", ((e, {instanceIdentifier: n, options: r}) => {
+    }(index_esm2017/* SDK_VERSION */.Jn), (0,index_esm2017/* _registerComponent */.Xd)(new esm_index_esm2017/* Component */.wA("firestore", ((e, {instanceIdentifier: n, options: r}) => {
         const i = e.getProvider("app").getImmediate(), s = new Firestore(new __PRIVATE_FirebaseAuthCredentialsProvider(e.getProvider("auth-internal")), new __PRIVATE_FirebaseAppCheckTokenProvider(e.getProvider("app-check-internal")), function __PRIVATE_databaseIdFromApp(e, t) {
             if (!Object.prototype.hasOwnProperty.apply(e.options, [ "projectId" ])) throw new FirestoreError(index_esm2017_D.INVALID_ARGUMENT, '"projectId" not provided in firebase.initializeApp.');
             return new DatabaseId(e.options.projectId, t);
@@ -36798,9 +37154,9 @@ let Se = null;
         return r = Object.assign({
             useFetchStreams: t
         }, r), s._setSettings(r), s;
-    }), "PUBLIC").setMultipleInstances(!0)), registerVersion(index_esm2017_w, "4.4.0", e), 
+    }), "PUBLIC").setMultipleInstances(!0)), (0,index_esm2017/* registerVersion */.KN)(index_esm2017_w, "4.4.0", e), 
     // BUILD_TARGET will be replaced by values like esm5, esm2017, cjs5, etc during the compilation
-    registerVersion(index_esm2017_w, "4.4.0", "esm2017");
+    (0,index_esm2017/* registerVersion */.KN)(index_esm2017_w, "4.4.0", "esm2017");
 }();
 
 
@@ -36810,200 +37166,13 @@ let Se = null;
 
 //# sourceMappingURL=index.esm.js.map
 
-;// CONCATENATED MODULE: ./node_modules/firebase/app/dist/esm/index.esm.js
 
+/***/ })
 
-
-var index_esm_name = "firebase";
-var index_esm_version = "10.7.1";
-
-/**
- * @license
- * Copyright 2020 Google LLC
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *   http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-registerVersion(index_esm_name, index_esm_version, 'app');
-//# sourceMappingURL=index.esm.js.map
-
-;// CONCATENATED MODULE: ./src/script/data/firebase-config.js
-var firebaseConfig = {
-  apiKey: 'AIzaSyDWNyKQpMAzdxYrx-6ZMIWLQlOCDYVsRXc',
-  authDomain: 'umkm-maju.firebaseapp.com',
-  projectId: 'umkm-maju',
-  storageBucket: 'umkm-maju.appspot.com',
-  messagingSenderId: '476036969425',
-  appId: '1:476036969425:web:ef970566295ef8a170a6f0',
-  measurementId: 'G-GNVRPSSBN8'
-};
-var dbCollection = {
-  libraries: 'libraries',
-  users: 'users'
-};
-
-;// CONCATENATED MODULE: ./src/script/view/init.js
-
-
-
-
-var initApp = initializeApp(firebaseConfig);
-var init_db = getFirestore();
-var libRef = collection(init_db, dbCollection.libraries);
-var userRef = collection(init_db, dbCollection.users);
-var auth = getAuth();
-
-;// CONCATENATED MODULE: ./src/script/view/admin.js
-function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
-function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
-function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
-function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
-function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter); }
-function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
-function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i]; return arr2; }
-function ownKeys(e, r) { var t = Object.keys(e); if (Object.getOwnPropertySymbols) { var o = Object.getOwnPropertySymbols(e); r && (o = o.filter(function (r) { return Object.getOwnPropertyDescriptor(e, r).enumerable; })), t.push.apply(t, o); } return t; }
-function _objectSpread(e) { for (var r = 1; r < arguments.length; r++) { var t = null != arguments[r] ? arguments[r] : {}; r % 2 ? ownKeys(Object(t), !0).forEach(function (r) { _defineProperty(e, r, t[r]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys(Object(t)).forEach(function (r) { Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r)); }); } return e; }
-function _defineProperty(obj, key, value) { key = _toPropertyKey(key); if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-function _toPropertyKey(t) { var i = _toPrimitive(t, "string"); return "symbol" == _typeof(i) ? i : String(i); }
-function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r || "default"); if ("object" != _typeof(i)) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); }
-
-
-
-
-var logoutBtn = document.querySelector('#logout');
-logoutBtn.addEventListener('click', function (e) {
-  e.preventDefault();
-  signOut(auth)["catch"](function (error) {
-    var errorCode = error.code;
-    var errorMessage = error.message;
-    alert(errorCode, errorMessage);
-  });
-});
-onAuthStateChanged(auth, function (user) {
-  if (user) {
-    getDoc(doc(init_db, dbCollection.users, user.uid)).then(function (docSnapshot) {
-      var _docSnapshot$data = docSnapshot.data(),
-        role = _docSnapshot$data.role;
-      if (role === 'user') {
-        window.location.href = 'user-dashboard.html';
-      } else if (role !== 'admin') {
-        alert('Invalid account role!');
-        signOut(auth).then(function () {
-          window.location.href = window.location.origin;
-        })["catch"](function (error) {
-          return console.log(error);
-        });
-      }
-    });
-  } else {
-    window.location.href = window.location.origin;
-  }
-});
-var addForm = document.querySelector('#add-form');
-addForm.addEventListener('submit', function (e) {
-  e.preventDefault();
-  var title = addForm.title.value;
-  var desc = addForm.desc.value;
-  var url = addForm.url.value;
-  var category = addForm.category.value;
-  var tags = Array.from(addForm.querySelectorAll('[name^="tag"]')).map(function (tagInput) {
-    return tagInput.value;
-  }).filter(function (tag) {
-    return tag.trim() !== '';
-  });
-  addDoc(libRef, {
-    title: title,
-    desc: desc,
-    url: url,
-    category: category,
-    rating: 0,
-    voteCount: 0,
-    tags: tags,
-    timestamp: serverTimestamp()
-  }).then(function () {
-    addForm.reset();
-  });
-});
-addForm.resetx.addEventListener('click', function (e) {
-  e.preventDefault();
-  addForm.reset();
-});
-var editForm = document.querySelector('#edit-form');
-function showEditForm(id) {
-  getDoc(doc(init_db, dbCollection.libraries, id)).then(function (docSnapshot) {
-    var data = docSnapshot.data();
-    editForm.id.value = id;
-    editForm.title.value = data.title;
-    editForm.desc.value = data.desc;
-    editForm.url.value = data.url;
-    editForm.category.value = data.category;
-    var tagsElem = Array.from(editForm.querySelectorAll('[name^="tag"]'));
-    tagsElem.forEach(function (tagInput, index) {
-      tagInput.value = data.tags[index] || '';
-    });
-  });
-}
-editForm.addEventListener('submit', function (e) {
-  e.preventDefault();
-  var id = editForm.id.value;
-  updateDoc(doc(init_db, dbCollection.libraries, id), {
-    title: editForm.title.value,
-    desc: editForm.desc.value,
-    url: editForm.url.value,
-    category: editForm.category.value,
-    tags: Array.from(editForm.querySelectorAll('[name^="tag"]')).map(function (tagInput) {
-      return tagInput.value;
-    }).filter(function (tag) {
-      return tag.trim() !== '';
-    })
-  }).then(function () {
-    editForm.reset();
-  });
-});
-editForm.resetx.addEventListener('click', function (e) {
-  e.preventDefault();
-  editForm.reset();
-});
-onSnapshot(libRef, function (snapshot) {
-  var data = [];
-  snapshot.docs.forEach(function (document) {
-    data.push(_objectSpread(_objectSpread({}, document.data()), {}, {
-      id: document.id
-    }));
-  });
-  var libTable = document.querySelector('#lib-table');
-  libTable.innerHTML = "\n    <tr>\n        <th>ID</th>\n        <th>Judul</th>\n        <th>Deskripsi</th>\n        <th>url</th>\n        <th>Kategori</th>\n        <th>Tag</th>\n        <th>Action</th>\n        </tr>\n        ";
-  data.forEach(function (item) {
-    libTable.innerHTML += "\n      <tr data-id=\"".concat(item.id, "\">\n          <td>").concat(item.id, "</td>\n          <td>").concat(item.title, "</td>\n          <td>").concat(item.desc, "</td>\n          <td>").concat(item.url, "</td>\n          <td>").concat(item.category, "</td>  \n          <td>").concat(item.tags, "</td>\n          <td>\n              <button class=\"btn edit\">Edit</button>\n              <button class=\"btn delete\">Delete</button>\n              </td>\n              </tr>\n              ");
-  });
-  var editButtons = _toConsumableArray(document.querySelectorAll('.btn.edit'));
-  editButtons.forEach(function (button) {
-    button.addEventListener('click', function (e) {
-      var id = e.target.parentElement.parentElement.dataset.id;
-      showEditForm(id);
-    });
-  });
-  var deleteButtons = _toConsumableArray(document.querySelectorAll('.btn.delete'));
-  deleteButtons.forEach(function (button) {
-    button.addEventListener('click', function (e) {
-      var id = e.target.parentElement.parentElement.dataset.id;
-      deleteDoc(doc(init_db, 'libraries', id))["catch"](function (err) {
-        return console.log(err);
-      });
-    });
-  });
-});
-;// CONCATENATED MODULE: ./src/admin-dashboard.js
-
-
-/******/ })()
-;
+},
+/******/ __webpack_require__ => { // webpackRuntimeModules
+/******/ var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
+/******/ __webpack_require__.O(0, [712], () => (__webpack_exec__(235)));
+/******/ var __webpack_exports__ = __webpack_require__.O();
+/******/ }
+]);
