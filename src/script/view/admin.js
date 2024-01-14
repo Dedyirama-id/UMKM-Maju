@@ -6,7 +6,17 @@ import {
 import { db, libRef, auth } from './init';
 import { dbCollection } from '../data/firebase-config';
 
+const btnAddNew = document.querySelector('#btn-add-new');
+const secAdd = document.querySelector('#sec-add-form');
+const secEdit = document.querySelector('#sec-edit-form');
 const logoutBtn = document.querySelector('#logout');
+
+btnAddNew.addEventListener('click', (e) => {
+  e.preventDefault();
+  secAdd.classList.remove('hidden');
+  secEdit.classList.add('hidden');
+});
+
 logoutBtn.addEventListener('click', (e) => {
   e.preventDefault();
   signOut(auth)
@@ -45,7 +55,7 @@ addForm.addEventListener('submit', (e) => {
   const desc = addForm.desc.value;
   const url = addForm.url.value;
   const category = addForm.category.value;
-  const tags = Array.from(addForm.querySelectorAll('[name^="tag"]'))
+  const tags = [...(addForm.querySelectorAll('.tag'))]
     .map((tagInput) => tagInput.value)
     .filter((tag) => tag.trim() !== '');
 
@@ -60,24 +70,29 @@ addForm.addEventListener('submit', (e) => {
     timestamp: serverTimestamp(),
   }).then(() => {
     addForm.reset();
+    secAdd.classList.add('hidden');
   });
 });
 
 addForm.resetx.addEventListener('click', (e) => {
   e.preventDefault();
   addForm.reset();
+  secAdd.classList.add('hidden');
 });
 
 const editForm = document.querySelector('#edit-form');
 function showEditForm(id) {
+  secAdd.classList.add('hidden');
+  secEdit.classList.remove('hidden');
   getDoc(doc(db, dbCollection.libraries, id)).then((docSnapshot) => {
     const data = docSnapshot.data();
-    editForm.id.value = id;
+    const editId = document.getElementById('edit-id');
+    editId.innerText = id;
     editForm.title.value = data.title;
     editForm.desc.value = data.desc;
     editForm.url.value = data.url;
     editForm.category.value = data.category;
-    const tagsElem = Array.from(editForm.querySelectorAll('[name^="tag"]'));
+    const tagsElem = [...editForm.querySelectorAll('.tag')];
     tagsElem.forEach((tagInput, index) => {
       tagInput.value = data.tags[index] || '';
     });
@@ -86,25 +101,31 @@ function showEditForm(id) {
 
 editForm.addEventListener('submit', (e) => {
   e.preventDefault();
-  const id = editForm.id.value;
+  const id = document.getElementById('edit-id').innerText;
 
   updateDoc(doc(db, dbCollection.libraries, id), {
     title: editForm.title.value,
     desc: editForm.desc.value,
     url: editForm.url.value,
     category: editForm.category.value,
-    tags: Array.from(editForm.querySelectorAll('[name^="tag"]'))
+    tags: [...(editForm.querySelectorAll('.tag'))]
       .map((tagInput) => tagInput.value)
       .filter((tag) => tag.trim() !== ''),
   })
     .then(() => {
       editForm.reset();
+      const editId = document.getElementById('edit-id');
+      editId.innerText = '-';
+      secEdit.classList.add('hidden');
     });
 });
 
 editForm.resetx.addEventListener('click', (e) => {
   e.preventDefault();
   editForm.reset();
+  const editId = document.getElementById('edit-id');
+  editId.innerText = '-';
+  secEdit.classList.add('hidden');
 });
 
 onSnapshot(libRef, (snapshot) => {
@@ -114,35 +135,41 @@ onSnapshot(libRef, (snapshot) => {
   });
   const libTable = document.querySelector('#lib-table');
   libTable.innerHTML = `
-    <tr>
-        <th>ID</th>
-        <th>Judul</th>
-        <th>Deskripsi</th>
-        <th>url</th>
-        <th>Kategori</th>
-        <th>Tag</th>
-        <th>Action</th>
+    <thead>
+        <tr>
+            <th>Action</th>
+            <th>ID</th>
+            <th>Title</th>
+            <th class="max-w-md">Desc</th>
+            <th>URL</th>
+            <th>Category</th>
+            <th>Tag</th>
         </tr>
+    </thead>
         `;
 
   data.forEach((item) => {
     libTable.innerHTML += `
       <tr data-id="${item.id}">
-          <td>${item.id}</td>
-          <td>${item.title}</td>
-          <td>${item.desc}</td>
-          <td>${item.url}</td>
-          <td>${item.category}</td>  
-          <td>${item.tags}</td>
-          <td>
-              <button class="btn edit">Edit</button>
-              <button class="btn delete">Delete</button>
-              </td>
-              </tr>
-              `;
+          <td class=" max-w-xs flex flex-row gap-1">
+            <span class="action edit material-symbols-outlined cursor-pointer hover:scale-110 ease-in-out duration-150">
+              edit_note
+            </span>
+            <span class="action delete material-symbols-outlined hover:cursor-pointer hover:scale-110 ease-in-out duration-150">
+              delete
+            </span>
+          </td>
+          <td class="max-w-md align-top">${item.id}</td>
+          <td class="max-w-md align-top">${item.title}</td>
+          <td class="max-w-md align-top">${item.desc}</td>
+          <td class="max-w-md align-top">${item.url}</td>
+          <td class="max-w-md align-top">${item.category}</td>  
+          <td class="max-w-sm align-top">${item.tags}</td>
+      </tr>
+    `;
   });
 
-  const editButtons = [...document.querySelectorAll('.btn.edit')];
+  const editButtons = [...document.querySelectorAll('.action.edit')];
   editButtons.forEach((button) => {
     button.addEventListener('click', (e) => {
       const { id } = e.target.parentElement.parentElement.dataset;
@@ -150,7 +177,7 @@ onSnapshot(libRef, (snapshot) => {
     });
   });
 
-  const deleteButtons = [...document.querySelectorAll('.btn.delete')];
+  const deleteButtons = [...document.querySelectorAll('.action.delete')];
   deleteButtons.forEach((button) => {
     button.addEventListener('click', (e) => {
       const { id } = e.target.parentElement.parentElement.dataset;

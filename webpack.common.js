@@ -21,6 +21,10 @@ module.exports = {
       import: './src/user-dashboard.js',
       dependOn: 'shared',
     },
+    category: {
+      import: './src/category.js',
+      dependOn: 'shared',
+    },
     shared: './src/shared.js',
   },
   output: {
@@ -70,6 +74,12 @@ module.exports = {
       template: './src/html/user-dashboard.html',
       filename: 'user-dashboard.html',
       chunks: ['userDashboard', 'shared'],
+      inject: 'body',
+    }),
+    new HtmlWebpackPlugin({
+      template: './src/html/category.html',
+      filename: 'category.html',
+      chunks: ['category', 'shared'],
       inject: 'body',
     }),
     new MiniCssExtractPlugin({
