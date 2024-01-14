@@ -1,5 +1,5 @@
 "use strict";
-(self["webpackChunkumkm_maju"] = self["webpackChunkumkm_maju"] || []).push([[830],{
+(self["webpackChunkumkm_maju"] = self["webpackChunkumkm_maju"] || []).push([[794],{
 
 /***/ 444:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
@@ -2232,68 +2232,86 @@ var auth = (0,esm_index_esm/* getAuth */.v0)();
 
 /***/ }),
 
-/***/ 99:
+/***/ 820:
 /***/ ((__unused_webpack_module, __unused_webpack___webpack_exports__, __webpack_require__) => {
 
 
-// EXTERNAL MODULE: ./node_modules/firebase/auth/dist/esm/index.esm.js + 3 modules
-var index_esm = __webpack_require__(858);
 // EXTERNAL MODULE: ./node_modules/firebase/firestore/dist/esm/index.esm.js + 2 modules
-var esm_index_esm = __webpack_require__(953);
+var index_esm = __webpack_require__(953);
+// EXTERNAL MODULE: ./node_modules/firebase/auth/dist/esm/index.esm.js + 3 modules
+var esm_index_esm = __webpack_require__(858);
 // EXTERNAL MODULE: ./src/script/view/init.js + 1 modules
 var init = __webpack_require__(761);
 // EXTERNAL MODULE: ./src/script/data/firebase-config.js
 var firebase_config = __webpack_require__(708);
-;// CONCATENATED MODULE: ./src/script/view/signup.js
+;// CONCATENATED MODULE: ./src/script/view/user.js
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter); }
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i]; return arr2; }
 
 
 
 
-
-// signupForm
-var signupForm = document.querySelector('#signup-form');
-signupForm.addEventListener('submit', function (e) {
-  e.preventDefault();
-  var email = signupForm.email.value;
-  var username = signupForm.username.value;
-  var password = signupForm.password.value;
-  (0,index_esm/* createUserWithEmailAndPassword */.Xb)(init/* auth */.I8, email, password).then(function (cred) {
-    (0,esm_index_esm/* setDoc */.pl)((0,esm_index_esm/* doc */.JU)(init.db, firebase_config/* dbCollection */.$.users, cred.user.uid), {
-      username: username,
-      role: 'user'
-    });
-  })["catch"](function (error) {
-    var parts = error.code.split('/');
-    var filteredText = parts[parts.length - 1].replace(/-/g, ' ');
-    var errMessage = filteredText.replace(/\b\w/g, function (_char) {
-      return _char.toUpperCase();
-    });
-    var errText = document.getElementById('error-message');
-    errText.textContent = errMessage;
-    errText.style.display = 'block';
-  });
-});
-(0,index_esm/* onAuthStateChanged */.Aj)(init/* auth */.I8, function (user) {
+var categoryContainer = document.getElementById('category-container');
+(0,esm_index_esm/* onAuthStateChanged */.Aj)(init/* auth */.I8, function (user) {
   if (user) {
-    (0,esm_index_esm/* getDoc */.QT)((0,esm_index_esm/* doc */.JU)(init.db, firebase_config/* dbCollection */.$.users, user.uid)).then(function (docSnapshot) {
+    (0,index_esm/* getDoc */.QT)((0,index_esm/* doc */.JU)(init.db, firebase_config/* dbCollection */.$.users, user.uid)).then(function (docSnapshot) {
       var _docSnapshot$data = docSnapshot.data(),
         role = _docSnapshot$data.role;
-      if (role === 'admin') {
-        window.location.href = 'admin-dashboard.html';
-      } else if (role === 'user') {
-        window.location.href = 'user-dashboard.html';
-      } else {
-        alert('Invalid account type!');
-        (0,index_esm/* signOut */.w7)(init/* auth */.I8).then(function () {
+      if (role !== 'admin' && role !== 'user') {
+        alert('Invalid account role!');
+        (0,esm_index_esm/* signOut */.w7)(init/* auth */.I8).then(function () {
           window.location.href = window.location.origin;
         })["catch"](function (error) {
           return console.log(error);
         });
       }
     });
+  } else {
+    window.location.href = window.location.origin;
   }
 });
-;// CONCATENATED MODULE: ./src/signup.js
+var logoutBtn = document.querySelector('#logout');
+logoutBtn.addEventListener('click', function (e) {
+  e.preventDefault();
+  (0,esm_index_esm/* signOut */.w7)(init/* auth */.I8).then(function () {
+    window.location.href = '/';
+  })["catch"](function (error) {
+    var errorCode = error.code;
+    var errorMessage = error.message;
+    alert(errorCode, errorMessage);
+  });
+});
+(0,index_esm/* onSnapshot */.cf)(init/* libRef */.dV, function (snapshot) {
+  var data = [];
+  snapshot.docs.forEach(function (document) {
+    data.push(document.data().category);
+  });
+  var categories = _toConsumableArray(new Set(data));
+  categoryContainer.innerHTML = '';
+  categories.forEach(function (c) {
+    var card = "\n      <section data-category = \"".concat(c, "\"\n          class=\"bg-slate-300 dark:bg-opacity-20 aspect-video shadow-md p-2 overflow-hidden relative flex flex-col align-middle justify-center cursor-pointer group\">\n          <div class=\"flex flex-col align-middle justify-center\">\n              <p\n                  class=\"text-xl font-bold flex-grow text-center group-hover:scale-105 ease-in-out duration-100\">\n                  ").concat(c, "</p>\n          </div>\n          <span class=\"material-symbols-outlined absolute right-1 bottom-1 cursor-pointer \">\n              arrow_forward\n          </span>\n      </section>\n    ");
+    categoryContainer.innerHTML += card;
+    var categoryElem = _toConsumableArray(document.querySelectorAll('[data-category]'));
+    categoryElem.forEach(function (item) {
+      item.addEventListener('click', function () {
+        localStorage.setItem('query', item.dataset.category);
+        window.location.href = 'category.html';
+      });
+    });
+  });
+});
+var searchForm = document.querySelector('#search-form');
+searchForm.addEventListener('submit', function (e) {
+  e.preventDefault();
+  var keyword = document.querySelector('#keyword');
+  localStorage.setItem('query', "Search: ".concat(keyword.value));
+  window.location.href = 'category.html';
+});
+;// CONCATENATED MODULE: ./src/user-dashboard.js
 
 
 /***/ }),
@@ -15139,12 +15157,14 @@ __webpack_require__.d(__webpack_exports__, {
   QT: () => (/* reexport */ getDoc),
   ad: () => (/* reexport */ getFirestore),
   cf: () => (/* reexport */ onSnapshot),
+  IO: () => (/* reexport */ query),
   Bt: () => (/* reexport */ serverTimestamp),
   pl: () => (/* reexport */ setDoc),
-  r7: () => (/* reexport */ updateDoc)
+  r7: () => (/* reexport */ updateDoc),
+  ar: () => (/* reexport */ where)
 });
 
-// UNUSED EXPORTS: AbstractUserDataWriter, AggregateField, AggregateQuerySnapshot, Bytes, CACHE_SIZE_UNLIMITED, CollectionReference, DocumentReference, DocumentSnapshot, FieldPath, FieldValue, Firestore, FirestoreError, GeoPoint, LoadBundleTask, PersistentCacheIndexManager, Query, QueryCompositeFilterConstraint, QueryConstraint, QueryDocumentSnapshot, QueryEndAtConstraint, QueryFieldFilterConstraint, QueryLimitConstraint, QueryOrderByConstraint, QuerySnapshot, QueryStartAtConstraint, SnapshotMetadata, Timestamp, Transaction, WriteBatch, _AutoId, _ByteString, _DatabaseId, _DocumentKey, _EmptyAppCheckTokenProvider, _EmptyAuthCredentialsProvider, _FieldPath, _TestingHooks, _cast, _debugAssert, _isBase64Available, _logWarn, _validateIsNotUsedTogether, aggregateFieldEqual, aggregateQuerySnapshotEqual, and, arrayRemove, arrayUnion, average, clearIndexedDbPersistence, collectionGroup, connectFirestoreEmulator, count, deleteAllPersistentCacheIndexes, deleteField, disableNetwork, disablePersistentCacheIndexAutoCreation, documentId, enableIndexedDbPersistence, enableMultiTabIndexedDbPersistence, enableNetwork, enablePersistentCacheIndexAutoCreation, endAt, endBefore, ensureFirestoreConfigured, executeWrite, getAggregateFromServer, getCountFromServer, getDocFromCache, getDocFromServer, getDocs, getDocsFromCache, getDocsFromServer, getPersistentCacheIndexManager, increment, initializeFirestore, limit, limitToLast, loadBundle, memoryEagerGarbageCollector, memoryLocalCache, memoryLruGarbageCollector, namedQuery, onSnapshotsInSync, or, orderBy, persistentLocalCache, persistentMultipleTabManager, persistentSingleTabManager, query, queryEqual, refEqual, runTransaction, setIndexConfiguration, setLogLevel, snapshotEqual, startAfter, startAt, sum, terminate, waitForPendingWrites, where, writeBatch
+// UNUSED EXPORTS: AbstractUserDataWriter, AggregateField, AggregateQuerySnapshot, Bytes, CACHE_SIZE_UNLIMITED, CollectionReference, DocumentReference, DocumentSnapshot, FieldPath, FieldValue, Firestore, FirestoreError, GeoPoint, LoadBundleTask, PersistentCacheIndexManager, Query, QueryCompositeFilterConstraint, QueryConstraint, QueryDocumentSnapshot, QueryEndAtConstraint, QueryFieldFilterConstraint, QueryLimitConstraint, QueryOrderByConstraint, QuerySnapshot, QueryStartAtConstraint, SnapshotMetadata, Timestamp, Transaction, WriteBatch, _AutoId, _ByteString, _DatabaseId, _DocumentKey, _EmptyAppCheckTokenProvider, _EmptyAuthCredentialsProvider, _FieldPath, _TestingHooks, _cast, _debugAssert, _isBase64Available, _logWarn, _validateIsNotUsedTogether, aggregateFieldEqual, aggregateQuerySnapshotEqual, and, arrayRemove, arrayUnion, average, clearIndexedDbPersistence, collectionGroup, connectFirestoreEmulator, count, deleteAllPersistentCacheIndexes, deleteField, disableNetwork, disablePersistentCacheIndexAutoCreation, documentId, enableIndexedDbPersistence, enableMultiTabIndexedDbPersistence, enableNetwork, enablePersistentCacheIndexAutoCreation, endAt, endBefore, ensureFirestoreConfigured, executeWrite, getAggregateFromServer, getCountFromServer, getDocFromCache, getDocFromServer, getDocs, getDocsFromCache, getDocsFromServer, getPersistentCacheIndexManager, increment, initializeFirestore, limit, limitToLast, loadBundle, memoryEagerGarbageCollector, memoryLocalCache, memoryLruGarbageCollector, namedQuery, onSnapshotsInSync, or, orderBy, persistentLocalCache, persistentMultipleTabManager, persistentSingleTabManager, queryEqual, refEqual, runTransaction, setIndexConfiguration, setLogLevel, snapshotEqual, startAfter, startAt, sum, terminate, waitForPendingWrites, writeBatch
 
 // EXTERNAL MODULE: ./node_modules/@firebase/app/dist/esm/index.esm2017.js + 2 modules
 var index_esm2017 = __webpack_require__(389);
@@ -35121,7 +35141,7 @@ function __PRIVATE_createError(e, t, n, r, i) {
  * (endBefore:1)}, {@link (endAt:1)}, {@link limit}, {@link limitToLast} and
  * can then be passed to {@link (query:1)} to create a new query instance that
  * also contains this `QueryConstraint`.
- */ class QueryConstraint extends (/* unused pure expression or super */ null && (AppliableConstraint)) {}
+ */ class QueryConstraint extends AppliableConstraint {}
 
 function query(e, t, ...n) {
     let r = [];
@@ -35161,7 +35181,7 @@ function query(e, t, ...n) {
  * `QueryFieldFilterConstraint`s are created by invoking {@link where} and can then
  * be passed to {@link (query:1)} to create a new query instance that also contains
  * this `QueryFieldFilterConstraint`.
- */ class QueryFieldFilterConstraint extends (/* unused pure expression or super */ null && (QueryConstraint)) {
+ */ class QueryFieldFilterConstraint extends QueryConstraint {
     /**
      * @internal
      */
@@ -35223,7 +35243,7 @@ function query(e, t, ...n) {
  * `QueryCompositeFilterConstraint`s are created by invoking {@link or} or
  * {@link and} and can then be passed to {@link (query:1)} to create a new query
  * instance that also contains the `QueryCompositeFilterConstraint`.
- */ class QueryCompositeFilterConstraint extends (/* unused pure expression or super */ null && (AppliableConstraint)) {
+ */ class QueryCompositeFilterConstraint extends AppliableConstraint {
     /**
      * @internal
      */
@@ -35522,7 +35542,7 @@ function endAt(...e) {
 }
 
 function __PRIVATE_parseDocumentIdValue(e, t, n) {
-    if ("string" == typeof (n = getModularInstance(n))) {
+    if ("string" == typeof (n = (0,dist_index_esm2017/* getModularInstance */.m9)(n))) {
         if ("" === n) throw new FirestoreError(index_esm2017_D.INVALID_ARGUMENT, "Invalid query. When querying with documentId(), you must provide a valid document ID, but it was an empty string.");
         if (!__PRIVATE_isCollectionGroupQuery(t) && -1 !== n.indexOf("/")) throw new FirestoreError(index_esm2017_D.INVALID_ARGUMENT, `Invalid query. When querying a collection by documentId(), you must provide a plain document ID, but '${n}' contains a '/' character.`);
         const r = t.path.child(ResourcePath.fromString(n));
@@ -37081,7 +37101,7 @@ let Se = null;
 },
 /******/ __webpack_require__ => { // webpackRuntimeModules
 /******/ var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-/******/ __webpack_require__.O(0, [712], () => (__webpack_exec__(99)));
+/******/ __webpack_require__.O(0, [712], () => (__webpack_exec__(820)));
 /******/ var __webpack_exports__ = __webpack_require__.O();
 /******/ }
 ]);

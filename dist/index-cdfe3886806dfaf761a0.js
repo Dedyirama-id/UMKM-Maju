@@ -15133,12 +15133,14 @@ __webpack_require__.d(__webpack_exports__, {
   QT: () => (/* reexport */ getDoc),
   ad: () => (/* reexport */ getFirestore),
   cf: () => (/* reexport */ onSnapshot),
+  IO: () => (/* reexport */ query),
   Bt: () => (/* reexport */ serverTimestamp),
   pl: () => (/* reexport */ setDoc),
-  r7: () => (/* reexport */ updateDoc)
+  r7: () => (/* reexport */ updateDoc),
+  ar: () => (/* reexport */ where)
 });
 
-// UNUSED EXPORTS: AbstractUserDataWriter, AggregateField, AggregateQuerySnapshot, Bytes, CACHE_SIZE_UNLIMITED, CollectionReference, DocumentReference, DocumentSnapshot, FieldPath, FieldValue, Firestore, FirestoreError, GeoPoint, LoadBundleTask, PersistentCacheIndexManager, Query, QueryCompositeFilterConstraint, QueryConstraint, QueryDocumentSnapshot, QueryEndAtConstraint, QueryFieldFilterConstraint, QueryLimitConstraint, QueryOrderByConstraint, QuerySnapshot, QueryStartAtConstraint, SnapshotMetadata, Timestamp, Transaction, WriteBatch, _AutoId, _ByteString, _DatabaseId, _DocumentKey, _EmptyAppCheckTokenProvider, _EmptyAuthCredentialsProvider, _FieldPath, _TestingHooks, _cast, _debugAssert, _isBase64Available, _logWarn, _validateIsNotUsedTogether, aggregateFieldEqual, aggregateQuerySnapshotEqual, and, arrayRemove, arrayUnion, average, clearIndexedDbPersistence, collectionGroup, connectFirestoreEmulator, count, deleteAllPersistentCacheIndexes, deleteField, disableNetwork, disablePersistentCacheIndexAutoCreation, documentId, enableIndexedDbPersistence, enableMultiTabIndexedDbPersistence, enableNetwork, enablePersistentCacheIndexAutoCreation, endAt, endBefore, ensureFirestoreConfigured, executeWrite, getAggregateFromServer, getCountFromServer, getDocFromCache, getDocFromServer, getDocs, getDocsFromCache, getDocsFromServer, getPersistentCacheIndexManager, increment, initializeFirestore, limit, limitToLast, loadBundle, memoryEagerGarbageCollector, memoryLocalCache, memoryLruGarbageCollector, namedQuery, onSnapshotsInSync, or, orderBy, persistentLocalCache, persistentMultipleTabManager, persistentSingleTabManager, query, queryEqual, refEqual, runTransaction, setIndexConfiguration, setLogLevel, snapshotEqual, startAfter, startAt, sum, terminate, waitForPendingWrites, where, writeBatch
+// UNUSED EXPORTS: AbstractUserDataWriter, AggregateField, AggregateQuerySnapshot, Bytes, CACHE_SIZE_UNLIMITED, CollectionReference, DocumentReference, DocumentSnapshot, FieldPath, FieldValue, Firestore, FirestoreError, GeoPoint, LoadBundleTask, PersistentCacheIndexManager, Query, QueryCompositeFilterConstraint, QueryConstraint, QueryDocumentSnapshot, QueryEndAtConstraint, QueryFieldFilterConstraint, QueryLimitConstraint, QueryOrderByConstraint, QuerySnapshot, QueryStartAtConstraint, SnapshotMetadata, Timestamp, Transaction, WriteBatch, _AutoId, _ByteString, _DatabaseId, _DocumentKey, _EmptyAppCheckTokenProvider, _EmptyAuthCredentialsProvider, _FieldPath, _TestingHooks, _cast, _debugAssert, _isBase64Available, _logWarn, _validateIsNotUsedTogether, aggregateFieldEqual, aggregateQuerySnapshotEqual, and, arrayRemove, arrayUnion, average, clearIndexedDbPersistence, collectionGroup, connectFirestoreEmulator, count, deleteAllPersistentCacheIndexes, deleteField, disableNetwork, disablePersistentCacheIndexAutoCreation, documentId, enableIndexedDbPersistence, enableMultiTabIndexedDbPersistence, enableNetwork, enablePersistentCacheIndexAutoCreation, endAt, endBefore, ensureFirestoreConfigured, executeWrite, getAggregateFromServer, getCountFromServer, getDocFromCache, getDocFromServer, getDocs, getDocsFromCache, getDocsFromServer, getPersistentCacheIndexManager, increment, initializeFirestore, limit, limitToLast, loadBundle, memoryEagerGarbageCollector, memoryLocalCache, memoryLruGarbageCollector, namedQuery, onSnapshotsInSync, or, orderBy, persistentLocalCache, persistentMultipleTabManager, persistentSingleTabManager, queryEqual, refEqual, runTransaction, setIndexConfiguration, setLogLevel, snapshotEqual, startAfter, startAt, sum, terminate, waitForPendingWrites, writeBatch
 
 // EXTERNAL MODULE: ./node_modules/@firebase/app/dist/esm/index.esm2017.js + 2 modules
 var index_esm2017 = __webpack_require__(389);
@@ -35115,7 +35117,7 @@ function __PRIVATE_createError(e, t, n, r, i) {
  * (endBefore:1)}, {@link (endAt:1)}, {@link limit}, {@link limitToLast} and
  * can then be passed to {@link (query:1)} to create a new query instance that
  * also contains this `QueryConstraint`.
- */ class QueryConstraint extends (/* unused pure expression or super */ null && (AppliableConstraint)) {}
+ */ class QueryConstraint extends AppliableConstraint {}
 
 function query(e, t, ...n) {
     let r = [];
@@ -35155,7 +35157,7 @@ function query(e, t, ...n) {
  * `QueryFieldFilterConstraint`s are created by invoking {@link where} and can then
  * be passed to {@link (query:1)} to create a new query instance that also contains
  * this `QueryFieldFilterConstraint`.
- */ class QueryFieldFilterConstraint extends (/* unused pure expression or super */ null && (QueryConstraint)) {
+ */ class QueryFieldFilterConstraint extends QueryConstraint {
     /**
      * @internal
      */
@@ -35217,7 +35219,7 @@ function query(e, t, ...n) {
  * `QueryCompositeFilterConstraint`s are created by invoking {@link or} or
  * {@link and} and can then be passed to {@link (query:1)} to create a new query
  * instance that also contains the `QueryCompositeFilterConstraint`.
- */ class QueryCompositeFilterConstraint extends (/* unused pure expression or super */ null && (AppliableConstraint)) {
+ */ class QueryCompositeFilterConstraint extends AppliableConstraint {
     /**
      * @internal
      */
@@ -35516,7 +35518,7 @@ function endAt(...e) {
 }
 
 function __PRIVATE_parseDocumentIdValue(e, t, n) {
-    if ("string" == typeof (n = getModularInstance(n))) {
+    if ("string" == typeof (n = (0,dist_index_esm2017/* getModularInstance */.m9)(n))) {
         if ("" === n) throw new FirestoreError(index_esm2017_D.INVALID_ARGUMENT, "Invalid query. When querying with documentId(), you must provide a valid document ID, but it was an empty string.");
         if (!__PRIVATE_isCollectionGroupQuery(t) && -1 !== n.indexOf("/")) throw new FirestoreError(index_esm2017_D.INVALID_ARGUMENT, `Invalid query. When querying a collection by documentId(), you must provide a plain document ID, but '${n}' contains a '/' character.`);
         const r = t.path.child(ResourcePath.fromString(n));
