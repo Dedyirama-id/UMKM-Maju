@@ -54,7 +54,7 @@ if (queryData.includes('Search: ')) {
       <section class="flex flex-col gap-4">
         <h2 class="text-xl font-bold h-16">#${i + 1}. ${d.title}</h2>
         <a href="${d.url}" target="_blank">
-          <div src="" alt="" class="data-img bg-gray-200 aspect-video w-full rounded-md shadow-md flex flex-col justify-center cursor-pointer p-2">
+          <div src="" alt="" class="data-img bg-gray-200 aspect-video w-full rounded-md shadow-md flex flex-col justify-center cursor-pointer p-2 overflow-hidden">
             <h3 class="mx-auto w-fit font-bold text-2xl">${d.url}</h3>
           </div>
         </a>

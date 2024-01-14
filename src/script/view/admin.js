@@ -137,7 +137,7 @@ onSnapshot(libRef, (snapshot) => {
   libTable.innerHTML = `
     <thead>
         <tr>
-            <th>Action</th>
+            <th class="-z-10">Action</th>
             <th>ID</th>
             <th>Title</th>
             <th class="max-w-md">Desc</th>
@@ -146,7 +146,7 @@ onSnapshot(libRef, (snapshot) => {
             <th>Tag</th>
         </tr>
     </thead>
-        `;
+  `;
 
   data.forEach((item) => {
     libTable.innerHTML += `
