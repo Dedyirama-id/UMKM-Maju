@@ -29,10 +29,10 @@ if (queryData.includes('Search: ')) {
     data.forEach((d, i) => {
       dataContainer.innerHTML += `
       <section class="flex flex-col gap-4">
-        <h2 class="text-xl font-bold h-16">#${i + 1}. ${d.title}</h2>
+        <h2 class="text-xl font-bold md:h-16">#${i + 1}. ${d.title}</h2>
         <a href="${d.url}" target="_blank">
-          <div src="" alt="" class="data-img bg-gray-200 aspect-video w-full rounded-md shadow-md flex flex-col justify-center cursor-pointer p-2">
-            <h3 class="mx-auto w-fit font-bold text-2xl">${d.url}</h3>
+          <div src="" alt="" class="data-img bg-gray-200 aspect-video w-full rounded-md shadow-md flex flex-col justify-center cursor-pointer p-2 overflow-hidden">
+            <h3 class="mx-auto w-fit font-bold text-2xl text-gray-500 text-center">${d.url}</h3>
           </div>
         </a>
         <p>${d.desc}</p>
@@ -52,10 +52,10 @@ if (queryData.includes('Search: ')) {
     data.forEach((d, i) => {
       dataContainer.innerHTML += `
       <section class="flex flex-col gap-4">
-        <h2 class="text-xl font-bold h-16">#${i + 1}. ${d.title}</h2>
+        <h2 class="text-xl font-bold md:h-16">#${i + 1}. ${d.title}</h2>
         <a href="${d.url}" target="_blank">
           <div src="" alt="" class="data-img bg-gray-200 aspect-video w-full rounded-md shadow-md flex flex-col justify-center cursor-pointer p-2 overflow-hidden">
-            <h3 class="mx-auto w-fit font-bold text-2xl">${d.url}</h3>
+            <h3 class="mx-auto w-fit font-bold text-2xl text-gray-500 text-center">${d.url}</h3>
           </div>
         </a>
         <p>${d.desc}</p>

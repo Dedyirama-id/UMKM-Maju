@@ -2190,7 +2190,7 @@ if (queryData.includes('Search: ')) {
     var dataContainer = document.getElementById('data-container');
     dataContainer.innerHTML = '';
     data.forEach(function (d, i) {
-      dataContainer.innerHTML += "\n      <section class=\"flex flex-col gap-4\">\n        <h2 class=\"text-xl font-bold h-16\">#".concat(i + 1, ". ").concat(d.title, "</h2>\n        <a href=\"").concat(d.url, "\" target=\"_blank\">\n          <div src=\"\" alt=\"\" class=\"data-img bg-gray-200 aspect-video w-full rounded-md shadow-md flex flex-col justify-center cursor-pointer p-2\">\n            <h3 class=\"mx-auto w-fit font-bold text-2xl\">").concat(d.url, "</h3>\n          </div>\n        </a>\n        <p>").concat(d.desc, "</p>\n      </section>\n    ");
+      dataContainer.innerHTML += "\n      <section class=\"flex flex-col gap-4\">\n        <h2 class=\"text-xl font-bold md:h-16\">#".concat(i + 1, ". ").concat(d.title, "</h2>\n        <a href=\"").concat(d.url, "\" target=\"_blank\">\n          <div src=\"\" alt=\"\" class=\"data-img bg-gray-200 aspect-video w-full rounded-md shadow-md flex flex-col justify-center cursor-pointer p-2 overflow-hidden\">\n            <h3 class=\"mx-auto w-fit font-bold text-2xl text-gray-500 text-center\">").concat(d.url, "</h3>\n          </div>\n        </a>\n        <p>").concat(d.desc, "</p>\n      </section>\n    ");
     });
   });
 } else {
@@ -2204,7 +2204,7 @@ if (queryData.includes('Search: ')) {
     var dataContainer = document.getElementById('data-container');
     dataContainer.innerHTML = '';
     data.forEach(function (d, i) {
-      dataContainer.innerHTML += "\n      <section class=\"flex flex-col gap-4\">\n        <h2 class=\"text-xl font-bold h-16\">#".concat(i + 1, ". ").concat(d.title, "</h2>\n        <a href=\"").concat(d.url, "\" target=\"_blank\">\n          <div src=\"\" alt=\"\" class=\"data-img bg-gray-200 aspect-video w-full rounded-md shadow-md flex flex-col justify-center cursor-pointer p-2 overflow-hidden\">\n            <h3 class=\"mx-auto w-fit font-bold text-2xl\">").concat(d.url, "</h3>\n          </div>\n        </a>\n        <p>").concat(d.desc, "</p>\n      </section>\n    ");
+      dataContainer.innerHTML += "\n      <section class=\"flex flex-col gap-4\">\n        <h2 class=\"text-xl font-bold md:h-16\">#".concat(i + 1, ". ").concat(d.title, "</h2>\n        <a href=\"").concat(d.url, "\" target=\"_blank\">\n          <div src=\"\" alt=\"\" class=\"data-img bg-gray-200 aspect-video w-full rounded-md shadow-md flex flex-col justify-center cursor-pointer p-2 overflow-hidden\">\n            <h3 class=\"mx-auto w-fit font-bold text-2xl text-gray-500 text-center\">").concat(d.url, "</h3>\n          </div>\n        </a>\n        <p>").concat(d.desc, "</p>\n      </section>\n    ");
     });
   });
 }
