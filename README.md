@@ -4,6 +4,12 @@ UMKM Maju  is a digital portal designed to facilitate Micro, Small, and Medium E
 
 Access Link: https://umkm-maju.web.app/
 
+## Developer Team - Servis AC
+1. Dedy Irama - Hacker
+2. Luhung Dewangkoro - Hipster
+3. Moch. Fanny Andriansyah - Hustler
+4. Rizky Alay Hermawan - Hacker
+
 ## Dummy Account
 #### Admin:
 - Username  : Admin
@@ -43,3 +49,6 @@ To experience the features of UMKM Maju, follow these steps:
 3. Log In: Access your account securely through the login feature.
 4. Explore: Browse the existing resources.
 5. Logout: When done, securely log out to protect your account information.
+
+## Admin Dashboard Preview
+![image](https://github.com/Dedyirama-id/UMKM-Maju/assets/153349665/14d8cb7d-75fd-48e2-8f63-1d26185afc9d)
