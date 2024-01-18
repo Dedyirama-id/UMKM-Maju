@@ -2289,6 +2289,11 @@ editForm.resetx.addEventListener('click', function (e) {
   editId.innerText = '-';
   secEdit.classList.add('hidden');
 });
+function deleteData(id) {
+  (0,esm_index_esm/* deleteDoc */.oe)((0,esm_index_esm/* doc */.JU)(init.db, 'libraries', id))["catch"](function (err) {
+    return console.log(err);
+  });
+}
 (0,esm_index_esm/* onSnapshot */.cf)(init/* libRef */.dV, function (snapshot) {
   var data = [];
   snapshot.docs.forEach(function (document) {
@@ -2311,9 +2316,24 @@ editForm.resetx.addEventListener('click', function (e) {
   var deleteButtons = _toConsumableArray(document.querySelectorAll('.action.delete'));
   deleteButtons.forEach(function (button) {
     button.addEventListener('click', function (e) {
+      e.preventDefault();
       var id = e.target.parentElement.parentElement.dataset.id;
-      (0,esm_index_esm/* deleteDoc */.oe)((0,esm_index_esm/* doc */.JU)(init.db, 'libraries', id))["catch"](function (err) {
-        return console.log(err);
+      var confirmModal = document.getElementById('confirm-modal');
+      var modalText = document.getElementById('confirm-text');
+      var cancelBtn = document.getElementById('cancel-btn');
+      var confirmBtn = document.getElementById('confirm-btn');
+      var modalBackdrop = document.getElementById('modal-backdrop');
+      confirmModal.classList.add('modal-open');
+      modalText.innerHTML = "Data with id <span class=\"bg-slate-200 px-2 rounded-full font-semibold\">".concat(id, "</span> will be deleted. You can't undo this action.");
+      confirmBtn.addEventListener('click', function () {
+        deleteData(id);
+        confirmModal.classList.remove('modal-open');
+      });
+      cancelBtn.addEventListener('click', function () {
+        return confirmModal.classList.remove('modal-open');
+      });
+      modalBackdrop.addEventListener('click', function () {
+        return confirmModal.classList.remove('modal-open');
       });
     });
   });
