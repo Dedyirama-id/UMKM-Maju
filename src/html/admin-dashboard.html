@@ -185,6 +185,21 @@
             </tbody> -->
             </table>
         </article>
+        <dialog id="confirm-modal" class="modal modal-bottom sm:modal-middle">
+            <div class="modal-box">
+                <h3 class="font-bold text-lg">Are you sure?</h3>
+                <p id="confirm-text" class="py-4"></p>
+                <div class="modal-action">
+                    <form method="dialog">
+                        <button id="cancel-btn" class="btn btn-md">Cancel</button>
+                    </form>
+                    <button id="confirm-btn" class="btn btn-outline btn-error">Delete</button>
+                </div>
+            </div>
+            <form method="dialog" class="modal-backdrop">
+                <button id="modal-backdrop"></button>
+            </form>
+        </dialog>
     </main>
 </body>
 

@@ -128,6 +128,10 @@ editForm.resetx.addEventListener('click', (e) => {
   secEdit.classList.add('hidden');
 });
 
+function deleteData(id) {
+  deleteDoc(doc(db, 'libraries', id)).catch((err) => console.log(err));
+}
+
 onSnapshot(libRef, (snapshot) => {
   const data = [];
   snapshot.docs.forEach((document) => {
@@ -180,8 +184,23 @@ onSnapshot(libRef, (snapshot) => {
   const deleteButtons = [...document.querySelectorAll('.action.delete')];
   deleteButtons.forEach((button) => {
     button.addEventListener('click', (e) => {
+      e.preventDefault();
       const { id } = e.target.parentElement.parentElement.dataset;
-      deleteDoc(doc(db, 'libraries', id)).catch((err) => console.log(err));
+      const confirmModal = document.getElementById('confirm-modal');
+      const modalText = document.getElementById('confirm-text');
+      const cancelBtn = document.getElementById('cancel-btn');
+      const confirmBtn = document.getElementById('confirm-btn');
+      const modalBackdrop = document.getElementById('modal-backdrop');
+
+      confirmModal.classList.add('modal-open');
+
+      modalText.innerHTML = `Data with id <span class="bg-slate-200 px-2 rounded-full font-semibold">${id}</span> will be deleted. You can't undo this action.`;
+      confirmBtn.addEventListener('click', () => {
+        deleteData(id);
+        confirmModal.classList.remove('modal-open');
+      });
+      cancelBtn.addEventListener('click', () => confirmModal.classList.remove('modal-open'));
+      modalBackdrop.addEventListener('click', () => confirmModal.classList.remove('modal-open'));
     });
   });
 });
