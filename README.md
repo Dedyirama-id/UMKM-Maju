@@ -50,5 +50,12 @@ To experience the features of UMKM Maju, follow these steps:
 4. Explore: Browse the existing resources.
 5. Logout: When done, securely log out to protect your account information.
 
-## Admin Dashboard Preview
-![image](https://github.com/Dedyirama-id/UMKM-Maju/assets/153349665/14d8cb7d-75fd-48e2-8f63-1d26185afc9d)
+# Preview
+## Login Page
+![image](https://github.com/Dedyirama-id/UMKM-Maju/assets/153349665/6ca2279a-6386-4edf-a66a-216e305eeb28)
+## Admin Dashboard
+![image](https://github.com/Dedyirama-id/UMKM-Maju/assets/153349665/9f4cd46d-475d-46bf-bb1d-f9341d560bea)
+## User Dashboard
+![image](https://github.com/Dedyirama-id/UMKM-Maju/assets/153349665/755c16e5-ed3f-4ea0-a0c0-3a0dec6b2ab0)
+## Library List
+![image](https://github.com/Dedyirama-id/UMKM-Maju/assets/153349665/1e10241f-74ed-4e06-bf1e-976ae5154166)
