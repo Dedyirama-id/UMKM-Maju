@@ -47,15 +47,19 @@ To experience the features of UMKM Maju, follow these steps:
 1. Visit the UMKM Maju site at https://umkm-maju.web.app/
 2. Create an Account: Register for a new account using the provided registration feature.
 3. Log In: Access your account securely through the login feature.
-4. Explore: Browse the existing resources.
-5. Logout: When done, securely log out to protect your account information.
+4. Add New Library: Using registered Admin account you can add new library data by clicking "Add New Data +" button on top-right page
+5. Explore: Browse the existing resources.
+6. Logout: When done, securely log out to protect your account information.
 
 # Preview
 ## Login Page
-![image](https://github.com/Dedyirama-id/UMKM-Maju/assets/153349665/6ca2279a-6386-4edf-a66a-216e305eeb28)
+![Cuplikan layar 2024-01-18 133348](https://github.com/Dedyirama-id/UMKM-Maju/assets/153349665/b3b8f061-3f55-43b9-a7b9-0b4589858b29)
+
 ## Admin Dashboard
-![image](https://github.com/Dedyirama-id/UMKM-Maju/assets/153349665/9f4cd46d-475d-46bf-bb1d-f9341d560bea)
+![Cuplikan layar 2024-01-18 133526](https://github.com/Dedyirama-id/UMKM-Maju/assets/153349665/70de70d7-e082-4ad4-b3f7-e111212b3462)
+
 ## User Dashboard
-![image](https://github.com/Dedyirama-id/UMKM-Maju/assets/153349665/755c16e5-ed3f-4ea0-a0c0-3a0dec6b2ab0)
+![Cuplikan layar 2024-01-18 133601](https://github.com/Dedyirama-id/UMKM-Maju/assets/153349665/97c2c74e-af0a-4d63-bd51-5e1113e17a0e)
+
 ## Library List
-![image](https://github.com/Dedyirama-id/UMKM-Maju/assets/153349665/1e10241f-74ed-4e06-bf1e-976ae5154166)
+![Cuplikan layar 2024-01-18 133623](https://github.com/Dedyirama-id/UMKM-Maju/assets/153349665/7d3a9f9b-f977-40ee-9dc9-255756449d17)
